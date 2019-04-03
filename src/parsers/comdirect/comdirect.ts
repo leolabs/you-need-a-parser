@@ -121,17 +121,21 @@ export const comdirectMatcher: MatcherFunction = async (file: File) => {
     return false;
   }
 
-  const { data } = await parse(trimMetaData(rawFileString), { header: true });
+  try {
+    const { data } = await parse(trimMetaData(rawFileString), { header: true });
 
-  if (data.length === 0) {
+    if (data.length === 0) {
+      return false;
+    }
+
+    const keys = Object.keys(data[0]);
+    const missingKeys = requiredKeys.filter(k => !keys.includes(k));
+
+    if (missingKeys.length === 0) {
+      return true;
+    }
+  } catch (e) {
     return false;
-  }
-
-  const keys = Object.keys(data[0]);
-  const missingKeys = requiredKeys.filter(k => !keys.includes(k));
-
-  if (missingKeys.length === 0) {
-    return true;
   }
 
   return false;
