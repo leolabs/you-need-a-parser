@@ -151,7 +151,12 @@ const App: React.FC = () => {
           </UploadIcon>
           <p>Drag files here to parse</p>
         </DropArea>
-        <p>Supported CSV formats: {Object.values(parserMap).map(p => p.name)}</p>
+        <p>
+          Supported CSV formats:{' '}
+          {Object.values(parserMap)
+            .map(p => p.name)
+            .join(', ')}
+        </p>
       </Container>
     </>
   );
