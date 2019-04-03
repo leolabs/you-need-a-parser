@@ -98,6 +98,8 @@ export const outbankMatcher: MatcherFunction = async (
 
 export const outbank: ParserModule = {
   name: 'Outbank',
+  link:
+    'https://help.outbankapp.com/en/kb/articles/wie-kann-ich-ums-tze-als-csv-datei-exportieren',
   matcher: outbankMatcher,
   parser: outbankParser,
 };

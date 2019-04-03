@@ -14,6 +14,7 @@ export interface YnabRow {
 
 export interface ParserModule {
   name: string;
+  link: string;
   matcher: MatcherFunction;
   parser: ParserFunction;
 }
