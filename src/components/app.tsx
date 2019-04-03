@@ -130,9 +130,9 @@ const App: React.FC = () => {
       <Container uploadHover={uploadHover}>
         <h1>You Need A Parser</h1>
         <p>
-          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
-          eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
-          voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+          YNAP converts CSV files from a variety of sources into a format that can
+          easily be imported into You Need A Budget. Just drag the files you want to
+          convert into this window. Your files will never leave your browser.
         </p>
         <DropArea>
           <UploadIcon
