@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import './app.css';
 import { parseFile, parserMap } from '../parsers';
 import { saveAs } from 'file-saver';
 import styled, { keyframes, css } from 'styled-components';
+import { GitHubBadge } from './github-badge';
 
 const pulse = keyframes`
   0% {
@@ -125,32 +125,35 @@ const App: React.FC = () => {
   }, []);
 
   return (
-    <Container uploadHover={uploadHover}>
-      <h1>You Need A Parser</h1>
-      <p>
-        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
-        eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
-        voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
-      </p>
-      <DropArea>
-        <UploadIcon
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        >
-          <g className="arrow-up">
-            <line x1="12" y1="3" x2="12" y2="15" />
-            <polyline points="17 8 12 3 7 8" />
-          </g>
-          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-        </UploadIcon>
-        <p>Drag files here to parse</p>
-      </DropArea>
-      <p>Supported CSV formats: {Object.values(parserMap).map(p => p.name)}</p>
-    </Container>
+    <>
+      <GitHubBadge />
+      <Container uploadHover={uploadHover}>
+        <h1>You Need A Parser</h1>
+        <p>
+          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+          eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
+          voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+        </p>
+        <DropArea>
+          <UploadIcon
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
+            <g className="arrow-up">
+              <line x1="12" y1="3" x2="12" y2="15" />
+              <polyline points="17 8 12 3 7 8" />
+            </g>
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+          </UploadIcon>
+          <p>Drag files here to parse</p>
+        </DropArea>
+        <p>Supported CSV formats: {Object.values(parserMap).map(p => p.name)}</p>
+      </Container>
+    </>
   );
 };
 
