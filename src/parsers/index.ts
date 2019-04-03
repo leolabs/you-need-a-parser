@@ -48,7 +48,7 @@ export const parseFile = async (file: File, parserOverride?: ParserModule) => {
   const parser = parserOverride || (await matchFile(file, data));
 
   if (!parser) {
-    throw new Error(`No parser is available for the file ${file.name}`);
+    throw new Error(`No parser is available for this file.`);
   }
 
   const ynabData = await parser.parser(data);
