@@ -4,6 +4,7 @@ import 'mdn-polyfills/String.prototype.padStart';
 import { outbank } from './outbank';
 import { n26 } from './n26';
 import { ingDiBa } from './ing-diba';
+import { comdirect } from './comdirect';
 
 export interface YnabRow {
   Date?: string;
@@ -28,6 +29,7 @@ export const parserMap: { [k: string]: ParserModule } = {
   outbank,
   n26,
   ingDiBa,
+  comdirect,
 };
 
 export const matchFile = async (file: File) => {
