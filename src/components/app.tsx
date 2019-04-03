@@ -60,7 +60,7 @@ const DropArea = styled.div`
   justify-content: center;
   flex-direction: column;
 
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem;
   padding: 3rem 4rem;
 
   background: #fff;
