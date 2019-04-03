@@ -32,7 +32,7 @@ const Container = styled.div<{ uploadHover: boolean }>`
   > p {
     max-width: 40rem;
     text-align: center;
-    margin-bottom: 6rem;
+    margin-bottom: 4rem;
   }
 
   ${p =>
@@ -76,6 +76,12 @@ const UploadIcon = styled.svg`
 
   .arrow-up {
     transition: transform 0.2s;
+  }
+`;
+
+const Footer = styled.footer`
+  p {
+    margin: 0;
   }
 `;
 
@@ -152,11 +158,26 @@ const App: React.FC = () => {
           <p>Drag files here to parse</p>
         </DropArea>
         <p>
-          Supported CSV formats:{' '}
-          {Object.values(parserMap)
-            .map(p => p.name)
-            .join(', ')}
+          Supported CSV formats:
+          <br />
+          {Object.values(parserMap).map(p => (
+            <>
+              <a target="_blank" href={p.link}>
+                {p.name}
+              </a>
+              {', '}
+            </>
+          ))}
+          and more in the future.
         </p>
+        <Footer>
+          <p>
+            Made with love by <a href="https://leolabs.org">Leo Bernard</a> |{' '}
+            <a href="https://github.com/leolabs/you-need-a-parser/issues/new">
+              Suggest a Format
+            </a>
+          </p>
+        </Footer>
       </Container>
     </>
   );
