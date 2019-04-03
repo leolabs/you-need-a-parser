@@ -56,7 +56,7 @@ describe('ING-DiBa Parser Module', () => {
       expect(result).toBe(false);
     });
 
-    it('should match Outbank files by fields', async () => {
+    it('should match ING-DiBa files by fields', async () => {
       const file = new File([content], 'test.csv');
       const result = await ingDiBa.match(file);
       expect(result).toBe(true);
