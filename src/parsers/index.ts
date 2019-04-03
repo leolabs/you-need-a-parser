@@ -1,10 +1,10 @@
 import { unparse } from 'papaparse';
 import 'mdn-polyfills/String.prototype.padStart';
 
-import { outbank } from './outbank';
-import { n26 } from './n26';
-import { ingDiBa } from './ing-diba';
-import { comdirect } from './comdirect';
+import { outbank } from './outbank/outbank';
+import { n26 } from './n26/n26';
+import { ingDiBa } from './ing-diba/ing-diba';
+import { comdirect } from './comdirect/comdirect';
 
 export interface YnabRow {
   Date?: string;

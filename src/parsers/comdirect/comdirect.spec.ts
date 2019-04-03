@@ -4,7 +4,7 @@ import {
   extractField,
   trimMetaData,
 } from './comdirect';
-import { YnabRow } from '.';
+import { YnabRow } from '..';
 import { encode, decode } from 'iconv-lite';
 
 const content = encode(

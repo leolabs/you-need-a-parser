@@ -1,5 +1,5 @@
 import { generateYnabDate, ingDiBa } from './ing-diba';
-import { YnabRow } from '.';
+import { YnabRow } from '..';
 import { encode } from 'iconv-lite';
 
 const content = encode(
