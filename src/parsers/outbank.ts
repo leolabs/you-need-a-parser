@@ -1,7 +1,7 @@
 import 'mdn-polyfills/String.prototype.startsWith';
 import { ParserFunction, MatcherFunction, ParserModule } from '.';
 
-interface OutbankRow {
+export interface OutbankRow {
   '#': string;
   Account?: string;
   Date?: string;
@@ -37,28 +37,26 @@ export const generateYnabDate = (input: string) => {
     throw new Error('The input is not a valid date. Expected format: M/D/Y');
   }
 
-  console.log(match);
-
   const [, month, day, year] = match;
   return [month.padStart(2, '0'), day.padStart(2, '0'), `20${year}`].join('/');
 };
 
-export const parseNumber = (input: string = '0') => Number(input.replace(',', '.'));
+export const parseNumber = (input: string) => Number(input.replace(',', '.'));
 
 export const outbankParser: ParserFunction = async (data: OutbankRow[]) => {
   return (data as OutbankRow[])
-    .filter(d => d.Date && d.Amount)
+    .filter(r => r.Date && r.Amount)
     .map(r => ({
       Date: generateYnabDate(r.Date!),
       Payee: r.Name,
       Category: r.Category,
       Memo: r.Reason,
       Outflow:
-        parseNumber(r.Amount) < 0
-          ? Math.abs(parseNumber(r.Amount)).toFixed(2)
+        parseNumber(r.Amount!) < 0
+          ? Math.abs(parseNumber(r.Amount!)).toFixed(2)
           : undefined,
       Inflow:
-        parseNumber(r.Amount) > 0 ? parseNumber(r.Amount).toFixed(2) : undefined,
+        parseNumber(r.Amount!) > 0 ? parseNumber(r.Amount!).toFixed(2) : undefined,
     }));
 };
 
@@ -82,6 +80,10 @@ export const outbankMatcher: MatcherFunction = async (
 
   if (file.name.startsWith('Outbank_Export_')) {
     return true;
+  }
+
+  if (data.length === 0) {
+    return false;
   }
 
   const keys = Object.keys(data[0]);
