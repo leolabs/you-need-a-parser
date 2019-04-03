@@ -199,9 +199,19 @@ const App: React.FC = () => {
         </p>
         <Footer>
           <p>
-            Made with love by <a href="https://leolabs.org">Leo Bernard</a> |{' '}
-            <a href="https://github.com/leolabs/you-need-a-parser/issues/new">
+            <a target="_blank" href="https://leolabs.org">
+              Made by Leo Bernard
+            </a>{' '}
+            |{' '}
+            <a
+              target="_blank"
+              href="https://github.com/leolabs/you-need-a-parser/issues/new"
+            >
               Suggest a Format
+            </a>{' '}
+            |{' '}
+            <a target="_blank" href="https://github.com/leolabs/you-need-a-parser">
+              GitHub
             </a>
           </p>
         </Footer>
