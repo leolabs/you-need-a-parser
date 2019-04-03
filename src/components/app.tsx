@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './app.css';
-import { parseFile, parserMap } from './parsers';
+import { parseFile, parserMap } from '../parsers';
 import { saveAs } from 'file-saver';
 import styled, { keyframes, css } from 'styled-components';
 
