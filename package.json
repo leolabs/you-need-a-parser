@@ -22,7 +22,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "build:netlify": "yarn test --coverage && yarn build && cp -R coverage build/",
+    "build:netlify": "yarn test --coverage && yarn build && cp -R coverage/lcov-report build/",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
