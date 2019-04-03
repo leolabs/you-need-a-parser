@@ -138,8 +138,8 @@ export const comdirectMatcher: MatcherFunction = async (file: File) => {
 };
 
 export const comdirect: ParserModule = {
-  name: 'ING-DiBa',
-  link: 'https://www.ing-diba.de',
+  name: 'comdirect',
+  link: 'https://www.comdirect.de',
   match: comdirectMatcher,
   parse: comdirectParser,
 };
