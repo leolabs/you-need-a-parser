@@ -1,7 +1,10 @@
 ---
-title: 'Feature Request'
+name: Format Request
+about: Request a new CSV format
+title: Feature Request
 labels: format-request
 assignees: leolabs
+
 ---
 
 <!--
