@@ -1,8 +1,9 @@
-import { parse, ParseResult, unparse } from 'papaparse';
+import { unparse } from 'papaparse';
 import 'mdn-polyfills/String.prototype.padStart';
 
 import { outbank } from './outbank';
 import { n26 } from './n26';
+import { ingDiBa } from './ing-diba';
 
 export interface YnabRow {
   Date?: string;
@@ -26,6 +27,7 @@ export type ParserFunction = (file: File) => Promise<YnabRow[]>;
 export const parserMap: { [k: string]: ParserModule } = {
   outbank,
   n26,
+  ingDiBa,
 };
 
 export const matchFile = async (file: File) => {

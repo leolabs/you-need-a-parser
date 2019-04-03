@@ -9,6 +9,7 @@
     "@types/react-dom": "16.8.3",
     "date-fns": "^1.30.1",
     "file-saver": "^2.0.1",
+    "iconv-lite": "^0.4.24",
     "mdn-polyfills": "^5.16.0",
     "papaparse": "^4.6.3",
     "react": "^16.8.6",
@@ -37,6 +38,7 @@
   "devDependencies": {
     "@types/file-saver": "^2.0.0",
     "@types/papaparse": "^4.5.9",
+    "@types/react-toastify": "^4.0.2",
     "@types/styled-components": "^4.1.12",
     "babel-plugin-styled-components": "^1.10.0"
   }
