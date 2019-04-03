@@ -205,7 +205,7 @@ const App: React.FC = () => {
             |{' '}
             <a
               target="_blank"
-              href="https://github.com/leolabs/you-need-a-parser/issues/new"
+              href="https://github.com/leolabs/you-need-a-parser/issues/new?template=format_request.md"
             >
               Suggest a Format
             </a>{' '}
