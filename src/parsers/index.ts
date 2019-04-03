@@ -5,6 +5,7 @@ import { outbank } from './outbank/outbank';
 import { n26 } from './n26/n26';
 import { ingDiBa } from './ing-diba/ing-diba';
 import { comdirect } from './comdirect/comdirect';
+import { kontist } from './kontist/kontist';
 
 export interface YnabRow {
   Date?: string;
@@ -30,6 +31,7 @@ export const parserMap: { [k: string]: ParserModule } = {
   n26,
   ingDiBa,
   comdirect,
+  kontist,
 };
 
 export const matchFile = async (file: File) => {
