@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import { parseFile, parserMap } from '../parsers';
 import { saveAs } from 'file-saver';
 import styled, { keyframes, css } from 'styled-components';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+import { parseFile, parserMap } from '../parsers';
 import { GitHubBadge } from './github-badge';
 
 const pulse = keyframes`
@@ -107,13 +110,36 @@ const App: React.FC = () => {
       e.stopPropagation();
 
       const files = Array.from(e.dataTransfer!.files);
+      let errors: number = 0;
 
       for (const file of files) {
-        const result = await parseFile(file);
-        const blob = new Blob([result.data], {
-          type: 'text/csv;charset=utf-8',
-        });
-        saveAs(blob, `ynab-${result.matchedParser.name.toLowerCase()}-${file.name}`);
+        try {
+          const result = await parseFile(file);
+          const blob = new Blob([result.data], {
+            type: 'text/csv;charset=utf-8',
+          });
+          saveAs(
+            blob,
+            `ynab-${result.matchedParser.name.toLowerCase()}-${file.name}`,
+          );
+        } catch (e) {
+          errors++;
+          toast(
+            <>
+              The file <strong>{file.name}</strong> errored: {e.message}
+            </>,
+            { type: 'error' },
+          );
+        }
+      }
+
+      if (files.length - errors > 0) {
+        toast(
+          <>
+            Converted <strong>{files.length - errors}</strong> files.
+          </>,
+          { type: 'success' },
+        );
       }
     };
 
@@ -132,6 +158,7 @@ const App: React.FC = () => {
 
   return (
     <>
+      <ToastContainer />
       <GitHubBadge />
       <Container uploadHover={uploadHover}>
         <h1>You Need A Parser</h1>
