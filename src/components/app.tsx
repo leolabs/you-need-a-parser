@@ -182,7 +182,7 @@ const App: React.FC = () => {
             </g>
             <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
           </UploadIcon>
-          <p>Drag files here to parse</p>
+          <p>{uploadHover ? 'Drop' : 'Drag'} files here to parse</p>
         </DropArea>
         <p>
           Supported CSV formats:
