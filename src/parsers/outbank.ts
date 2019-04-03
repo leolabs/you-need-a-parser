@@ -1,5 +1,6 @@
 import 'mdn-polyfills/String.prototype.startsWith';
 import { ParserFunction, MatcherFunction, ParserModule } from '.';
+import { parse } from '../util/papaparse';
 
 export interface OutbankRow {
   '#': string;
@@ -43,7 +44,9 @@ export const generateYnabDate = (input: string) => {
 
 export const parseNumber = (input: string) => Number(input.replace(',', '.'));
 
-export const outbankParser: ParserFunction = async (data: OutbankRow[]) => {
+export const outbankParser: ParserFunction = async (file: File) => {
+  const { data } = await parse(file, { header: true });
+
   return (data as OutbankRow[])
     .filter(r => r.Date && r.Amount)
     .map(r => ({
@@ -60,10 +63,7 @@ export const outbankParser: ParserFunction = async (data: OutbankRow[]) => {
     }));
 };
 
-export const outbankMatcher: MatcherFunction = async (
-  file: File,
-  data: OutbankRow[],
-) => {
+export const outbankMatcher: MatcherFunction = async (file: File) => {
   const requiredKeys = [
     '#',
     'Account',
@@ -81,6 +81,8 @@ export const outbankMatcher: MatcherFunction = async (
   if (file.name.startsWith('Outbank_Export_')) {
     return true;
   }
+
+  const { data } = await parse(file, { header: true });
 
   if (data.length === 0) {
     return false;
@@ -100,6 +102,6 @@ export const outbank: ParserModule = {
   name: 'Outbank',
   link:
     'https://help.outbankapp.com/en/kb/articles/wie-kann-ich-ums-tze-als-csv-datei-exportieren',
-  matcher: outbankMatcher,
-  parser: outbankParser,
+  match: outbankMatcher,
+  parse: outbankParser,
 };

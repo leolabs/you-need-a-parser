@@ -16,21 +16,21 @@ export interface YnabRow {
 export interface ParserModule {
   name: string;
   link: string;
-  matcher: MatcherFunction;
-  parser: ParserFunction;
+  match: MatcherFunction;
+  parse: ParserFunction;
 }
 
-export type MatcherFunction = (file: File, data: any[]) => Promise<boolean>;
-export type ParserFunction = (data: any[]) => Promise<YnabRow[]>;
+export type MatcherFunction = (file: File) => Promise<boolean>;
+export type ParserFunction = (file: File) => Promise<YnabRow[]>;
 
 export const parserMap: { [k: string]: ParserModule } = {
   outbank,
   n26,
 };
 
-export const matchFile = async (file: File, data: any[]) => {
+export const matchFile = async (file: File) => {
   for (const parser of Object.values(parserMap)) {
-    if (await parser.matcher(file, data)) {
+    if (await parser.match(file)) {
       return parser;
     }
   }
@@ -39,21 +39,13 @@ export const matchFile = async (file: File, data: any[]) => {
 };
 
 export const parseFile = async (file: File, parserOverride?: ParserModule) => {
-  const { data }: ParseResult = await new Promise((complete, error) => {
-    parse(file, {
-      header: true,
-      complete,
-      error,
-    });
-  });
-
-  const parser = parserOverride || (await matchFile(file, data));
+  const parser = parserOverride || (await matchFile(file));
 
   if (!parser) {
     throw new Error(`No parser is available for this file.`);
   }
 
-  const ynabData = await parser.parser(data);
+  const ynabData = await parser.parse(file);
 
   return {
     data: unparse(ynabData),

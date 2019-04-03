@@ -1,7 +1,8 @@
 import { generateYnabDate, n26, N26Row } from './n26';
 import { YnabRow } from '.';
+import { unparse } from 'papaparse';
 
-const content: N26Row[] = [
+const content = unparse([
   {
     Date: '2019-01-01',
     Payee: 'Test Payee',
@@ -26,7 +27,7 @@ const content: N26Row[] = [
     'Type Foreign Currency': 'EUR',
     'Exchange Rate': '1.0',
   },
-];
+]);
 
 const ynabResult: YnabRow[] = [
   {
@@ -51,32 +52,33 @@ describe('N26 Parser Module', () => {
   describe('Matcher', () => {
     it('should match N26 files by file name', async () => {
       const validFile = new File([], 'n26-csv-transactions.csv');
-      const result = await n26.matcher(validFile, [{}]);
+      const result = await n26.match(validFile);
       expect(result).toBe(true);
     });
 
     it('should not match other files by file name', async () => {
-      const invalidFile = new File([], 'test.csv');
-      const result = await n26.matcher(invalidFile, [{}]);
+      const invalidFile = new File([], 'invalid.csv');
+      const result = await n26.match(invalidFile);
       expect(result).toBe(false);
     });
 
     it('should match N26 files by fields', async () => {
-      const file = new File([], 'test.csv');
-      const result = await n26.matcher(file, content);
+      const file = new File([content], 'test.csv');
+      const result = await n26.match(file);
       expect(result).toBe(true);
     });
 
     it('should not match empty files', async () => {
       const file = new File([], 'test.csv');
-      const result = await n26.matcher(file, []);
+      const result = await n26.match(file);
       expect(result).toBe(false);
     });
   });
 
   describe('Parser', () => {
     it('should parse data correctly', async () => {
-      const result = await n26.parser(content);
+      const file = new File([content], 'test.csv');
+      const result = await n26.parse(file);
       expect(result).toEqual(ynabResult);
     });
   });

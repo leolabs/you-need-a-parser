@@ -1,7 +1,8 @@
 import { generateYnabDate, outbank, OutbankRow } from './outbank';
 import { YnabRow } from '.';
+import { unparse } from 'papaparse';
 
-const content: OutbankRow[] = [
+const content = unparse([
   {
     '#': '1',
     Account: 'DE27100777770209299700',
@@ -58,7 +59,7 @@ const content: OutbankRow[] = [
     'Mandate Identification': '',
     'Originator Identifier': '',
   },
-];
+]);
 
 const ynabResult: YnabRow[] = [
   {
@@ -83,32 +84,33 @@ describe('Outbank Parser Module', () => {
   describe('Matcher', () => {
     it('should match Outbank files by file name', async () => {
       const validFile = new File([], 'Outbank_Export_20190403.csv');
-      const result = await outbank.matcher(validFile, [{}]);
+      const result = await outbank.match(validFile);
       expect(result).toBe(true);
     });
 
     it('should not match other files by file name', async () => {
       const invalidFile = new File([], 'test.csv');
-      const result = await outbank.matcher(invalidFile, [{}]);
+      const result = await outbank.match(invalidFile);
       expect(result).toBe(false);
     });
 
     it('should match Outbank files by fields', async () => {
-      const file = new File([], 'test.csv');
-      const result = await outbank.matcher(file, content);
+      const file = new File([content], 'test.csv');
+      const result = await outbank.match(file);
       expect(result).toBe(true);
     });
 
     it('should not match empty files', async () => {
       const file = new File([], 'test.csv');
-      const result = await outbank.matcher(file, []);
+      const result = await outbank.match(file);
       expect(result).toBe(false);
     });
   });
 
   describe('Parser', () => {
     it('should parse data correctly', async () => {
-      const result = await outbank.parser(content);
+      const file = new File([content], 'test.csv');
+      const result = await outbank.parse(file);
       expect(result).toEqual(ynabResult);
     });
   });

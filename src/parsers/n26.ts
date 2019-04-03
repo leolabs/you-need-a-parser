@@ -1,5 +1,6 @@
 import 'mdn-polyfills/String.prototype.startsWith';
 import { ParserFunction, MatcherFunction, ParserModule } from '.';
+import { parse } from '../util/papaparse';
 
 export interface N26Row {
   Date: string;
@@ -25,7 +26,9 @@ export const generateYnabDate = (input: string) => {
   return [month.padStart(2, '0'), day.padStart(2, '0'), year].join('/');
 };
 
-export const n26Parser: ParserFunction = async (data: N26Row[]) => {
+export const n26Parser: ParserFunction = async (file: File) => {
+  const { data } = await parse(file, { header: true });
+
   return (data as N26Row[])
     .filter(r => r.Date && r['Amount (EUR)'])
     .map(r => ({
@@ -44,7 +47,7 @@ export const n26Parser: ParserFunction = async (data: N26Row[]) => {
     }));
 };
 
-export const n26Matcher: MatcherFunction = async (file: File, data: N26Row[]) => {
+export const n26Matcher: MatcherFunction = async (file: File) => {
   const requiredKeys: (keyof N26Row)[] = [
     'Date',
     'Payee',
@@ -58,6 +61,8 @@ export const n26Matcher: MatcherFunction = async (file: File, data: N26Row[]) =>
   if (file.name.startsWith('n26-csv-transactions')) {
     return true;
   }
+
+  const { data } = await parse(file, { header: true });
 
   if (data.length === 0) {
     return false;
@@ -77,6 +82,6 @@ export const n26: ParserModule = {
   name: 'N26',
   link:
     'https://support.n26.com/en-eu/fixing-an-issue/payments-and-transfers/how-to-export-a-list-of-my-transactions',
-  matcher: n26Matcher,
-  parser: n26Parser,
+  match: n26Matcher,
+  parse: n26Parser,
 };
