@@ -1,4 +1,4 @@
-import { generateYnabDate, n26, N26Row } from './n26';
+import { generateYnabDate, n26 } from './n26';
 import { YnabRow } from '..';
 import { unparse } from 'papaparse';
 
