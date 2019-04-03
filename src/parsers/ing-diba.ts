@@ -1,6 +1,7 @@
 import 'mdn-polyfills/String.prototype.startsWith';
 import { ParserFunction, MatcherFunction, ParserModule } from '.';
 import { parse } from '../util/papaparse';
+import { readWindowsFile } from '../util/read-windows-file';
 
 export interface IngDiBaRow {
   Buchung: string;
@@ -24,20 +25,6 @@ export const generateYnabDate = (input: string) => {
 };
 
 export const parseNumber = (input: string) => Number(input.replace(',', '.'));
-
-export const readWindowsFile = (file: File): Promise<string> => {
-  return new Promise((res, rej) => {
-    const reader = new FileReader();
-    reader.addEventListener('load', () => {
-      if (reader.result === null) {
-        rej('Result is null.');
-      }
-
-      res(reader.result! as string);
-    });
-    reader.readAsText(file, 'WINDOWS-1252');
-  });
-};
 
 export const trimMetaData = (input: string) =>
   input.replace(/(.+)Buchung;/s, 'Buchung;');
