@@ -36,6 +36,8 @@ const Badge = styled.svg`
 export const GitHubBadge: React.FC = () => (
   <a
     href="https://github.com/leolabs/you-need-a-parser"
+    target="_blank"
+    rel="noopener"
     className="github-corner"
     aria-label="View source on GitHub"
   >

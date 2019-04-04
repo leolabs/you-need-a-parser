@@ -165,7 +165,7 @@ const App: React.FC = () => {
         <p>
           YNAP converts CSV files from a variety of sources into a format that can
           easily be imported into{' '}
-          <a href="https://youneedabudget.com" target="_blank">
+          <a href="https://youneedabudget.com" target="_blank" rel="noopener">
             You Need A Budget
           </a>
           . Just drag the files you want to convert into this window. Your files will
@@ -193,7 +193,7 @@ const App: React.FC = () => {
           <br />
           {Object.values(parserMap).map(p => (
             <>
-              <a target="_blank" href={p.link}>
+              <a target="_blank" href={p.link} rel="noopener">
                 {p.name}
               </a>
               {', '}
@@ -203,18 +203,23 @@ const App: React.FC = () => {
         </p>
         <Footer>
           <p>
-            <a target="_blank" href="https://leolabs.org">
+            <a target="_blank" href="https://leolabs.org" rel="noopener">
               Made by Leo Bernard
             </a>{' '}
             |{' '}
             <a
               target="_blank"
               href="https://github.com/leolabs/you-need-a-parser/issues/new?template=format_request.md"
+              rel="noopener"
             >
               Suggest a Format
             </a>{' '}
             |{' '}
-            <a target="_blank" href="https://github.com/leolabs/you-need-a-parser">
+            <a
+              target="_blank"
+              href="https://github.com/leolabs/you-need-a-parser"
+              rel="noopener"
+            >
               GitHub
             </a>
           </p>
