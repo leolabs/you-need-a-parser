@@ -164,8 +164,12 @@ const App: React.FC = () => {
         <h1>You Need A Parser</h1>
         <p>
           YNAP converts CSV files from a variety of sources into a format that can
-          easily be imported into You Need A Budget. Just drag the files you want to
-          convert into this window. Your files will never leave your browser.
+          easily be imported into{' '}
+          <a href="https://youneedabudget.com" target="_blank">
+            You Need A Budget
+          </a>
+          . Just drag the files you want to convert into this window. Your files will
+          never leave your browser.
         </p>
         <DropArea>
           <UploadIcon
