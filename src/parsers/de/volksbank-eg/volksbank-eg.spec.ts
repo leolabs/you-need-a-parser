@@ -65,7 +65,10 @@ const ynabResult: YnabFile[] = [
 describe('Volksbank Parser Module', () => {
   describe('Matcher', () => {
     it('should match Volksbank files by file name', async () => {
-      const validFile = new File([], 'Volksbank_Beispiel.csv');
+      const validFile = new File(
+        [],
+        'Umsaetze_DE84000099000008800049_2019.04.04.csv',
+      );
       const result = await volksbankEG.match(validFile);
       expect(result).toBe(true);
     });
