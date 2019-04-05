@@ -1,7 +1,7 @@
 import 'mdn-polyfills/String.prototype.startsWith';
 import { ParserFunction, MatcherFunction, ParserModule } from '../..';
 import { parse } from '../../../util/papaparse';
-import { readWindowsFile } from '../../../util/read-windows-file';
+import { readEncodedFile } from '../../../util/read-windows-file';
 
 export interface ComdirectRow {
   Buchungstag: string;
@@ -75,7 +75,7 @@ export const extractField = (
 };
 
 export const comdirectParser: ParserFunction = async (file: File) => {
-  const fileString = trimMetaData(await readWindowsFile(file));
+  const fileString = trimMetaData(await readEncodedFile(file));
   const { data } = await parse(fileString, { header: true });
 
   return [
@@ -115,7 +115,7 @@ export const comdirectMatcher: MatcherFunction = async (file: File) => {
     return true;
   }
 
-  const rawFileString = await readWindowsFile(file);
+  const rawFileString = await readEncodedFile(file);
 
   if (rawFileString.startsWith(';\n"Umsätze Verrechnungskonto')) {
     return true;

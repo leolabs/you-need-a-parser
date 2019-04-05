@@ -1,7 +1,7 @@
 import 'mdn-polyfills/String.prototype.startsWith';
 import { ParserFunction, MatcherFunction, ParserModule } from '../..';
 import { parse } from '../../../util/papaparse';
-import { readWindowsFile } from '../../../util/read-windows-file';
+import { readEncodedFile } from '../../../util/read-windows-file';
 
 export interface VolksbankRow {
   Buchungstag: string;
@@ -54,7 +54,7 @@ export const sanitizeMemo = (input: string) => {
 };
 
 export const volksbankParser: ParserFunction = async (file: File) => {
-  const fileString = trimMetaData(await readWindowsFile(file));
+  const fileString = trimMetaData(await readEncodedFile(file));
   const { data } = await parse(fileString, { header: true });
 
   return [
@@ -94,11 +94,11 @@ export const volksbankMatcher: MatcherFunction = async (file: File) => {
     'Währung',
   ];
 
-  if (file.name.match(/Volksbank_(.+)\.csv/)) {
+  if (file.name.match(/Umsaetze_(.+?)_\d{4}\.\d{2}\.\d{2}\.csv/)) {
     return true;
   }
 
-  const rawFileString = await readWindowsFile(file);
+  const rawFileString = await readEncodedFile(file);
 
   if (rawFileString.startsWith('Volksbank eG;;;;;;;;;;;;')) {
     return true;

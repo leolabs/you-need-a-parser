@@ -1,4 +1,7 @@
-export const readWindowsFile = (file: File): Promise<string> => {
+import chardet from 'jschardet';
+import { decode } from 'iconv-lite';
+
+export const readEncodedFile = (file: File): Promise<string> => {
   return new Promise((res, rej) => {
     const reader = new FileReader();
     reader.addEventListener('load', () => {
@@ -6,8 +9,19 @@ export const readWindowsFile = (file: File): Promise<string> => {
         rej('Result is null.');
       }
 
-      res(reader.result! as string);
+      const result = reader.result! as string;
+
+      if (result.length === 0) {
+        return res('');
+      }
+
+      const charset = chardet.detect(result);
+      const decoded = decode(
+        Buffer.from(result, 'binary'),
+        charset.encoding || 'utf-8',
+      );
+      return res(decoded);
     });
-    reader.readAsText(file, 'WINDOWS-1252');
+    reader.readAsBinaryString(file);
   });
 };
