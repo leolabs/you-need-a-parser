@@ -25,15 +25,18 @@ export const generateYnabDate = (input: string) => {
 export const parseNumber = (input: string) => Number(input.replace(',', '.'));
 
 export const trimMetaData = (input: string) => {
-  const match = input.match(/"Buchungstag"(.+)"Alter Kontostand"/s);
+  const beginning = input.indexOf('"Buchungstag"');
+  const end = input.lastIndexOf('\n"Alter Kontostand"');
 
-  if (!match) {
+  if (beginning === -1 || end === -1) {
     throw new Error(
       'Metadata could not be trimmed because the file format is incorrect.',
     );
   }
 
-  return `"Buchungstag"${match[1]}`.trim();
+  return input
+    .substr(beginning, input.length - beginning - (input.length - end))
+    .trim();
 };
 
 const postingTextFields = {

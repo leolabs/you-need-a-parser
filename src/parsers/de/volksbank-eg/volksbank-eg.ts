@@ -32,15 +32,20 @@ export const generateYnabDate = (input: string) => {
 export const parseNumber = (input: string) => Number(input.replace(',', '.'));
 
 export const trimMetaData = (input: string) => {
-  const match = input.match(/\nBuchungstag;(.+?)\n;;;;/s);
+  const beginning = input.indexOf('Buchungstag;Valuta;');
+  const end = input.lastIndexOf('\n;;;;');
 
-  if (!match) {
+  if (beginning === -1 || end === -1) {
     throw new Error(
       'Metadata could not be trimmed because the file format is incorrect.',
     );
   }
 
-  return `Buchungstag;${match[1]}`.trim();
+  const res = input
+    .substr(beginning, input.length - beginning - (input.length - end))
+    .trim();
+
+  return res;
 };
 
 export const sanitizeMemo = (input: string) => {

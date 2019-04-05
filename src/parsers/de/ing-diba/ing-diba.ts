@@ -27,7 +27,7 @@ export const generateYnabDate = (input: string) => {
 export const parseNumber = (input: string) => Number(input.replace(',', '.'));
 
 export const trimMetaData = (input: string) =>
-  input.replace(/(.+)Buchung;/s, 'Buchung;');
+  input.substr(input.indexOf('Buchung;'));
 
 export const ingDiBaParser: ParserFunction = async (file: File) => {
   const fileString = trimMetaData(await readEncodedFile(file));
