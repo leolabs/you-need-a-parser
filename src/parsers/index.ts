@@ -6,6 +6,7 @@ import { n26 } from './de/n26/n26';
 import { ingDiBa } from './de/ing-diba/ing-diba';
 import { comdirect } from './de/comdirect/comdirect';
 import { kontist } from './de/kontist/kontist';
+import { volksbankEG } from './de/volksbank-eg/volksbank-eg';
 
 export interface YnabRow {
   Date?: string;
@@ -32,6 +33,7 @@ export const parserMap: { [k: string]: ParserModule } = {
   ingDiBa,
   comdirect,
   kontist,
+  volksbankEG,
 };
 
 export const matchFile = async (file: File) => {
