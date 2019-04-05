@@ -32,7 +32,7 @@ export const generateYnabDate = (input: string) => {
 export const parseNumber = (input: string) => Number(input.replace(',', '.'));
 
 export const trimMetaData = (input: string) => {
-  const match = input.match(/;;;;;;;;;;;;\nBuchungstag;(.+?);;;;;;;;;;;;/s);
+  const match = input.match(/\nBuchungstag;(.+?)\n;;;;/s);
 
   if (!match) {
     throw new Error(
