@@ -115,13 +115,24 @@ const App: React.FC = () => {
       for (const file of files) {
         try {
           const result = await parseFile(file);
-          const blob = new Blob([result.data], {
-            type: 'text/csv;charset=utf-8',
-          });
-          saveAs(
-            blob,
-            `ynab-${result.matchedParser.name.toLowerCase()}-${file.name}`,
-          );
+
+          for (const parsedFile of result) {
+            const blob = new Blob([parsedFile.data], {
+              type: 'text/csv;charset=utf-8',
+            });
+            const fileName = [
+              'ynab',
+              parsedFile.matchedParser.name,
+              parsedFile.accountName,
+              file.name
+                .split('.')
+                .slice(0, -1)
+                .join('.'),
+            ]
+              .filter(e => e)
+              .join('-');
+            saveAs(blob, `${fileName}.csv`);
+          }
         } catch (e) {
           errors++;
           toast(

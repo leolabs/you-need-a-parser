@@ -4,7 +4,7 @@ import {
   extractField,
   trimMetaData,
 } from './comdirect';
-import { YnabRow } from '../..';
+import { YnabFile } from '../..';
 import { encode, decode } from 'iconv-lite';
 
 const content = encode(
@@ -24,17 +24,21 @@ const trimmedContent = `"Buchungstag";"Wertstellung (Valuta)";"Vorgang";"Buchung
 "01.04.2019";"03.04.2019";"Wertpapiere";" Buchungstext: ISHSII-MSCI EUR.SRI EOACC WPKNR: A1H7ZS ISIN: IE00B52VJ196 Ref. 25F1909221559359/2 ";"-119,98";
 "01.04.2019";"01.04.2019";"DTA-glt. Buchung";" Zahlungspflichtiger: John DoeKto/IBAN: DE84100110012626835902 BLZ/BIC: NTSBDEB1XXX Buchungstext: Sparplan 1 Ref. H9219087I4644658/2 ";"180,00";`;
 
-const ynabResult: YnabRow[] = [
+const ynabResult: YnabFile[] = [
   {
-    Date: '04/01/2019',
-    Memo: 'ISHSII-MSCI EUR.SRI EOACC WPKNR: A1H7ZS ISIN: IE00B52VJ196',
-    Outflow: '119.98',
-  },
-  {
-    Date: '04/01/2019',
-    Payee: 'John Doe',
-    Memo: 'Sparplan 1',
-    Inflow: '180.00',
+    data: [
+      {
+        Date: '04/01/2019',
+        Memo: 'ISHSII-MSCI EUR.SRI EOACC WPKNR: A1H7ZS ISIN: IE00B52VJ196',
+        Outflow: '119.98',
+      },
+      {
+        Date: '04/01/2019',
+        Payee: 'John Doe',
+        Memo: 'Sparplan 1',
+        Inflow: '180.00',
+      },
+    ],
   },
 ];
 

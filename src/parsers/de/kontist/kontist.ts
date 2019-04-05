@@ -26,16 +26,21 @@ export const generateYnabDate = (input: string) => {
 export const kontistParser: ParserFunction = async (file: File) => {
   const { data } = await parse(file, { header: true });
 
-  return (data as KontistRow[])
-    .filter(r => r.booking_date && r.amount)
-    .map(r => ({
-      Date: generateYnabDate(r.booking_date),
-      Payee: r.name,
-      Memo: r.purpose,
-      Outflow:
-        Number(r.amount) < 0 ? (-Number(r.amount) / 100).toFixed(2) : undefined,
-      Inflow: Number(r.amount) > 0 ? (Number(r.amount) / 100).toFixed(2) : undefined,
-    }));
+  return [
+    {
+      data: (data as KontistRow[])
+        .filter(r => r.booking_date && r.amount)
+        .map(r => ({
+          Date: generateYnabDate(r.booking_date),
+          Payee: r.name,
+          Memo: r.purpose,
+          Outflow:
+            Number(r.amount) < 0 ? (-Number(r.amount) / 100).toFixed(2) : undefined,
+          Inflow:
+            Number(r.amount) > 0 ? (Number(r.amount) / 100).toFixed(2) : undefined,
+        })),
+    },
+  ];
 };
 
 export const kontistMatcher: MatcherFunction = async (file: File) => {

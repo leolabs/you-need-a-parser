@@ -47,20 +47,26 @@ export const parseNumber = (input: string) => Number(input.replace(',', '.'));
 export const outbankParser: ParserFunction = async (file: File) => {
   const { data } = await parse(file, { header: true });
 
-  return (data as OutbankRow[])
-    .filter(r => r.Date && r.Amount)
-    .map(r => ({
-      Date: generateYnabDate(r.Date!),
-      Payee: r.Name,
-      Category: r.Category,
-      Memo: r.Reason,
-      Outflow:
-        parseNumber(r.Amount!) < 0
-          ? Math.abs(parseNumber(r.Amount!)).toFixed(2)
-          : undefined,
-      Inflow:
-        parseNumber(r.Amount!) > 0 ? parseNumber(r.Amount!).toFixed(2) : undefined,
-    }));
+  return [
+    {
+      data: (data as OutbankRow[])
+        .filter(r => r.Date && r.Amount)
+        .map(r => ({
+          Date: generateYnabDate(r.Date!),
+          Payee: r.Name,
+          Category: r.Category,
+          Memo: r.Reason,
+          Outflow:
+            parseNumber(r.Amount!) < 0
+              ? Math.abs(parseNumber(r.Amount!)).toFixed(2)
+              : undefined,
+          Inflow:
+            parseNumber(r.Amount!) > 0
+              ? parseNumber(r.Amount!).toFixed(2)
+              : undefined,
+        })),
+    },
+  ];
 };
 
 export const outbankMatcher: MatcherFunction = async (file: File) => {

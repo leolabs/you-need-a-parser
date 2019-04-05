@@ -78,24 +78,28 @@ export const comdirectParser: ParserFunction = async (file: File) => {
   const fileString = trimMetaData(await readWindowsFile(file));
   const { data } = await parse(fileString, { header: true });
 
-  return (data as ComdirectRow[])
-    .filter(r => r.Buchungstag && r['Umsatz in EUR'])
-    .map(r => ({
-      Date: generateYnabDate(r.Buchungstag),
-      Payee:
-        extractField(r.Buchungstext, 'Empfänger') ||
-        extractField(r.Buchungstext, 'Zahlungspflichtiger') ||
-        extractField(r.Buchungstext, 'Auftraggeber'),
-      Memo: extractField(r.Buchungstext, 'Buchungstext'),
-      Outflow:
-        parseNumber(r['Umsatz in EUR']) < 0
-          ? (-parseNumber(r['Umsatz in EUR'])).toFixed(2)
-          : undefined,
-      Inflow:
-        parseNumber(r['Umsatz in EUR']) > 0
-          ? parseNumber(r['Umsatz in EUR']).toFixed(2)
-          : undefined,
-    }));
+  return [
+    {
+      data: (data as ComdirectRow[])
+        .filter(r => r.Buchungstag && r['Umsatz in EUR'])
+        .map(r => ({
+          Date: generateYnabDate(r.Buchungstag),
+          Payee:
+            extractField(r.Buchungstext, 'Empfänger') ||
+            extractField(r.Buchungstext, 'Zahlungspflichtiger') ||
+            extractField(r.Buchungstext, 'Auftraggeber'),
+          Memo: extractField(r.Buchungstext, 'Buchungstext'),
+          Outflow:
+            parseNumber(r['Umsatz in EUR']) < 0
+              ? (-parseNumber(r['Umsatz in EUR'])).toFixed(2)
+              : undefined,
+          Inflow:
+            parseNumber(r['Umsatz in EUR']) > 0
+              ? parseNumber(r['Umsatz in EUR']).toFixed(2)
+              : undefined,
+        })),
+    },
+  ];
 };
 
 export const comdirectMatcher: MatcherFunction = async (file: File) => {

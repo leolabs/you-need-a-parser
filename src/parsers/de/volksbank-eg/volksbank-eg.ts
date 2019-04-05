@@ -57,18 +57,25 @@ export const volksbankParser: ParserFunction = async (file: File) => {
   const fileString = trimMetaData(await readWindowsFile(file));
   const { data } = await parse(fileString, { header: true });
 
-  return (data as VolksbankRow[])
-    .filter(r => r.Valuta && r.Umsatz)
-    .map(r => ({
-      Date: generateYnabDate(r.Valuta),
-      Payee:
-        r['Auftraggeber/Zahlungsempfänger'] || r['Empfänger/Zahlungspflichtiger'],
-      Memo: sanitizeMemo(r['Vorgang/Verwendungszweck']),
-      Outflow:
-        parseNumber(r.Umsatz) < 0 ? (-parseNumber(r.Umsatz)).toFixed(2) : undefined,
-      Inflow:
-        parseNumber(r.Umsatz) > 0 ? parseNumber(r.Umsatz).toFixed(2) : undefined,
-    }));
+  return [
+    {
+      data: (data as VolksbankRow[])
+        .filter(r => r.Valuta && r.Umsatz)
+        .map(r => ({
+          Date: generateYnabDate(r.Valuta),
+          Payee:
+            r['Auftraggeber/Zahlungsempfänger'] ||
+            r['Empfänger/Zahlungspflichtiger'],
+          Memo: sanitizeMemo(r['Vorgang/Verwendungszweck']),
+          Outflow:
+            parseNumber(r.Umsatz) < 0
+              ? (-parseNumber(r.Umsatz)).toFixed(2)
+              : undefined,
+          Inflow:
+            parseNumber(r.Umsatz) > 0 ? parseNumber(r.Umsatz).toFixed(2) : undefined,
+        })),
+    },
+  ];
 };
 
 export const volksbankMatcher: MatcherFunction = async (file: File) => {

@@ -1,5 +1,5 @@
 import { generateYnabDate, n26 } from './n26';
-import { YnabRow } from '../..';
+import { YnabFile } from '../..';
 import { unparse } from 'papaparse';
 
 const content = unparse([
@@ -29,22 +29,26 @@ const content = unparse([
   },
 ]);
 
-const ynabResult: YnabRow[] = [
+const ynabResult: YnabFile[] = [
   {
-    Date: '01/01/2019',
-    Payee: 'Test Payee',
-    Category: 'Subscriptions & Donations',
-    Memo: 'Netflix',
-    Outflow: '3.00',
-    Inflow: undefined,
-  },
-  {
-    Date: '01/02/2019',
-    Payee: 'Work Account',
-    Category: 'Income',
-    Memo: '',
-    Outflow: undefined,
-    Inflow: '600.00',
+    data: [
+      {
+        Date: '01/01/2019',
+        Payee: 'Test Payee',
+        Category: 'Subscriptions & Donations',
+        Memo: 'Netflix',
+        Outflow: '3.00',
+        Inflow: undefined,
+      },
+      {
+        Date: '01/02/2019',
+        Payee: 'Work Account',
+        Category: 'Income',
+        Memo: '',
+        Outflow: undefined,
+        Inflow: '600.00',
+      },
+    ],
   },
 ];
 

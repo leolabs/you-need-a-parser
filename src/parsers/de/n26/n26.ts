@@ -29,22 +29,26 @@ export const generateYnabDate = (input: string) => {
 export const n26Parser: ParserFunction = async (file: File) => {
   const { data } = await parse(file, { header: true });
 
-  return (data as N26Row[])
-    .filter(r => r.Date && r['Amount (EUR)'])
-    .map(r => ({
-      Date: generateYnabDate(r.Date),
-      Payee: r.Payee,
-      Category: r.Category,
-      Memo: r['Payment reference'],
-      Outflow:
-        Number(r['Amount (EUR)']) < 0
-          ? Math.abs(Number(r['Amount (EUR)'])).toFixed(2)
-          : undefined,
-      Inflow:
-        Number(r['Amount (EUR)']) > 0
-          ? Number(r['Amount (EUR)']).toFixed(2)
-          : undefined,
-    }));
+  return [
+    {
+      data: (data as N26Row[])
+        .filter(r => r.Date && r['Amount (EUR)'])
+        .map(r => ({
+          Date: generateYnabDate(r.Date),
+          Payee: r.Payee,
+          Category: r.Category,
+          Memo: r['Payment reference'],
+          Outflow:
+            Number(r['Amount (EUR)']) < 0
+              ? Math.abs(Number(r['Amount (EUR)'])).toFixed(2)
+              : undefined,
+          Inflow:
+            Number(r['Amount (EUR)']) > 0
+              ? Number(r['Amount (EUR)']).toFixed(2)
+              : undefined,
+        })),
+    },
+  ];
 };
 
 export const n26Matcher: MatcherFunction = async (file: File) => {

@@ -33,17 +33,23 @@ export const ingDiBaParser: ParserFunction = async (file: File) => {
   const fileString = trimMetaData(await readWindowsFile(file));
   const { data } = await parse(fileString, { header: true });
 
-  return (data as IngDiBaRow[])
-    .filter(r => r.Buchung && r.Betrag)
-    .map(r => ({
-      Date: generateYnabDate(r.Buchung),
-      Payee: r['Auftraggeber/Empfänger'],
-      Memo: r.Verwendungszweck,
-      Outflow:
-        parseNumber(r.Betrag) < 0 ? (-parseNumber(r.Betrag)).toFixed(2) : undefined,
-      Inflow:
-        parseNumber(r.Betrag) > 0 ? parseNumber(r.Betrag).toFixed(2) : undefined,
-    }));
+  return [
+    {
+      data: (data as IngDiBaRow[])
+        .filter(r => r.Buchung && r.Betrag)
+        .map(r => ({
+          Date: generateYnabDate(r.Buchung),
+          Payee: r['Auftraggeber/Empfänger'],
+          Memo: r.Verwendungszweck,
+          Outflow:
+            parseNumber(r.Betrag) < 0
+              ? (-parseNumber(r.Betrag)).toFixed(2)
+              : undefined,
+          Inflow:
+            parseNumber(r.Betrag) > 0 ? parseNumber(r.Betrag).toFixed(2) : undefined,
+        })),
+    },
+  ];
 };
 
 export const ingDiBaMatcher: MatcherFunction = async (file: File) => {

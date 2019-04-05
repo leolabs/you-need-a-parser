@@ -1,5 +1,5 @@
 import { generateYnabDate, ingDiBa } from './ing-diba';
-import { YnabRow } from '../..';
+import { YnabRow, YnabFile } from '../..';
 import { encode } from 'iconv-lite';
 
 const content = encode(
@@ -22,20 +22,24 @@ Buchung;Valuta;Auftraggeber/Empfänger;Buchungstext;Verwendungszweck;Betrag;Wäh
   'win1252',
 );
 
-const ynabResult: YnabRow[] = [
+const ynabResult: YnabFile[] = [
   {
-    Date: '04/03/2019',
-    Payee: 'eprimo GmbH',
-    Memo: 'eprimo sagt danke',
-    Outflow: '71.00',
-    Inflow: undefined,
-  },
-  {
-    Date: '04/03/2019',
-    Payee: 'Income',
-    Memo: '',
-    Outflow: undefined,
-    Inflow: '700.00',
+    data: [
+      {
+        Date: '04/03/2019',
+        Payee: 'eprimo GmbH',
+        Memo: 'eprimo sagt danke',
+        Outflow: '71.00',
+        Inflow: undefined,
+      },
+      {
+        Date: '04/03/2019',
+        Payee: 'Income',
+        Memo: '',
+        Outflow: undefined,
+        Inflow: '700.00',
+      },
+    ],
   },
 ];
 

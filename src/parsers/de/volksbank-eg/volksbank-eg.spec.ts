@@ -1,5 +1,5 @@
 import { generateYnabDate, volksbankEG } from './volksbank-eg';
-import { YnabRow } from '../..';
+import { YnabFile } from '../..';
 import { encode } from 'iconv-lite';
 
 const content = encode(
@@ -34,27 +34,31 @@ Vielen Dank fuer Ihren Einkauf";;EUR;258,17;S
   'win1252',
 );
 
-const ynabResult: YnabRow[] = [
+const ynabResult: YnabFile[] = [
   {
-    Date: '04/04/2019',
-    Inflow: '12.00',
-    Memo: 'Quartalsbeitrag Gartenbauverein Musterstadt 73 e.V. vom 03.03.2005',
-    Outflow: undefined,
-    Payee: 'Hermann Testkunde',
-  },
-  {
-    Date: '04/04/2019',
-    Inflow: '112.00',
-    Memo: 'Hermann Testkunde UEBERTRAG VOM ANLAGEKONTO',
-    Outflow: undefined,
-    Payee: 'Hermann Testkunde',
-  },
-  {
-    Date: '04/04/2019',
-    Inflow: '258.17',
-    Memo: 'Kaufstadt Lebensmittel Vielen Dank fuer Ihren Einkauf',
-    Outflow: undefined,
-    Payee: 'Hermann Testkunde',
+    data: [
+      {
+        Date: '04/04/2019',
+        Inflow: '12.00',
+        Memo: 'Quartalsbeitrag Gartenbauverein Musterstadt 73 e.V. vom 03.03.2005',
+        Outflow: undefined,
+        Payee: 'Hermann Testkunde',
+      },
+      {
+        Date: '04/04/2019',
+        Inflow: '112.00',
+        Memo: 'Hermann Testkunde UEBERTRAG VOM ANLAGEKONTO',
+        Outflow: undefined,
+        Payee: 'Hermann Testkunde',
+      },
+      {
+        Date: '04/04/2019',
+        Inflow: '258.17',
+        Memo: 'Kaufstadt Lebensmittel Vielen Dank fuer Ihren Einkauf',
+        Outflow: undefined,
+        Payee: 'Hermann Testkunde',
+      },
+    ],
   },
 ];
 
@@ -89,7 +93,6 @@ describe('Volksbank Parser Module', () => {
     it('should parse data correctly', async () => {
       const file = new File([content], 'test.csv');
       const result = await volksbankEG.parse(file);
-      console.log(JSON.stringify(result));
       expect(result).toEqual(ynabResult);
     });
   });

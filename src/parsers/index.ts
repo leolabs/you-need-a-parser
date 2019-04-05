@@ -17,6 +17,11 @@ export interface YnabRow {
   Inflow?: string;
 }
 
+export interface YnabFile {
+  accountName?: string;
+  data: YnabRow[];
+}
+
 export interface ParserModule {
   name: string;
   link: string;
@@ -25,7 +30,7 @@ export interface ParserModule {
 }
 
 export type MatcherFunction = (file: File) => Promise<boolean>;
-export type ParserFunction = (file: File) => Promise<YnabRow[]>;
+export type ParserFunction = (file: File) => Promise<YnabFile[]>;
 
 export const parserMap: { [k: string]: ParserModule } = {
   outbank,
@@ -38,7 +43,9 @@ export const parserMap: { [k: string]: ParserModule } = {
 
 export const matchFile = async (file: File) => {
   for (const parser of Object.values(parserMap)) {
+    console.log('Trying', parser.name);
     if (await parser.match(file)) {
+      console.log(parser.name, 'matched.');
       return parser;
     }
   }
@@ -55,8 +62,9 @@ export const parseFile = async (file: File, parserOverride?: ParserModule) => {
 
   const ynabData = await parser.parse(file);
 
-  return {
-    data: unparse(ynabData),
+  return ynabData.map(f => ({
+    ...f,
+    data: unparse(f.data),
     matchedParser: parser,
-  };
+  }));
 };
