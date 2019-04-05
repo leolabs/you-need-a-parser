@@ -43,9 +43,7 @@ export const parserMap: { [k: string]: ParserModule } = {
 
 export const matchFile = async (file: File) => {
   for (const parser of Object.values(parserMap)) {
-    console.log('Trying', parser.name);
     if (await parser.match(file)) {
-      console.log(parser.name, 'matched.');
       return parser;
     }
   }
