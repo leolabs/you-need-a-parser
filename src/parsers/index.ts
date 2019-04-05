@@ -42,13 +42,23 @@ export const parserMap: { [k: string]: ParserModule } = {
 };
 
 export const matchFile = async (file: File) => {
-  for (const parser of Object.values(parserMap)) {
-    if (await parser.match(file)) {
-      return parser;
-    }
+  const results = (await Promise.all(
+    Object.values(parserMap).map(async p => ({
+      parser: p,
+      matched: await p.match(file),
+    })),
+  )).filter(r => r.matched);
+
+  if (results.length === 0) {
+    return null;
   }
 
-  return null;
+  if (results.length > 1) {
+    console.warn('Found multiple parsers for', file.name);
+    console.warn(results.map(r => r.parser.name));
+  }
+
+  return results[0].parser;
 };
 
 export const parseFile = async (file: File, parserOverride?: ParserModule) => {
