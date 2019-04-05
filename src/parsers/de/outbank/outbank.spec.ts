@@ -1,5 +1,5 @@
-import { generateYnabDate, outbank, OutbankRow } from './outbank';
-import { YnabRow } from '..';
+import { generateYnabDate, outbank } from './outbank';
+import { YnabRow } from '../..';
 import { unparse } from 'papaparse';
 
 const content = unparse([

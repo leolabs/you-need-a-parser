@@ -1,5 +1,5 @@
 import { generateYnabDate, kontist } from './kontist';
-import { YnabRow } from '..';
+import { YnabRow } from '../..';
 
 const content = `booking_date,valuta_date,amount,name,purpose,end_to_end_id,booking_status
 2018-07-19,2018-07-19,-18000,John Doe,Invoice 2018006,E-e5a5084f898385ba8bc869c9627d8d2,processed

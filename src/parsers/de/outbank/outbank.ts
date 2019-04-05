@@ -1,6 +1,6 @@
 import 'mdn-polyfills/String.prototype.startsWith';
-import { ParserFunction, MatcherFunction, ParserModule } from '..';
-import { parse } from '../../util/papaparse';
+import { ParserFunction, MatcherFunction, ParserModule } from '../..';
+import { parse } from '../../../util/papaparse';
 
 export interface OutbankRow {
   '#': string;

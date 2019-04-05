@@ -1,5 +1,5 @@
 import { generateYnabDate, n26 } from './n26';
-import { YnabRow } from '..';
+import { YnabRow } from '../..';
 import { unparse } from 'papaparse';
 
 const content = unparse([

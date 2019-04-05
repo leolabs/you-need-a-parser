@@ -1,11 +1,11 @@
 import { unparse } from 'papaparse';
 import 'mdn-polyfills/String.prototype.padStart';
 
-import { outbank } from './outbank/outbank';
-import { n26 } from './n26/n26';
-import { ingDiBa } from './ing-diba/ing-diba';
-import { comdirect } from './comdirect/comdirect';
-import { kontist } from './kontist/kontist';
+import { outbank } from './de/outbank/outbank';
+import { n26 } from './de/n26/n26';
+import { ingDiBa } from './de/ing-diba/ing-diba';
+import { comdirect } from './de/comdirect/comdirect';
+import { kontist } from './de/kontist/kontist';
 
 export interface YnabRow {
   Date?: string;
