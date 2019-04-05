@@ -22,7 +22,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "build:netlify": "yarn test --coverage && yarn build && cp -R coverage/lcov-report build/",
+    "build:netlify": "yarn test --coverage && yarn build && codecov",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -40,6 +40,7 @@
     "@types/papaparse": "^4.5.9",
     "@types/react-toastify": "^4.0.2",
     "@types/styled-components": "^4.1.12",
-    "babel-plugin-styled-components": "^1.10.0"
+    "babel-plugin-styled-components": "^1.10.0",
+    "codecov": "^3.3.0"
   }
 }
