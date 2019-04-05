@@ -1,0 +1,5 @@
+"Date","Payee","Account number","Transaction type","Payment reference","Category","Amount (EUR)","Amount (Foreign Currency)","Type Foreign Currency","Exchange Rate"
+"2019-01-01","Jan Nordmann","","Outgoing Transfer","Netflix","Subscriptions & Donations","-3.0","","",""
+"2019-01-02","ITUNES.COM/BILL","","MasterCard Payment","","Media & Electronics","-1.0","-1.0","EUR","1.0"
+"2019-01-02","ITUNES.COM/BILL","","MasterCard Payment","","Media & Electronics","1.0","1.0","EUR","1.0"
+"2019-01-02","Leo Bernard","","Direct Debit","Lastschrift Test","Miscellaneous","-180.0","","",""

@@ -8,9 +8,6 @@
 # testing
 /coverage
 
-# test data
-/test-data
-
 # production
 /build
 

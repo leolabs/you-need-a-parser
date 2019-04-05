@@ -1,0 +1,27 @@
+Volksbank eG;;;;;;;;;;;;
+;;;;;;;;;;;;
+Umsatzanzeige;;;;;;;;;;;;
+;;;;;;;;;;;;
+BLZ:;42461435;;Datum:;04.04.2019;;;;;;;;
+Konto:;1008800049;;Uhrzeit:;22:57:16;;;;;;;;
+Abfrage von:;Hermann Testkunde;;Kontoinhaber:;Hermann Testkunde;;;;;;;;
+;;;;;;;;;;;;
+Zeitraum:;;von:;28.03.2019;bis:;;;;;;;;
+Betrag in EUR:;;von:; ;bis:; ;;;;;;;
+Sortiert nach:;Buchungstag;absteigend;;;;;;;;;;
+;;;;;;;;;;;;
+Buchungstag;Valuta;Auftraggeber/Zahlungsempfänger;Empfänger/Zahlungspflichtiger;Konto-Nr.;IBAN;BLZ;BIC;Vorgang/Verwendungszweck;Kundenreferenz;Währung;Umsatz; 
+03.04.2019;04.04.2019;Hermann Testkunde;Gartenbauverein;12345678;;70190000;;"ÜBERWEISUNG
+Quartalsbeitrag Gartenbauverein
+Musterstadt 73 e.V.
+vom 03.03.2005
+Verwendete TAN: 123456";;EUR;12;S
+03.04.2019;04.04.2019;Hermann Testkunde;Hermann Testkunde;;;;;"ÜBERTRAG
+Hermann Testkunde
+UEBERTRAG VOM ANLAGEKONTO";;EUR;112;H
+03.04.2019;04.04.2019;Hermann Testkunde;;;;;;"ÜBERWEISUNG
+Kaufstadt Lebensmittel
+Vielen Dank fuer Ihren Einkauf";;EUR;258,17;S
+;;;;;;;;;;;;
+28.03.2019;;;;;;;;;Anfangssaldo;EUR;22.257,11;H
+04.04.2019;;;;;;;;;Endsaldo;EUR;21.488,94;H

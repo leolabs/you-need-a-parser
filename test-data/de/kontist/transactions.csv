@@ -1,0 +1,4 @@
+booking_date,valuta_date,amount,name,purpose,end_to_end_id,booking_status
+2018-07-19,2018-07-19,-18000,Max Mustermann,Rechnung 2017006,NOTPROVIDED,processed
+2018-07-19,2018-07-19,55800,Employer GmbH,Purpose,NOTPROVIDED,processed
+2018-07-23,2018-07-23,9510,John Appleseed,Purpose,NOTPROVIDED,processed

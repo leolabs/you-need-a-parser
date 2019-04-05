@@ -1,0 +1,11 @@
+;
+"Umsätze Verrechnungskonto ";"Zeitraum: 30 Tage";
+"Neuer Kontostand";"16,94 EUR";
+
+"Buchungstag";"Wertstellung (Valuta)";"Vorgang";"Buchungstext";"Umsatz in EUR";
+"01.04.2019";"03.04.2019";"Wertpapiere";" Buchungstext: Test Ref. 000000000/0 ";"-59,97";
+"01.04.2019";"03.04.2019";"Wertpapiere";" Buchungstext: ISHSII-MSCI EUR.SRI EOACC WPKNR: A1H7ZS ISIN: IE00B52VJ196 Ref. 0000000000000/0 ";"-119,98";
+"01.04.2019";"01.04.2019";"DTA-glt. Buchung";" Zahlungspflichtiger: Leo BernardKto/IBAN: DE84100000012000035900 BLZ/BIC: XXXXXXXXX Buchungstext: Lastschrift Sparplan 1 Ref. H9219087I4644658/2 ";"180,00";
+
+"Alter Kontostand";"16,89 EUR";
+

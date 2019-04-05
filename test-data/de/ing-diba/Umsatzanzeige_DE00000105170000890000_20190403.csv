@@ -1,0 +1,19 @@
+Umsatzanzeige;Datei erstellt am: 03.04.2019 22:08
+;Letztes Update: aktuell
+
+IBAN;DE11 0000 0000 0000 0000 72
+Kontoname;Girokonto
+Bank;ING
+Kunde;Test Nutzer
+Zeitraum;03.03.2019 - 03.04.2019
+Saldo;126,08;EUR
+
+Sortierung;Datum absteigend
+
+In der CSV-Datei finden Sie alle bereits gebuchten Ums�tze. Die vorgemerkten Ums�tze werden nicht aufgenommen, auch wenn sie in Ihrem Internetbanking angezeigt werden.
+
+Buchung;Valuta;Auftraggeber/Empf�nger;Buchungstext;Verwendungszweck;Saldo;W�hrung;Betrag;W�hrung
+03.04.2019;03.04.2019;eprimo GmbH;Lastschrift;eprimo sagt danke;126,08;EUR;-71,00;EUR
+03.04.2019;03.04.2019;eprimo GmbH;Lastschrift;eprimo sagt danke;197,08;EUR;-70,00;EUR
+26.03.2019;26.03.2019;Max Mustermann;�berweisung;Miete;267,08;EUR;-670,00;EUR
+26.03.2019;26.03.2019;John Doe;Gutschrift;Miete;937,08;EUR;290,00;EUR
