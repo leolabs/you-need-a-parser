@@ -1,5 +1,5 @@
 import 'mdn-polyfills/String.prototype.startsWith';
-import { ParserFunction, MatcherFunction, ParserModule } from '../..';
+import { ParserFunction, MatcherFunction, ParserModule, YnabRow } from '../..';
 import { parse } from '../../../util/papaparse';
 
 export interface OutbankRow {
@@ -47,26 +47,42 @@ export const parseNumber = (input: string) => Number(input.replace(',', '.'));
 export const outbankParser: ParserFunction = async (file: File) => {
   const { data } = await parse(file, { header: true });
 
-  return [
-    {
-      data: (data as OutbankRow[])
-        .filter(r => r.Date && r.Amount)
-        .map(r => ({
-          Date: generateYnabDate(r.Date!),
-          Payee: r.Name,
-          Category: r.Category,
-          Memo: r.Reason,
+  const groupedData = (data as OutbankRow[])
+    .filter(r => r.Date && r.Amount)
+    .reduce(
+      (acc, cur) => {
+        const data = {
+          Date: generateYnabDate(cur.Date!),
+          Payee: cur.Name,
+          Category: cur.Category,
+          Memo: cur.Reason,
           Outflow:
-            parseNumber(r.Amount!) < 0
-              ? Math.abs(parseNumber(r.Amount!)).toFixed(2)
+            parseNumber(cur.Amount!) < 0
+              ? Math.abs(parseNumber(cur.Amount!)).toFixed(2)
               : undefined,
           Inflow:
-            parseNumber(r.Amount!) > 0
-              ? parseNumber(r.Amount!).toFixed(2)
+            parseNumber(cur.Amount!) > 0
+              ? parseNumber(cur.Amount!).toFixed(2)
               : undefined,
-        })),
-    },
-  ];
+        };
+
+        const key = cur.Account || 'no-account';
+
+        if (Object.keys(acc).includes(key)) {
+          acc[key].push(data);
+        } else {
+          acc[key] = [data];
+        }
+
+        return acc;
+      },
+      {} as { [k: string]: YnabRow[] },
+    );
+
+  return Object.keys(groupedData).map(key => ({
+    accountName: key,
+    data: groupedData[key],
+  }));
 };
 
 export const outbankMatcher: MatcherFunction = async (file: File) => {

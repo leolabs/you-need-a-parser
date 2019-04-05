@@ -63,6 +63,7 @@ const content = unparse([
 
 const ynabResult: YnabFile[] = [
   {
+    accountName: 'DE27100777770209299700',
     data: [
       {
         Date: '04/02/2019',
