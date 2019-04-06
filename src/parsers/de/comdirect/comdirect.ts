@@ -1,7 +1,7 @@
 import 'mdn-polyfills/String.prototype.startsWith';
 import { ParserFunction, MatcherFunction, ParserModule } from '../..';
 import { parse } from '../../../util/papaparse';
-import { readEncodedFile } from '../../../util/read-windows-file';
+import { readEncodedFile } from '../../../util/read-encoded-file';
 
 export interface ComdirectRow {
   Buchungstag: string;
