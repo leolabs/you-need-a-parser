@@ -7,7 +7,7 @@
     "@types/node": "11.13.0",
     "@types/react": "16.8.10",
     "@types/react-dom": "16.8.3",
-    "date-fns": "^1.30.1",
+    "date-fns": "2.0.0-alpha.27",
     "file-saver": "^2.0.1",
     "iconv-lite": "^0.4.24",
     "jschardet": "^2.1.0",
@@ -18,6 +18,7 @@
     "react-scripts": "2.1.8",
     "react-toastify": "^5.0.0-rc.6",
     "styled-components": "^4.2.0",
+    "ts-node": "^8.0.3",
     "typescript": "3.4.1"
   },
   "scripts": {
@@ -25,7 +26,8 @@
     "build": "react-scripts build",
     "build:netlify": "yarn test --coverage && yarn build && codecov",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "fetch-bank2ynab": "(cd scripts && ts-node fetch-bank2ynab.ts)"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -38,10 +40,13 @@
   ],
   "devDependencies": {
     "@types/file-saver": "^2.0.0",
+    "@types/node-fetch": "^2.3.0",
     "@types/papaparse": "^4.5.9",
     "@types/react-toastify": "^4.0.2",
     "@types/styled-components": "^4.1.12",
     "babel-plugin-styled-components": "^1.10.0",
-    "codecov": "^3.3.0"
+    "codecov": "^3.3.0",
+    "encoding": "^0.1.12",
+    "node-fetch": "^2.3.0"
   }
 }
