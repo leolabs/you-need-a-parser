@@ -8,6 +8,8 @@ import { comdirect } from './de/comdirect/comdirect';
 import { kontist } from './de/kontist/kontist';
 import { volksbankEG } from './de/volksbank-eg/volksbank-eg';
 
+import { bank2ynab } from './bank2ynab/bank2ynab';
+
 export interface YnabRow {
   Date?: string;
   Payee?: string;
@@ -24,6 +26,7 @@ export interface YnabFile {
 
 export interface ParserModule {
   name: string;
+  country: string;
   link: string;
   match: MatcherFunction;
   parse: ParserFunction;
@@ -32,18 +35,20 @@ export interface ParserModule {
 export type MatcherFunction = (file: File) => Promise<boolean>;
 export type ParserFunction = (file: File) => Promise<YnabFile[]>;
 
-export const parserMap: { [k: string]: ParserModule } = {
+export const parsers: ParserModule[] = [
   outbank,
   n26,
   ingDiBa,
   comdirect,
   kontist,
   volksbankEG,
-};
+
+  ...bank2ynab,
+];
 
 export const matchFile = async (file: File) => {
   const results = (await Promise.all(
-    Object.values(parserMap).map(async p => ({
+    parsers.map(async p => ({
       parser: p,
       matched: await p.match(file),
     })),

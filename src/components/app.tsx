@@ -4,7 +4,7 @@ import styled, { keyframes, css } from 'styled-components';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-import { parseFile, parserMap } from '../parsers';
+import { parseFile, parsers } from '../parsers';
 import { GitHubBadge } from './github-badge';
 
 const pulse = keyframes`
@@ -202,7 +202,7 @@ const App: React.FC = () => {
         <p>
           Supported CSV formats:
           <br />
-          {Object.values(parserMap).map(p => (
+          {parsers.map(p => (
             <>
               <a target="_blank" href={p.link} rel="noopener">
                 {p.name}
