@@ -123,6 +123,7 @@ export const generateParser = (config: ParserConfig) => {
   return {
     name: config.name,
     link: config.link,
+    country: config.country,
     match,
     parse,
   } as ParserModule;

@@ -131,6 +131,7 @@ export const volksbankMatcher: MatcherFunction = async (file: File) => {
 
 export const volksbankEG: ParserModule = {
   name: 'Volksbank',
+  country: 'de',
   link: 'https://www.volksbank-eg.de/privatkunden.html',
   match: volksbankMatcher,
   parse: volksbankParser,

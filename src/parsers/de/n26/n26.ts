@@ -84,6 +84,7 @@ export const n26Matcher: MatcherFunction = async (file: File) => {
 
 export const n26: ParserModule = {
   name: 'N26',
+  country: 'de',
   link:
     'https://support.n26.com/en-eu/fixing-an-issue/payments-and-transfers/how-to-export-a-list-of-my-transactions',
   match: n26Matcher,

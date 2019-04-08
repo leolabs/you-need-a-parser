@@ -93,6 +93,7 @@ export const ingDiBaMatcher: MatcherFunction = async (file: File) => {
 
 export const ingDiBa: ParserModule = {
   name: 'ING-DiBa',
+  country: 'de',
   link: 'https://www.ing-diba.de',
   match: ingDiBaMatcher,
   parse: ingDiBaParser,
