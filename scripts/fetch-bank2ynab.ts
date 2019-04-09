@@ -100,7 +100,9 @@ const script = async () => {
     .map(
       c =>
         ({
-          name: c.Name.split(' ', 2)[1],
+          name: c.Name.split(' ')
+            .slice(1)
+            .join(' '),
           country: c.Name.split(' ')[0].toLowerCase(),
           filenamePattern: `${c['Source Filename Pattern']}\\.${(
             c['Source Filename Extension'] || '.csv'
