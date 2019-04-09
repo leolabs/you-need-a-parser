@@ -1,4 +1,4 @@
-import { parse } from 'date-fns';
+import { parse, format } from 'date-fns';
 
 // See https://github.com/bank2ynab/bank2ynab/wiki/DateFormatting#dates-in-data-rows
 export const placeholders: { [k: string]: string } = {
@@ -24,3 +24,5 @@ export const parseDate = (input: string, format?: string) => {
 
   return parse(input, convertedFormat, new Date());
 };
+
+export const ynabDate = (input: number | Date) => format(input, 'MM/dd/yyyy');

@@ -2,14 +2,14 @@ import 'mdn-polyfills/String.prototype.startsWith';
 import { ParserFunction, MatcherFunction, ParserModule, YnabRow } from '..';
 import { parse as parseCsv } from '../../util/papaparse';
 import { readEncodedFile } from '../../util/read-encoded-file';
-import { parseDate } from './parse-date';
+import { parseDate, ynabDate } from './parse-date';
 
 import banks from './banks.json';
 
 export interface ParserConfig {
   filenamePattern: string;
-  headerRows?: number;
-  footerRows?: number;
+  headerRows: number;
+  footerRows: number;
   inputColumns: string[];
   dateFormat?: string;
   name: string;
@@ -23,18 +23,6 @@ export const parseNumber = (input?: string) =>
       ? Number(input.replace(',', '.'))
       : Number(input)
     : undefined;
-
-export const trimHeaderAndFooterRows = (
-  input: string,
-  headerRows = 0,
-  footerRows = 0,
-) => {
-  const lines = input.trim().split('\n');
-
-  return lines
-    .slice(headerRows, lines.length - headerRows - footerRows + 1)
-    .join('\n');
-};
 
 export const calculateInflow = (inflow?: number, outflow?: number) => {
   if (typeof inflow === 'undefined' && typeof outflow === 'undefined') {
@@ -92,26 +80,26 @@ export const generateParser = (config: ParserConfig) => {
 
   const parse: ParserFunction = async (file: File) => {
     const content = await readEncodedFile(file);
-    const { data } = await parseCsv(
-      trimHeaderAndFooterRows(content, config.headerRows, config.footerRows),
-    );
+    const { data } = await parseCsv(content);
 
-    const ynabData = data.map(d => {
-      return {
-        Category: columns.Category ? d[columns.Category] : undefined,
-        Date: columns.Date
-          ? parseDate(d[columns.Date], config.dateFormat)
-          : undefined,
-        Inflow: calculateInflow(
-          columns.Inflow ? parseNumber(d[columns.Inflow]) : undefined,
-          columns.Outflow ? parseNumber(d[columns.Outflow]) : undefined,
-        ),
-        Outflow: calculateOutflow(
-          columns.Inflow ? parseNumber(d[columns.Inflow]) : undefined,
-          columns.Outflow ? parseNumber(d[columns.Outflow]) : undefined,
-        ),
-      } as YnabRow;
-    });
+    const ynabData = data
+      .slice(data.length - config.headerRows - config.footerRows + 1)
+      .map(d => {
+        return {
+          Category: columns.Category ? d[columns.Category] : undefined,
+          Date: columns.Date
+            ? ynabDate(parseDate(d[columns.Date], config.dateFormat))
+            : undefined,
+          Inflow: calculateInflow(
+            columns.Inflow ? parseNumber(d[columns.Inflow]) : undefined,
+            columns.Outflow ? parseNumber(d[columns.Outflow]) : undefined,
+          ),
+          Outflow: calculateOutflow(
+            columns.Inflow ? parseNumber(d[columns.Inflow]) : undefined,
+            columns.Outflow ? parseNumber(d[columns.Outflow]) : undefined,
+          ),
+        } as YnabRow;
+      });
 
     return [
       {
