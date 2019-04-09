@@ -1,8 +1,4 @@
-import {
-  calculateInflow,
-  calculateOutflow,
-  trimHeaderAndFooterRows,
-} from './bank2ynab';
+import { calculateInflow, calculateOutflow } from './bank2ynab';
 
 describe('bank2ynab Parser Module', () => {
   describe('Inflow Parser', () => {
@@ -24,16 +20,6 @@ describe('bank2ynab Parser Module', () => {
       expect(calculateOutflow(undefined, -10)).toBeUndefined();
       expect(() => calculateOutflow(10, 20)).toThrow();
       expect(calculateOutflow(-20, undefined)).toBe(20);
-    });
-  });
-
-  describe('Row Trimming', () => {
-    it('should correctly trim lines on the start and end of a string', () => {
-      const input = '1\n2\n3\n4\n5';
-
-      expect(trimHeaderAndFooterRows(input)).toBe(input);
-      expect(trimHeaderAndFooterRows(input, 1, 0)).toBe('2\n3\n4\n5');
-      expect(trimHeaderAndFooterRows(input, 1, 1)).toBe('2\n3\n4');
     });
   });
 });
