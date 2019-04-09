@@ -8,8 +8,11 @@
 # testing
 /coverage
 
+# gatsby
+.cache/
+
 # production
-/build
+/public
 
 # misc
 .DS_Store

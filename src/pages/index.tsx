@@ -1,11 +1,15 @@
 import React, { useEffect, useState } from 'react';
+import { Helmet } from 'react-helmet-async';
+import { Link } from 'gatsby';
 import { saveAs } from 'file-saver';
 import styled, { keyframes, css } from 'styled-components';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-import { parseFile, parsers } from '../parsers';
-import { GitHubBadge } from './github-badge';
+import '../styles/index.css';
+import { parseFile, parsers, countries } from '../parsers';
+import MetaTags from '../components/meta-tags';
+import { GitHubBadge } from '../components/github-badge';
 
 const pulse = keyframes`
   0% {
@@ -19,12 +23,13 @@ const pulse = keyframes`
   }
 `;
 
-const Container = styled.div<{ uploadHover: boolean }>`
+const Container = styled.div<{ uploadHover?: boolean }>`
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  text-align: center;
 
   padding: 2rem;
   box-sizing: border-box;
@@ -34,7 +39,6 @@ const Container = styled.div<{ uploadHover: boolean }>`
 
   > p {
     max-width: 40rem;
-    text-align: center;
     margin-bottom: 4rem;
   }
 
@@ -169,7 +173,6 @@ const App: React.FC = () => {
 
   return (
     <>
-      <ToastContainer />
       <GitHubBadge />
       <Container uploadHover={uploadHover}>
         <h1>You Need A Parser</h1>
@@ -200,17 +203,19 @@ const App: React.FC = () => {
           <p>{uploadHover ? 'Drop' : 'Drag'} files here to parse</p>
         </DropArea>
         <p>
-          Supported CSV formats:
-          <br />
-          {parsers.map(p => (
-            <>
-              <a target="_blank" href={p.link} rel="noopener">
-                {p.name}
-              </a>
-              {', '}
-            </>
-          ))}
-          and more in the future.
+          YNAP supports {parsers.length} different formats for banks of{' '}
+          {countries.length} countries, including{' '}
+          {parsers
+            .map(p => (
+              <>
+                <a href={p.link} target="_blank">
+                  {p.name}
+                </a>
+                ,{' '}
+              </>
+            ))
+            .slice(0, 10)}
+          <Link to="/supported-formats">and more</Link>.
         </p>
         <Footer>
           <p>
@@ -240,4 +245,12 @@ const App: React.FC = () => {
   );
 };
 
-export default App;
+const Index = () => (
+  <>
+    <MetaTags />
+    <ToastContainer />
+    <App />
+  </>
+);
+
+export default Index;

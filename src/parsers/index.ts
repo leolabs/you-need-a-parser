@@ -1,6 +1,8 @@
 import { unparse } from 'papaparse';
 import 'mdn-polyfills/String.prototype.padStart';
 
+import uniq from 'lodash/uniq';
+
 import { outbank } from './de/outbank/outbank';
 import { n26 } from './de/n26/n26';
 import { ingDiBa } from './de/ing-diba/ing-diba';
@@ -45,6 +47,10 @@ export const parsers: ParserModule[] = [
 
   ...bank2ynab,
 ];
+
+export const countries = uniq(
+  parsers.filter(p => p.country.length === 2).map(p => p.country),
+);
 
 export const matchFile = async (file: File) => {
   const results = (await Promise.all(

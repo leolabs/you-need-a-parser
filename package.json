@@ -4,29 +4,36 @@
   "private": true,
   "dependencies": {
     "@types/jest": "24.0.11",
-    "@types/node": "11.13.0",
-    "@types/react": "16.8.10",
-    "@types/react-dom": "16.8.3",
+    "@types/node": "^11.13.2",
+    "@types/react": "^16.8.13",
+    "@types/react-dom": "^16.8.3",
     "date-fns": "2.0.0-alpha.27",
     "file-saver": "^2.0.1",
+    "gatsby": "^2.3.16",
+    "gatsby-plugin-netlify": "^2.0.13",
+    "gatsby-plugin-offline": "^2.0.25",
+    "gatsby-plugin-react-helmet": "^3.0.12",
+    "gatsby-plugin-styled-components": "^3.0.7",
+    "gatsby-plugin-typescript": "^2.0.12",
     "iconv-lite": "^0.4.24",
     "jschardet": "^2.1.0",
+    "lodash": "^4.17.11",
     "mdn-polyfills": "^5.16.0",
     "papaparse": "^4.6.3",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-scripts": "2.1.8",
+    "react-helmet": "^5.2.0",
+    "react-helmet-async": "^1.0.2",
     "react-toastify": "^5.0.0-rc.6",
     "styled-components": "^4.2.0",
     "ts-node": "^8.0.3",
-    "typescript": "3.4.1"
+    "typescript": "^3.4.2"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "start": "gatsby develop",
+    "build": "gatsby build",
     "build:netlify": "yarn test --coverage && yarn build && codecov",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
+    "test": "jest",
     "fetch-bank2ynab": "(cd scripts && ts-node fetch-bank2ynab.ts)"
   },
   "eslintConfig": {
@@ -40,13 +47,19 @@
   ],
   "devDependencies": {
     "@types/file-saver": "^2.0.0",
+    "@types/lodash": "^4.14.123",
     "@types/node-fetch": "^2.3.0",
     "@types/papaparse": "^4.5.9",
+    "@types/react-helmet": "^5.0.8",
+    "@types/react-helmet-async": "^1.0.0",
     "@types/react-toastify": "^4.0.2",
     "@types/styled-components": "^4.1.12",
     "babel-plugin-styled-components": "^1.10.0",
     "codecov": "^3.3.0",
     "encoding": "^0.1.12",
-    "node-fetch": "^2.3.0"
+    "jest": "^24.7.1",
+    "node-fetch": "^2.3.0",
+    "ts-jest": "^24.0.2",
+    "tslint": "^5.15.0"
   }
 }

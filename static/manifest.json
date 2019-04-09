@@ -1,6 +1,7 @@
 {
-  "background_color": "#f1f4f9",
-  "display": "standalone",
+  "name": "You Need A Parser",
+  "short_name": "YNAP",
+  "start_url": ".",
   "icons": [
     {
       "src": "/android-chrome-192x192.png",
@@ -13,10 +14,7 @@
       "type": "image/png"
     }
   ],
-  "main.js": "render-page.js",
-  "main.js.map": "render-page.js.map",
-  "name": "You Need A Parser",
-  "short_name": "YNAP",
-  "start_url": ".",
-  "theme_color": "#f1f4f9"
+  "theme_color": "#f1f4f9",
+  "background_color": "#f1f4f9",
+  "display": "standalone"
 }
