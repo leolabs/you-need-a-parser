@@ -15,8 +15,8 @@ export interface YnabRow {
   Payee?: string;
   Category?: string;
   Memo?: string;
-  Outflow?: string;
-  Inflow?: string;
+  Outflow?: number | string;
+  Inflow?: number | string;
 }
 
 export interface YnabFile {
