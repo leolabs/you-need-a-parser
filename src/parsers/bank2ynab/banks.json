@@ -1,6 +1,6 @@
 [
   {
-    "name": "easybank",
+    "name": "easybank credit card",
     "country": "at",
     "filenamePattern": "EASYBANK_Umsatzliste_20[0-9]{6}_[0-9]{4}\\.csv",
     "inputColumns": [
@@ -16,7 +16,7 @@
     "footerRows": 0
   },
   {
-    "name": "Raiffeisen",
+    "name": "Raiffeisen Bank",
     "country": "at",
     "filenamePattern": "elbi_umsaetze_20[0-9]{12}\\.csv",
     "inputColumns": [
@@ -33,7 +33,7 @@
     "footerRows": 0
   },
   {
-    "name": "Raiffeisen",
+    "name": "Raiffeisen VISA",
     "country": "at",
     "filenamePattern": "finstatus_20[0-9]{12}\\.csv",
     "inputColumns": [
@@ -50,7 +50,7 @@
     "footerRows": 0
   },
   {
-    "name": "KBC",
+    "name": "KBC checking",
     "country": "be",
     "filenamePattern": "export_BE[0-9]{14}_[0-9]{8}_[0-9]{4}\\.csv",
     "inputColumns": [
@@ -79,7 +79,7 @@
     "footerRows": 0
   },
   {
-    "name": "Inter,",
+    "name": "Inter, checking",
     "country": "br",
     "filenamePattern": "Extrato\\.csv",
     "inputColumns": [
@@ -93,7 +93,7 @@
     "footerRows": 0
   },
   {
-    "name": "TD",
+    "name": "TD Canada Trust, checking+Visa",
     "country": "ca",
     "filenamePattern": "accountactivity\\.csv",
     "inputColumns": [
@@ -109,7 +109,7 @@
     "footerRows": 0
   },
   {
-    "name": "Ceska",
+    "name": "Ceska Sporitelna",
     "country": "cz",
     "filenamePattern": "TH_[0-9]{8}-[0-9]{8}(_(page|strana)_[0-9])?\\.csv",
     "inputColumns": [
@@ -131,7 +131,7 @@
     "footerRows": 0
   },
   {
-    "name": "Raiffeisen",
+    "name": "Raiffeisen bank",
     "country": "cz",
     "filenamePattern": "(Pohyby|Movements)_[0-9]{10}_[0-9]{12}\\.csv",
     "inputColumns": [
@@ -156,7 +156,7 @@
     "footerRows": 0
   },
   {
-    "name": "Commerzbank",
+    "name": "Commerzbank checking",
     "country": "de",
     "filenamePattern": "Umsaetze_KtoNr[0-9]{9}_EUR_[0-9]{2}-[0-9]{2}-[0-9]{4}_[0-9]{4}\\.CSV",
     "inputColumns": [
@@ -175,7 +175,7 @@
     "footerRows": 0
   },
   {
-    "name": "Consorsbank",
+    "name": "Consorsbank checking",
     "country": "de",
     "filenamePattern": "Umsatzübersicht_[0-9]{9}\\.csv",
     "inputColumns": [
@@ -194,7 +194,7 @@
     "footerRows": 0
   },
   {
-    "name": "Deutsche",
+    "name": "Deutsche Kreditbank credit card",
     "country": "de",
     "filenamePattern": "\\d{4}_{8}\\d{4}\\.csv",
     "inputColumns": [
@@ -210,46 +210,7 @@
     "footerRows": 0
   },
   {
-    "name": "ING-DiBa",
-    "country": "de",
-    "filenamePattern": "Umsatzanzeige_DE[0-9]{20}_[0-9]{8}\\.csv",
-    "inputColumns": [
-      "Date",
-      "skip",
-      "Payee",
-      "skip",
-      "Memo",
-      "skip",
-      "skip",
-      "Inflow",
-      "skip"
-    ],
-    "link": "https://github.com/bank2ynab/bank2ynab/blob/master/bank2ynab.conf#L166",
-    "headerRows": 13,
-    "footerRows": 0
-  },
-  {
-    "name": "N26",
-    "country": "de",
-    "filenamePattern": "20[0-9]{6}-20[0-9]{6}\\.csv",
-    "inputColumns": [
-      "Date",
-      "Payee",
-      "skip",
-      "skip",
-      "skip",
-      "skip",
-      "Inflow",
-      "skip",
-      "skip",
-      "skip"
-    ],
-    "link": "https://github.com/bank2ynab/bank2ynab/blob/master/bank2ynab.conf#L182",
-    "headerRows": 1,
-    "footerRows": 0
-  },
-  {
-    "name": "Ostseesparkasse",
+    "name": "Ostseesparkasse Rostock checking",
     "country": "de",
     "filenamePattern": "[0-9]{8}-[0-9]{10}-umsatz\\.CSV",
     "inputColumns": [
@@ -271,7 +232,7 @@
     "footerRows": 0
   },
   {
-    "name": "Ostseesparkasse",
+    "name": "Ostseesparkasse Rostock credit card",
     "country": "de",
     "filenamePattern": "umsatz-[0-9]{4}_{8}[0-9]{4}-[0-9]{8}\\.CSV",
     "inputColumns": [
@@ -298,7 +259,7 @@
     "footerRows": 0
   },
   {
-    "name": "Sparkasse",
+    "name": "Sparkasse Rhein-Neckar-Nord",
     "country": "de",
     "filenamePattern": "[0-9]{8}-[0-9]{8}-umsatz\\.csv",
     "inputColumns": [
@@ -325,7 +286,7 @@
     "footerRows": 0
   },
   {
-    "name": "Bankernes",
+    "name": "Bankernes EDB Central",
     "country": "dk",
     "filenamePattern": "Posteringer\\.csv",
     "inputColumns": [
@@ -340,7 +301,7 @@
     "footerRows": 0
   },
   {
-    "name": "Sparkassen",
+    "name": "Sparkassen Thy",
     "country": "dk",
     "filenamePattern": "export\\.csv",
     "inputColumns": [
@@ -356,7 +317,7 @@
     "footerRows": 0
   },
   {
-    "name": "AIB",
+    "name": "AIB Ireland",
     "country": "ie",
     "filenamePattern": "Transaction_Export_[0-9]{2}.[0-9]{2}.20[0-9]{2}_[0-9]{2}.[0-9]{2}\\.csv",
     "inputColumns": [
@@ -373,7 +334,7 @@
     "footerRows": 0
   },
   {
-    "name": "Bank",
+    "name": "Bank of Ireland",
     "country": "ie",
     "filenamePattern": "TransactionExport\\.csv",
     "inputColumns": [
@@ -388,7 +349,7 @@
     "footerRows": 0
   },
   {
-    "name": "Bank",
+    "name": "Bank of Maldives, checking",
     "country": "mv",
     "filenamePattern": "statement\\.\\.csv",
     "inputColumns": [
@@ -409,7 +370,7 @@
     "footerRows": 0
   },
   {
-    "name": "Bunq",
+    "name": "Bunq checking",
     "country": "nl",
     "filenamePattern": "[0-9]{4}-[0-9]{2}-[0-9]{2}_[0-9]{2}-[0-9]{2}-[0-9]{2}_bunq-transactieoverzicht\\.csv",
     "inputColumns": [
@@ -578,7 +539,7 @@
     "footerRows": 3
   },
   {
-    "name": "POSB",
+    "name": "POSB savings",
     "country": "sg",
     "filenamePattern": "[0-9a-z]{32}.[A-Z][0-9]{15}\\.csv",
     "inputColumns": [
@@ -596,7 +557,7 @@
     "footerRows": 0
   },
   {
-    "name": "Co-operative",
+    "name": "Co-operative Bank",
     "country": "uk",
     "filenamePattern": "[0-9]{6}_[0-9]{8}_[0-9]{4}-[0-9]{2}-[0-9]{2}\\.csv",
     "inputColumns": [
@@ -612,7 +573,7 @@
     "footerRows": 0
   },
   {
-    "name": "Monzo",
+    "name": "Monzo checking",
     "country": "uk",
     "filenamePattern": "MonzoDataExport_(January|February|March|April|May|June|July|August|September|October|November|December)[0-9]{4}_[0-9]{4}-[0-9]{2}-[0-9]{2}_[0-9]{6}\\.csv",
     "inputColumns": [
@@ -635,7 +596,7 @@
     "footerRows": 0
   },
   {
-    "name": "Barclaycard",
+    "name": "Barclaycard credit card",
     "country": "uk",
     "filenamePattern": "statement_[0-9]{1}\\.csv",
     "inputColumns": [
@@ -654,7 +615,7 @@
     "footerRows": 0
   },
   {
-    "name": "first",
+    "name": "first direct checking",
     "country": "uk",
     "filenamePattern": "20[0-9]{6}_[0-9]{8}\\.csv",
     "inputColumns": [

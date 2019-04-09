@@ -3,6 +3,7 @@ import fs from 'fs';
 import path from 'path';
 
 import { ParserConfig } from '../src/parsers/bank2ynab/bank2ynab';
+import { parsers } from '../src/parsers';
 
 const CONFIG_URL =
   'https://raw.githubusercontent.com/bank2ynab/bank2ynab/master/bank2ynab.conf';
@@ -13,6 +14,8 @@ const CONFIG_LINK =
 const SECTION = new RegExp(/^\s*\[([^\]]+)]/);
 const KEY = new RegExp(/\s*(.*?)\s*[=:]\s*(.*)/);
 const COMMENT = new RegExp(/^\s*[;#]/);
+
+const blacklist = ['DE N26', 'DE ING-DiBa'];
 
 interface Sections {
   [k: string]: ConfigFields;
@@ -77,14 +80,22 @@ const script = async () => {
 
   const config = parseConfig(configData);
 
+  const existingParsers = parsers.map(p => `${p.country.toUpperCase()} ${p.name}`);
+
   const filteredConfig: ParserConfig[] = Object.keys(config)
     .map(c => ({ ...config[c], Name: c }))
     .filter(
       c =>
         c.Name !== 'DEFAULT' &&
+        !blacklist.includes(c.Name) &&
         !c.Plugin &&
         c['Source Filename Pattern'] !== 'unknown!' &&
-        c['Input Columns'],
+        c['Input Columns'] &&
+        !existingParsers.includes(
+          c.Name.split(' ')
+            .slice(1)
+            .join(' '),
+        ),
     )
     .map(
       c =>
@@ -102,7 +113,13 @@ const script = async () => {
         } as ParserConfig),
     );
 
-  console.log('Parsed', filteredConfig.length, 'bank configs.');
+  console.log(
+    'Parsed',
+    filteredConfig.length,
+    'bank configs. Filtered from',
+    Object.keys(config).length,
+    'configs.',
+  );
 
   const jsonPath = path.normalize(
     path.join(__dirname, '../src/parsers/bank2ynab/banks.json'),
