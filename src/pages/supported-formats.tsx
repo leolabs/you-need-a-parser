@@ -7,6 +7,7 @@ import MetaTags from '../components/meta-tags';
 const Container = styled.div`
   padding: 4rem 2rem;
   max-width: 40rem;
+  margin: auto;
 `;
 
 const SupportedFormats = () => (
