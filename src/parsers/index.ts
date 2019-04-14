@@ -5,6 +5,7 @@ import uniq from 'lodash/uniq';
 
 import { outbank } from './de/outbank/outbank';
 import { n26 } from './de/n26/n26';
+import { revolut } from './international/revolut/revolut';
 import { ingDiBa } from './de/ing-diba/ing-diba';
 import { comdirect } from './de/comdirect/comdirect';
 import { kontist } from './de/kontist/kontist';
@@ -40,6 +41,7 @@ export type ParserFunction = (file: File) => Promise<YnabFile[]>;
 export const parsers: ParserModule[] = [
   outbank,
   n26,
+  revolut,
   ingDiBa,
   comdirect,
   kontist,
