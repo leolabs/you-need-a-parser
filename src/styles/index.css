@@ -23,3 +23,9 @@ a,
 a:visited {
   color: #111;
 }
+
+h1 a,
+h1 a:visited {
+  color: #3ebd93;
+  text-decoration: none;
+}

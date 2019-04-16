@@ -37,7 +37,10 @@ const SupportedFormats = () => (
     />
 
     <Container>
-      <h1>You Need A Parser</h1>
+      <h1>
+        <a href="/">You Need A Parser</a>
+      </h1>
+
       <h2>Supported Formats</h2>
 
       {['international', ...countries].map(c => (
