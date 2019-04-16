@@ -208,7 +208,7 @@ const App: React.FC = () => {
           {parsers
             .map(p => (
               <>
-                <a href={p.link} target="_blank">
+                <a key={p.link} href={p.link} target="_blank">
                   {p.name}
                 </a>
                 ,{' '}
