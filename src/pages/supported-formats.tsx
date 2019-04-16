@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import '../styles/index.css';
 
 import { parsers, countries } from '../parsers';
+import countryNames from '../util/countries';
 import MetaTags from '../components/meta-tags';
 
 const Container = styled.div`
@@ -41,7 +42,7 @@ const SupportedFormats = () => (
 
       {['international', ...countries].map(c => (
         <Fragment key={c}>
-          <h3>{c}</h3>
+          <h3>{countryNames[c] || c}</h3>
           <p>
             {parsers
               .filter(p => p.country === c)
