@@ -1,6 +1,8 @@
 import React, { Fragment } from 'react';
 import styled from 'styled-components';
 
+import '../styles/index.css';
+
 import { parsers, countries } from '../parsers';
 import MetaTags from '../components/meta-tags';
 
