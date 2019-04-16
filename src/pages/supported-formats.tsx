@@ -25,7 +25,15 @@ const ParserPill = styled.a`
 
 const SupportedFormats = () => (
   <>
-    <MetaTags title="Supported Formats" />
+    <MetaTags
+      title="Supported Formats"
+      description={`YNAP supports ${parsers.length} different formats for banks of ${
+        countries.length
+      } countries, including ${parsers
+        .slice(0, 4)
+        .map(p => p.name)
+        .join(', ')}, and more.`}
+    />
 
     <Container>
       <h1>You Need A Parser</h1>
