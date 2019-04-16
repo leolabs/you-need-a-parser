@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import styled from 'styled-components';
 
 import { parsers, countries } from '../parsers';
@@ -30,18 +30,18 @@ const SupportedFormats = () => (
       <h2>Supported Formats</h2>
 
       {['international', ...countries].map(c => (
-        <>
+        <Fragment key={c}>
           <h3>{c}</h3>
           <p>
             {parsers
               .filter(p => p.country === c)
               .map(p => (
-                <ParserPill href={p.link} target="_blank">
+                <ParserPill key={p.link} href={p.link} target="_blank">
                   {p.name}
                 </ParserPill>
               ))}
           </p>
-        </>
+        </Fragment>
       ))}
     </Container>
   </>
