@@ -1,8 +1,7 @@
 node_modules/
 lib/
 
-bank2ynab.json
 /*.js
 /*.ts
 
-!jest.config.js
+bank2ynab.json

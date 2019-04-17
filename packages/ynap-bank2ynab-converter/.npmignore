@@ -3,4 +3,7 @@ lib/
 src/
 
 bank2ynab.json
+tsconfig.json
+
 yarn-error.log
+yarn.lock
