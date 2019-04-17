@@ -2,3 +2,10 @@ node_modules/
 lib/
 
 yarn-error.log
+
+/index.js
+/index.d.ts
+/util/
+/??/
+/bank2ynab/
+/international/
