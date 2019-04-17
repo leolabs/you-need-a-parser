@@ -34,7 +34,7 @@ const SECTION = new RegExp(/^\s*\[([^\]]+)]/);
 const KEY = new RegExp(/\s*(.*?)\s*[=:]\s*(.*)/);
 const COMMENT = new RegExp(/^\s*[;#]/);
 
-const blacklist = ['DE N26', 'DE ING-DiBa'];
+const blacklist = commander.exclude || [];
 
 interface Sections {
   [k: string]: ConfigFields;
@@ -99,6 +99,8 @@ const script = async () => {
 
   const config = parseConfig(configData);
 
+  console.log('Excluding', blacklist.length, 'items from blacklist.');
+
   const filteredConfig: ParserConfig[] = Object.keys(config)
     .map(c => ({ ...config[c], Name: c }))
     .filter(
@@ -135,9 +137,8 @@ const script = async () => {
     'configs.',
   );
 
-  const jsonPath = path.normalize(path.join(__dirname, commander.output));
-  fs.writeFileSync(jsonPath, JSON.stringify(filteredConfig, null, 2));
-  console.log('Saved configs to', jsonPath);
+  fs.writeFileSync(commander.output, JSON.stringify(filteredConfig, null, 2));
+  console.log('Saved configs to', commander.output);
 };
 
 script();
