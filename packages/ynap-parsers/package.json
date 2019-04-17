@@ -1,6 +1,6 @@
 {
   "name": "ynap-parsers",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "Parsers from various formats to YNAB CSV",
   "main": "index.js",
   "author": "Leo Bernard <admin+github@leolabs.org>",
@@ -13,7 +13,7 @@
     "lodash": "^4.17.11",
     "mdn-polyfills": "^5.16.0",
     "papaparse": "^4.6.3",
-    "ynap-bank2ynab-converter": "^1.0.0"
+    "ynap-bank2ynab-converter": "^1.1.0"
   },
   "devDependencies": {
     "@types/jest": "^24.0.11",
