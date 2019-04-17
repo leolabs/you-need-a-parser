@@ -1,0 +1,6 @@
+node_modules/
+lib/
+src/
+
+bank2ynab.json
+yarn-error.log

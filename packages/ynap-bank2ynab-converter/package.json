@@ -1,0 +1,26 @@
+{
+  "name": "ynap-bank2ynab-converter",
+  "version": "1.0.1",
+  "author": {
+    "email": "admin+github@leolabs.org",
+    "name": "Leo Bernard",
+    "url": "https://leolabs.org"
+  },
+  "bin": "index.js",
+  "main": "index.js",
+  "scripts": {
+    "start": "ts-node index.ts",
+    "prepublishOnly": "tsc && cp -r ./lib/* . && rm -rf ./lib"
+  },
+  "devDependencies": {
+    "@types/node": "^11.13.4",
+    "@types/node-fetch": "^2.3.2",
+    "ts-node": "^8.1.0",
+    "typescript": "^3.4.3"
+  },
+  "dependencies": {
+    "commander": "^2.20.0",
+    "encoding": "^0.1.12",
+    "node-fetch": "^2.3.0"
+  }
+}

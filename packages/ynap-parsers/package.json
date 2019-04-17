@@ -1,0 +1,30 @@
+{
+  "name": "ynap-parsers",
+  "version": "1.0.1",
+  "description": "Parsers from various formats to YNAB CSV",
+  "main": "index.js",
+  "author": "Leo Bernard <admin+github@leolabs.org>",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "date-fns": "2.0.0-alpha.27",
+    "iconv-lite": "^0.4.24",
+    "jschardet": "^2.1.0",
+    "lodash": "^4.17.11",
+    "mdn-polyfills": "^5.16.0",
+    "papaparse": "^4.6.3",
+    "ynap-bank2ynab-converter": "^1.0.0"
+  },
+  "devDependencies": {
+    "@types/jest": "^24.0.11",
+    "@types/lodash": "^4.14.123",
+    "@types/papaparse": "^4.5.9",
+    "jest": "^24.7.1",
+    "ts-jest": "^24.0.2",
+    "typescript": "^3.4.3"
+  },
+  "scripts": {
+    "test": "jest",
+    "prepublishOnly": "tsc && cp -r ./lib/* . && rm -rf ./lib"
+  }
+}

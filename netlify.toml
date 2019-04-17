@@ -1,4 +1,4 @@
 [build]
-  base = "/"
+  base = "/packages/ynap-web-app/"
   publish = "/public/"
   command = "yarn build:netlify"
