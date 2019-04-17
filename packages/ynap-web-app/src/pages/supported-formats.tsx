@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 import '../styles/index.css';
 
-import { parsers, countries } from '../parsers';
+import { parsers, countries } from 'ynap-parsers';
 import countryNames from '../util/countries';
 import MetaTags from '../components/meta-tags';
 
