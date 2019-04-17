@@ -33,7 +33,6 @@
   "scripts": {
     "start": "gatsby develop",
     "build": "gatsby build",
-    "build:netlify": "yarn test --coverage && yarn build && codecov",
     "test": "jest"
   },
   "eslintConfig": {
