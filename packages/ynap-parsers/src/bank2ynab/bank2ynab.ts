@@ -107,4 +107,7 @@ export const generateParser = (config: ParserConfig) => {
   } as ParserModule;
 };
 
-export const bank2ynab = banks.map(bank => generateParser(bank as ParserConfig));
+const blacklist = ['de N26', 'de ING-DiBa'];
+export const bank2ynab = banks
+  .filter(b => !blacklist.includes(`${b.country} ${b.name}`))
+  .map(bank => generateParser(bank as ParserConfig));

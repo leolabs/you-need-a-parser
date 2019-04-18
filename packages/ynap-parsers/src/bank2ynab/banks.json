@@ -210,6 +210,45 @@
     "footerRows": 0
   },
   {
+    "name": "ING-DiBa",
+    "country": "de",
+    "filenamePattern": "Umsatzanzeige_DE[0-9]{20}_[0-9]{8}\\.csv",
+    "inputColumns": [
+      "Date",
+      "skip",
+      "Payee",
+      "skip",
+      "Memo",
+      "skip",
+      "skip",
+      "Inflow",
+      "skip"
+    ],
+    "link": "https://github.com/bank2ynab/bank2ynab/blob/master/bank2ynab.conf#L166",
+    "headerRows": 13,
+    "footerRows": 0
+  },
+  {
+    "name": "N26",
+    "country": "de",
+    "filenamePattern": "20[0-9]{6}-20[0-9]{6}\\.csv",
+    "inputColumns": [
+      "Date",
+      "Payee",
+      "skip",
+      "skip",
+      "skip",
+      "skip",
+      "Inflow",
+      "skip",
+      "skip",
+      "skip"
+    ],
+    "link": "https://github.com/bank2ynab/bank2ynab/blob/master/bank2ynab.conf#L182",
+    "headerRows": 1,
+    "footerRows": 0
+  },
+  {
     "name": "Ostseesparkasse Rostock checking",
     "country": "de",
     "filenamePattern": "[0-9]{8}-[0-9]{10}-umsatz\\.CSV",
