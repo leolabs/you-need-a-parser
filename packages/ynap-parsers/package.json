@@ -12,8 +12,7 @@
     "jschardet": "^2.1.0",
     "lodash": "^4.17.11",
     "mdn-polyfills": "^5.16.0",
-    "papaparse": "^4.6.3",
-    "ynap-bank2ynab-converter": "^1.1.0"
+    "papaparse": "^4.6.3"
   },
   "devDependencies": {
     "@types/jest": "^24.0.11",
@@ -21,10 +20,12 @@
     "@types/papaparse": "^4.5.9",
     "jest": "^24.7.1",
     "ts-jest": "^24.0.2",
-    "typescript": "^3.4.3"
+    "typescript": "^3.4.3",
+    "ynap-bank2ynab-converter": "^1.1.0"
   },
   "scripts": {
     "test": "jest",
+    "fetch-bank2ynab": "ynap-bank2ynab-converter -o src/bank2ynab/banks.json",
     "prepublishOnly": "jest && tsc && cp -r ./lib/* . && rm -rf ./lib"
   }
 }
