@@ -25,6 +25,6 @@
   },
   "scripts": {
     "test": "jest",
-    "prepublishOnly": "tsc && cp -r ./lib/* . && rm -rf ./lib"
+    "prepublishOnly": "jest && tsc && cp -r ./lib/* . && rm -rf ./lib"
   }
 }
