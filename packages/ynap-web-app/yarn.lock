@@ -2729,7 +2729,7 @@ command-exists@^1.2.2:
   resolved "https://registry.yarnpkg.com/command-exists/-/command-exists-1.2.8.tgz#715acefdd1223b9c9b37110a149c6392c2852291"
   integrity sha512-PM54PkseWbiiD/mMsbvW351/u+dafwTJ0ye2qB60G1aGQP9j3xK2gmMDc+R34L3nDtx4qMCitXT75mkbkGJDLw==
 
-commander@^2.11.0, commander@^2.12.1, commander@^2.19.0, commander@^2.20.0, commander@~2.20.0:
+commander@^2.11.0, commander@^2.12.1, commander@^2.19.0, commander@~2.20.0:
   version "2.20.0"
   resolved "https://registry.yarnpkg.com/commander/-/commander-2.20.0.tgz#d58bb2b5c1ee8f87b0d340027e9e94e222c5a422"
   integrity sha512-7j2y+40w61zy6YC2iRNpUe/NwhNyoXrYpHMrSunaMG64nRnaf96zO/KMQR4OyN/UnE5KLyEBnKHd4aG3rskjpQ==
@@ -11294,28 +11294,6 @@ yn@^3.0.0:
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/yn/-/yn-3.1.0.tgz#fcbe2db63610361afcc5eb9e0ac91e976d046114"
   integrity sha512-kKfnnYkbTfrAdd0xICNFw7Atm8nKpLcLv9AZGEt+kczL/WQVai4e2V6ZN8U/O+iI6WrNuJjNNOyu4zfhl9D3Hg==
-
-ynap-bank2ynab-converter@^1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/ynap-bank2ynab-converter/-/ynap-bank2ynab-converter-1.1.0.tgz#57e06269d1ee14db7252032d988e5fd996329b47"
-  integrity sha512-sNRs+m5xIK8gZQ/fWX2SA7DZciH1JaigsAxzICnmSgTy6MfZ0icOPE0FTsB99cmYpfuvpnnGh0sESilhQyyJ7A==
-  dependencies:
-    commander "^2.20.0"
-    encoding "^0.1.12"
-    node-fetch "^2.3.0"
-
-ynap-parsers@^1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/ynap-parsers/-/ynap-parsers-1.1.0.tgz#4539aa32c669f44ff8f4e137b5cee8e54896e0d3"
-  integrity sha512-iWNRjiZsv800NTwthobCVA8XES1goqPme0Tpu9/Wzz5GUjJ5uZ81f2RL+AEDeTApon1G2goMb7hrwwX/yTV9Wg==
-  dependencies:
-    date-fns "2.0.0-alpha.27"
-    iconv-lite "^0.4.24"
-    jschardet "^2.1.0"
-    lodash "^4.17.11"
-    mdn-polyfills "^5.16.0"
-    papaparse "^4.6.3"
-    ynap-bank2ynab-converter "^1.1.0"
 
 yurnalist@^1.0.2:
   version "1.0.5"
