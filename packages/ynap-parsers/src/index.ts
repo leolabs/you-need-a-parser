@@ -55,6 +55,10 @@ export const countries = uniq(
 );
 
 export const matchFile = async (file: File) => {
+  if (file.name.match(/^ynab-(.+)\.csv$/)) {
+    throw new Error('This file has already been converted by YNAP.');
+  }
+
   const results = (await Promise.all(
     parsers.map(async p => ({
       parser: p,
