@@ -2,6 +2,7 @@ import { unparse } from 'papaparse';
 import 'mdn-polyfills/String.prototype.padStart';
 
 import uniq from 'lodash/uniq';
+import last from 'lodash/last';
 
 import { outbank } from './de/outbank/outbank';
 import { n26 } from './de/n26/n26';
@@ -31,6 +32,7 @@ export interface ParserModule {
   name: string;
   country: string;
   link: string;
+  fileExtension: string;
   match: MatcherFunction;
   parse: ParserFunction;
 }
@@ -60,11 +62,18 @@ export const matchFile = async (file: File) => {
   }
 
   const results = (await Promise.all(
-    parsers.map(async p => ({
-      parser: p,
-      matched: await p.match(file),
-    })),
-  )).filter(r => r.matched);
+    parsers
+      .filter(
+        p =>
+          p.fileExtension.toLowerCase() === last(file.name.split('.')).toLowerCase(),
+      )
+      .map(async p => ({
+        parser: p,
+        matched: await p.match(file),
+      })),
+  ))
+    .filter(r => r.matched)
+    .map(p => p.parser);
 
   if (results.length === 0) {
     return null;
@@ -72,14 +81,14 @@ export const matchFile = async (file: File) => {
 
   if (results.length > 1) {
     console.warn('Found multiple parsers for', file.name);
-    console.warn(results.map(r => r.parser.name));
+    console.warn(results.map(r => r.name));
   }
 
-  return results[0].parser;
+  return results;
 };
 
 export const parseFile = async (file: File, parserOverride?: ParserModule) => {
-  const parser = parserOverride || (await matchFile(file));
+  const parser = parserOverride || (await matchFile(file))[0];
 
   if (!parser) {
     throw new Error(`No parser is available for this file.`);

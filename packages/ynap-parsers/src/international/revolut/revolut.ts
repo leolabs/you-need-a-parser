@@ -53,6 +53,7 @@ export const revolutMatcher: MatcherFunction = async (file: File) => {
 export const revolut: ParserModule = {
   name: 'Revolut',
   country: 'international',
+  fileExtension: 'csv',
   link: 'https://blog.revolut.com/new-feature-exportable-statements/',
   match: revolutMatcher,
   parse: revolutParser,

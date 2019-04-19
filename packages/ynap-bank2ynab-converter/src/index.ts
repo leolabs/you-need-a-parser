@@ -121,6 +121,9 @@ const script = async () => {
           filenamePattern: `${c['Source Filename Pattern']}\\.${(
             c['Source Filename Extension'] || '.csv'
           ).substr(1)}`,
+          filenameExctension: (c['Source Filename Extension'] || 'csv')
+            .toLowerCase()
+            .replace('.', ''),
           inputColumns: c['Input Columns'].split(','),
           link: `${CONFIG_LINK}#L${c.Line}`,
           dateFormat: c['Date Format'],

@@ -72,6 +72,7 @@ export const kontistMatcher: MatcherFunction = async (file: File) => {
 export const kontist: ParserModule = {
   name: 'Kontist',
   country: 'de',
+  fileExtension: 'csv',
   link: 'https://intercom.help/kontist/konto/konto-export-von-kontoauszugen',
   match: kontistMatcher,
   parse: kontistParser,

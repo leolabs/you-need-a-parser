@@ -151,6 +151,7 @@ export const comdirectMatcher: MatcherFunction = async (file: File) => {
 export const comdirect: ParserModule = {
   name: 'comdirect',
   country: 'de',
+  fileExtension: 'csv',
   link: 'https://www.comdirect.de',
   match: comdirectMatcher,
   parse: comdirectParser,
