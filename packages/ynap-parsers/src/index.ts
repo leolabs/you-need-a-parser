@@ -99,6 +99,7 @@ export const parseFile = async (file: File, parserOverride?: ParserModule) => {
   return ynabData.map(f => ({
     ...f,
     data: unparse(f.data),
+    rawData: f.data,
     matchedParser: parser,
   }));
 };
