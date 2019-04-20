@@ -18,7 +18,7 @@ In der CSV-Datei finden Sie alle bereits gebuchten Umsätze. Die vorgemerkten Um
 
 Buchung;Valuta;Auftraggeber/Empfänger;Buchungstext;Verwendungszweck;Betrag;Währung
 03.04.2019;03.04.2019;eprimo GmbH;Lastschrift;eprimo sagt danke;-71,00;EUR
-03.04.2019;03.04.2019;Income;Lastschrift;;700,00;EUR`,
+03.04.2019;03.04.2019;Income;Gehalt/Rente;MAERZ 2019;700,00;EUR`,
   'win1252',
 );
 
@@ -35,7 +35,7 @@ const ynabResult: YnabFile[] = [
       {
         Date: '04/03/2019',
         Payee: 'Income',
-        Memo: '',
+        Memo: 'MAERZ 2019',
         Outflow: undefined,
         Inflow: '700.00',
       },
