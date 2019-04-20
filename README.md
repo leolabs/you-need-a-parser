@@ -4,8 +4,8 @@
 
 YNAP is a web app that converts CSV files from a variety of sources into a format
 that can easily be imported into [You Need A Budget](https://youneedabudget.com).
-Just drag the files you want to convert into this window.
-As the conversion happens entirely in JS, your files will never leave your browser.
+Just drag the files you want to convert into this window. As the conversion happens
+entirely in JS, your files will never leave your browser.
 
 This repository consists of three packages:
 
