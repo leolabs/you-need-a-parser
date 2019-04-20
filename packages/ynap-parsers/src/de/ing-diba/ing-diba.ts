@@ -31,7 +31,7 @@ export const trimMetaData = (input: string) =>
 
 export const ingDiBaParser: ParserFunction = async (file: File) => {
   const fileString = trimMetaData(await readEncodedFile(file));
-  const { data } = await parse(fileString, { header: true });
+  const { data } = await parse(fileString, { header: true, delimiter: ';' });
 
   return [
     {
@@ -72,7 +72,10 @@ export const ingDiBaMatcher: MatcherFunction = async (file: File) => {
   }
 
   try {
-    const { data } = await parse(trimMetaData(rawFileString), { header: true });
+    const { data } = await parse(trimMetaData(rawFileString), {
+      header: true,
+      delimiter: ';',
+    });
 
     if (data.length === 0) {
       return false;
