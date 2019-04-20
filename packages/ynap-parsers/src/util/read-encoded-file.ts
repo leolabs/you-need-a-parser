@@ -1,7 +1,7 @@
 import chardet from 'jschardet';
 import { decode } from 'iconv-lite';
 
-export const readEncodedFile = (file: File): Promise<string> => {
+export const readEncodedFile = (file: File, charset?: string): Promise<string> => {
   return new Promise((res, rej) => {
     const reader = new FileReader();
     reader.addEventListener('load', () => {
@@ -15,11 +15,12 @@ export const readEncodedFile = (file: File): Promise<string> => {
         return res('');
       }
 
-      const charset = chardet.detect(result);
-      const decoded = decode(
-        Buffer.from(result, 'binary'),
-        charset.encoding || 'utf-8',
-      );
+      if (!charset) {
+        const detectedCharset = chardet.detect(result);
+        charset = detectedCharset ? detectedCharset.encoding : 'utf-8';
+      }
+
+      const decoded = decode(Buffer.from(result, 'binary'), charset);
       return res(decoded);
     });
     reader.readAsBinaryString(file);
