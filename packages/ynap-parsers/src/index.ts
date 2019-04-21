@@ -13,6 +13,7 @@ import { kontist } from './de/kontist/kontist';
 import { volksbankEG } from './de/volksbank-eg/volksbank-eg';
 
 import { bank2ynab } from './bank2ynab/bank2ynab';
+import { bancomer } from './mx/bbva-bancomer/bbva-bancomer';
 
 export interface YnabRow {
   Date?: string;
@@ -48,6 +49,8 @@ export const parsers: ParserModule[] = [
   comdirect,
   kontist,
   volksbankEG,
+
+  bancomer,
 
   ...bank2ynab,
 ];
