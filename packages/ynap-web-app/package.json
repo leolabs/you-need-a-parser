@@ -1,6 +1,6 @@
 {
   "name": "ynap-web-app",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "private": true,
   "dependencies": {
     "@types/jest": "24.0.11",
@@ -28,7 +28,7 @@
     "styled-components": "^4.2.0",
     "ts-node": "^8.0.3",
     "typescript": "^3.4.2",
-    "ynap-parsers": "^1.1.0"
+    "ynap-parsers": "^1.2.0"
   },
   "scripts": {
     "start": "gatsby develop",
@@ -60,6 +60,6 @@
     "node-fetch": "^2.3.0",
     "ts-jest": "^24.0.2",
     "tslint": "^5.15.0",
-    "ynap-bank2ynab-converter": "^1.1.0"
+    "ynap-bank2ynab-converter": "^1.2.0"
   }
 }
