@@ -7,7 +7,6 @@
     "@types/node": "^11.13.2",
     "@types/react": "^16.8.13",
     "@types/react-dom": "^16.8.3",
-    "date-fns": "2.0.0-alpha.27",
     "file-saver": "^2.0.1",
     "gatsby": "^2.3.16",
     "gatsby-plugin-netlify": "^2.0.13",
@@ -15,11 +14,6 @@
     "gatsby-plugin-react-helmet": "^3.0.12",
     "gatsby-plugin-styled-components": "^3.0.7",
     "gatsby-plugin-typescript": "^2.0.12",
-    "iconv-lite": "^0.4.24",
-    "jschardet": "^2.1.0",
-    "lodash": "^4.17.11",
-    "mdn-polyfills": "^5.16.0",
-    "papaparse": "^4.6.3",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-helmet": "^5.2.0",
@@ -46,9 +40,7 @@
   ],
   "devDependencies": {
     "@types/file-saver": "^2.0.0",
-    "@types/lodash": "^4.14.123",
     "@types/node-fetch": "^2.3.0",
-    "@types/papaparse": "^4.5.9",
     "@types/react-helmet": "^5.0.8",
     "@types/react-helmet-async": "^1.0.0",
     "@types/react-toastify": "^4.0.2",
@@ -59,7 +51,6 @@
     "jest": "^24.7.1",
     "node-fetch": "^2.3.0",
     "ts-jest": "^24.0.2",
-    "tslint": "^5.15.0",
-    "ynap-bank2ynab-converter": "^1.2.0"
+    "tslint": "^5.15.0"
   }
 }

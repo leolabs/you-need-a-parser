@@ -1104,11 +1104,6 @@
   dependencies:
     "@types/jest-diff" "*"
 
-"@types/lodash@^4.14.123":
-  version "4.14.123"
-  resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.14.123.tgz#39be5d211478c8dd3bdae98ee75bb7efe4abfe4d"
-  integrity sha512-pQvPkc4Nltyx7G1Ww45OjVqUsJP4UsZm+GWJpigXgkikZqJgRm4c48g027o6tdgubWHwFRF15iFd+Y4Pmqv6+Q==
-
 "@types/minimatch@*":
   version "3.0.3"
   resolved "https://registry.yarnpkg.com/@types/minimatch/-/minimatch-3.0.3.tgz#3dca0e3f33b200fc7d1139c0cd96c1268cadfd9d"
@@ -1135,13 +1130,6 @@
   version "7.10.5"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-7.10.5.tgz#6831006b2c87441d69e79b37ae9bc03246dfb379"
   integrity sha512-RYkagUUbxQBss46ElbEa+j4q4X3GR12QwB7a/PM5hmVuVkYoW1jENT1+taspKUv8ibwW8cw+kRFbOaTc/Key3w==
-
-"@types/papaparse@^4.5.9":
-  version "4.5.9"
-  resolved "https://registry.yarnpkg.com/@types/papaparse/-/papaparse-4.5.9.tgz#ff887bd362f57cd0c87320d2de38ac232bb55e81"
-  integrity sha512-8Pmxp2IEd/y58tOIsiZkCbAkcKI7InYVpwZFVKJyweCVnqnVahKXVjfSo6gvxUVykQsJvtWB+s6Kc60znVfQVw==
-  dependencies:
-    "@types/node" "*"
 
 "@types/prop-types@*":
   version "15.7.1"
@@ -11294,6 +11282,18 @@ yn@^3.0.0:
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/yn/-/yn-3.1.0.tgz#fcbe2db63610361afcc5eb9e0ac91e976d046114"
   integrity sha512-kKfnnYkbTfrAdd0xICNFw7Atm8nKpLcLv9AZGEt+kczL/WQVai4e2V6ZN8U/O+iI6WrNuJjNNOyu4zfhl9D3Hg==
+
+ynap-parsers@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/ynap-parsers/-/ynap-parsers-1.2.0.tgz#4e8a2af8d29e0976f7e31749316bac0abbfec9b7"
+  integrity sha512-RJ77pmoLSL6gWSlgfPL2WTt22kIg5/WEwodGb7wHw8cbbgcT/TblrRYmxyYv/l850cmLub1VwuuT134u2vg1AA==
+  dependencies:
+    date-fns "2.0.0-alpha.27"
+    iconv-lite "^0.4.24"
+    jschardet "^2.1.0"
+    lodash "^4.17.11"
+    mdn-polyfills "^5.16.0"
+    papaparse "^4.6.3"
 
 yurnalist@^1.0.2:
   version "1.0.5"
