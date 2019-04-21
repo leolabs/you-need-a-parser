@@ -59,7 +59,7 @@ export const countries = uniq(
   parsers.filter(p => p.country.length === 2).map(p => p.country),
 );
 
-export const matchFile = async (file: File) => {
+export const matchFile = async (file: File): Promise<ParserModule[]> => {
   if (file.name.match(/^ynab-(.+)\.csv$/)) {
     throw new Error('This file has already been converted by YNAP.');
   }
@@ -77,10 +77,6 @@ export const matchFile = async (file: File) => {
   ))
     .filter(r => r.matched)
     .map(p => p.parser);
-
-  if (results.length === 0) {
-    return null;
-  }
 
   if (results.length > 1) {
     console.warn('Found multiple parsers for', file.name);
