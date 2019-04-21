@@ -87,7 +87,14 @@ export const matchFile = async (file: File): Promise<ParserModule[]> => {
 };
 
 export const parseFile = async (file: File, parserOverride?: ParserModule) => {
-  const parser = parserOverride || (await matchFile(file))[0];
+  let parser: ParserModule | null = null;
+
+  if (parserOverride) {
+    parser = parserOverride;
+  } else {
+    const matches = await matchFile(file);
+    parser = matches.length > 0 ? matches[0] : null;
+  }
 
   if (!parser) {
     throw new Error(`No parser is available for this file.`);
