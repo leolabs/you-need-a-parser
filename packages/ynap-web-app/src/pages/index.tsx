@@ -144,6 +144,7 @@ const App: React.FC = () => {
             </>,
             { type: 'error' },
           );
+          throw e;
         }
       }
 
