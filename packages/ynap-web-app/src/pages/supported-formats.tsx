@@ -6,6 +6,7 @@ import '../styles/index.css';
 import { parsers, countries } from 'ynap-parsers';
 import countryNames from '../util/countries';
 import MetaTags from '../components/meta-tags';
+import { Link } from 'gatsby';
 
 const Container = styled.div`
   padding: 4rem 2rem;
@@ -38,7 +39,7 @@ const SupportedFormats = () => (
 
     <Container>
       <h1>
-        <a href="/">You Need A Parser</a>
+        <Link to="/">You Need A Parser</Link>
       </h1>
 
       <h2>Supported Formats</h2>
