@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'gatsby';
+import { Link, graphql } from 'gatsby';
 import { saveAs } from 'file-saver';
 import styled, { keyframes, css } from 'styled-components';
 import { ToastContainer, toast } from 'react-toastify';
@@ -88,10 +88,20 @@ const UploadIcon = styled.svg`
 const Footer = styled.footer`
   p {
     margin: 0;
+
+    &.small {
+      margin-top: 0.2rem;
+      font-size: 80%;
+      opacity: 0.8;
+    }
   }
 `;
 
-const App: React.FC = () => {
+const App: React.FC<{ version: string; commit: string; timestamp: string }> = ({
+  version,
+  commit,
+  timestamp,
+}) => {
   const [uploadHover, setUploadHover] = useState(false);
 
   useEffect(() => {
@@ -235,18 +245,37 @@ const App: React.FC = () => {
               GitHub
             </a>
           </p>
+          <p className="small">
+            Version {version} | Build {commit} ({timestamp})
+          </p>
         </Footer>
       </Container>
     </>
   );
 };
 
-const Index = () => (
+const Index = ({ data }) => (
   <>
     <MetaTags />
     <ToastContainer />
-    <App />
+    <App
+      version={data.site.siteMetadata.version}
+      commit={data.site.siteMetadata.commit}
+      timestamp={data.site.siteMetadata.timestamp}
+    />
   </>
 );
+
+export const query = graphql`
+  {
+    site {
+      siteMetadata {
+        version
+        commit
+        timestamp
+      }
+    }
+  }
+`;
 
 export default Index;
