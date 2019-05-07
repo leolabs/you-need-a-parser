@@ -1,18 +1,6 @@
+import countries from './countries-map.json';
+
 export default {
+  ...countries,
   international: 'International',
-  de: 'Germany',
-  at: 'Austria',
-  be: 'Belgium',
-  br: 'Brazil',
-  ca: 'Canada',
-  cz: 'Czech Republic',
-  dk: 'Denmark',
-  ie: 'Ireland',
-  mv: 'Maldives',
-  nl: 'Netherlands',
-  no: 'Norway',
-  se: 'Sweden',
-  sg: 'Singapore',
-  uk: 'United Kingdom',
-  us: 'United States',
 };
