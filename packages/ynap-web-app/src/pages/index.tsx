@@ -124,13 +124,9 @@ const App: React.FC = () => {
               type: 'text/csv;charset=utf-8',
             });
             const fileName = [
-              'ynab',
               parsedFile.matchedParser.name,
               parsedFile.accountName,
-              file.name
-                .split('.')
-                .slice(0, -1)
-                .join('.'),
+              'ynap',
             ]
               .filter(e => e)
               .join('-');
