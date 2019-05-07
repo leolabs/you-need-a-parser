@@ -316,6 +316,11 @@
   dependencies:
     "@babel/types" "^7.3.0"
 
+"@types/iban@^0.0.30":
+  version "0.0.30"
+  resolved "https://registry.yarnpkg.com/@types/iban/-/iban-0.0.30.tgz#48a5d532487f69f92105ea057942bb6e39d86506"
+  integrity sha512-RdRxcqL1nuDq+6+LAhlzsr9Wig11wv1xMtKZJfQz/OTmkQTU23yKN91Xo1zkBuGzpr7CdZQBJ8WsJ1widkqBPQ==
+
 "@types/istanbul-lib-coverage@^2.0.0":
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/@types/istanbul-lib-coverage/-/istanbul-lib-coverage-2.0.0.tgz#1eb8c033e98cf4e1a4cedcaf8bcafe8cb7591e85"
@@ -1405,6 +1410,11 @@ http-signature@~1.2.0:
     assert-plus "^1.0.0"
     jsprim "^1.2.2"
     sshpk "^1.7.0"
+
+iban@^0.0.12:
+  version "0.0.12"
+  resolved "https://registry.yarnpkg.com/iban/-/iban-0.0.12.tgz#557d4b29b27a5a985e399eaf36f73512c98ec8b6"
+  integrity sha512-j+beWwI28a0tOzb2pTEVPwVl3dpWEuVI7EawGb6bUQD1j2GilGnETTnwIPzQZd1sQQuO4ET0giYt7fQkJ6bB3A==
 
 iconv-lite@0.4.24, iconv-lite@^0.4.24, iconv-lite@^0.4.4, iconv-lite@~0.4.13:
   version "0.4.24"
@@ -3133,6 +3143,11 @@ slash@^2.0.0:
   resolved "https://registry.yarnpkg.com/slash/-/slash-2.0.0.tgz#de552851a1759df3a8f206535442f5ec4ddeab44"
   integrity sha512-ZYKh3Wh2z1PpEXWr0MpSBZ0V6mZHAQfYevttO11c51CaWjGTaadiKZ+wVt1PbMlDV5qhMFslpZCemhwOK7C89A==
 
+slugify@^1.3.4:
+  version "1.3.4"
+  resolved "https://registry.yarnpkg.com/slugify/-/slugify-1.3.4.tgz#78d2792d7222b55cd9fc81fa018df99af779efeb"
+  integrity sha512-KP0ZYk5hJNBS8/eIjGkFDCzGQIoZ1mnfQRYS5WM3273z+fxGWXeN0fkwf2ebEweydv9tioZIHGZKoF21U07/nw==
+
 snapdragon-node@^2.0.1:
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/snapdragon-node/-/snapdragon-node-2.1.1.tgz#6c175f86ff14bdb0724563e8f3c1b021a286853b"
@@ -3718,10 +3733,10 @@ yargs@^12.0.2:
     y18n "^3.2.1 || ^4.0.0"
     yargs-parser "^11.1.1"
 
-ynap-bank2ynab-converter@^1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/ynap-bank2ynab-converter/-/ynap-bank2ynab-converter-1.1.0.tgz#57e06269d1ee14db7252032d988e5fd996329b47"
-  integrity sha512-sNRs+m5xIK8gZQ/fWX2SA7DZciH1JaigsAxzICnmSgTy6MfZ0icOPE0FTsB99cmYpfuvpnnGh0sESilhQyyJ7A==
+ynap-bank2ynab-converter@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/ynap-bank2ynab-converter/-/ynap-bank2ynab-converter-1.2.0.tgz#e8ffacfd1a6b05a4cfe54788d5dc1967bce72359"
+  integrity sha512-iOtZvAnJPKS2bgnjD/YSbkGwLdSDeeOlGNaT/+UTuk1LPEJrQzYSxyuEw0byQnDSD/cZbGz8wgCFLgISZX3lBw==
   dependencies:
     commander "^2.20.0"
     encoding "^0.1.12"

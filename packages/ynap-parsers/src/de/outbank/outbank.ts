@@ -1,6 +1,8 @@
 import 'mdn-polyfills/String.prototype.startsWith';
 import { ParserFunction, MatcherFunction, ParserModule, YnabRow } from '../..';
 import { parse } from '../../util/papaparse';
+import iban from 'iban';
+import slugify from 'slugify';
 
 export interface OutbankRow {
   '#': string;
@@ -46,6 +48,7 @@ export const parseNumber = (input: string) => Number(input.replace(',', '.'));
 
 export const outbankParser: ParserFunction = async (file: File) => {
   const { data } = await parse(file, { header: true });
+  const banks = (await import('./blz.json')).default;
 
   const groupedData = (data as OutbankRow[])
     .filter(r => r.Date && r.Amount)
@@ -79,8 +82,13 @@ export const outbankParser: ParserFunction = async (file: File) => {
       {} as { [k: string]: YnabRow[] },
     );
 
+  const getBankSlug = (key: string) =>
+    banks[key.substr(4, 8)]
+      ? slugify(banks[key.substr(4, 8)]).toLowerCase()
+      : 'unknown';
+
   return Object.keys(groupedData).map(key => ({
-    accountName: key,
+    accountName: iban.isValid(key) ? getBankSlug(key) : key,
     data: groupedData[key],
   }));
 };
