@@ -246,7 +246,13 @@ const App: React.FC<{ version: string; commit: string; timestamp: string }> = ({
             </a>
           </p>
           <p className="small">
-            Version {version} | Build {commit} ({timestamp})
+            Version {version} | {' '}
+            <a
+              href={`https://github.com/leolabs/you-need-a-parser/commit/${commit}`}
+              target="_blank"
+            >
+              Build {commit.substr(0, 7)} ({timestamp})
+            </a>
           </p>
         </Footer>
       </Container>
