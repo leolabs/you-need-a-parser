@@ -12,8 +12,10 @@ import { comdirect } from './de/comdirect/comdirect';
 import { kontist } from './de/kontist/kontist';
 import { volksbankEG } from './de/volksbank-eg/volksbank-eg';
 
-import { bank2ynab } from './bank2ynab/bank2ynab';
 import { bancomer } from './mx/bbva-bancomer/bbva-bancomer';
+import { piraeus } from './gr/piraeus/piraeus';
+
+import { bank2ynab } from './bank2ynab/bank2ynab';
 
 export interface YnabRow {
   Date?: string;
@@ -42,6 +44,7 @@ export type MatcherFunction = (file: File) => Promise<boolean>;
 export type ParserFunction = (file: File) => Promise<YnabFile[]>;
 
 export const parsers: ParserModule[] = [
+  // DE
   outbank,
   n26,
   revolut,
@@ -50,8 +53,13 @@ export const parsers: ParserModule[] = [
   kontist,
   volksbankEG,
 
+  // MX
   bancomer,
 
+  // GR
+  piraeus,
+
+  // International
   ...bank2ynab,
 ];
 
