@@ -40,8 +40,6 @@ export const bancomerParser: ParserFunction = async (file: File) => {
   const fileString = trimMetaData(await readEncodedFile(file, 'utf16le'));
   const { data } = await parse(fileString, { delimiter: '\t' });
 
-  console.log(data);
-
   return [
     {
       data: (data as string[][])
