@@ -14,6 +14,7 @@ import { volksbankEG } from './de/volksbank-eg/volksbank-eg';
 
 import { bancomer } from './mx/bbva-bancomer/bbva-bancomer';
 import { piraeus } from './gr/piraeus/piraeus';
+import { marcus } from './uk/marcus/marcus';
 
 import { bank2ynab } from './bank2ynab/bank2ynab';
 
@@ -53,11 +54,14 @@ export const parsers: ParserModule[] = [
   kontist,
   volksbankEG,
 
+  // GR
+  piraeus,
+
   // MX
   bancomer,
 
-  // GR
-  piraeus,
+  // UK
+  marcus,
 
   // International
   ...bank2ynab,
