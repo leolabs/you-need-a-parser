@@ -9,7 +9,7 @@ export const readToBuffer = (file: File): Promise<Buffer> => {
       const result = reader.result! as string;
 
       if (result.length === 0) {
-        return res(new Buffer(''));
+        return res(Buffer.from(''));
       }
 
       return res(Buffer.from(result, 'binary'));
