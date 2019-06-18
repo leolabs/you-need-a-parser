@@ -1,6 +1,6 @@
 export interface ParserConfig {
   filenamePattern: string;
-  filenameExctension: string;
+  filenameExtension: string;
   headerRows: number;
   footerRows: number;
   inputColumns: string[];

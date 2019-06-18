@@ -2,7 +2,6 @@
 
 import fetch from 'node-fetch';
 import fs from 'fs';
-import path from 'path';
 import commander from 'commander';
 
 commander
@@ -121,7 +120,7 @@ const script = async () => {
           filenamePattern: `${c['Source Filename Pattern']}\\.${(
             c['Source Filename Extension'] || '.csv'
           ).substr(1)}`,
-          filenameExctension: (c['Source Filename Extension'] || 'csv')
+          filenameExtension: (c['Source Filename Extension'] || 'csv')
             .toLowerCase()
             .replace('.', ''),
           inputColumns: c['Input Columns'].split(','),
