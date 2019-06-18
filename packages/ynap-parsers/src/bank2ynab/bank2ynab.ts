@@ -102,7 +102,7 @@ export const generateParser = (config: ParserConfig) => {
     name: config.name,
     link: config.link,
     country: config.country,
-    fileExtension: config.filenameExctension || 'csv',
+    fileExtension: config.filenameExtension || 'csv',
     match,
     parse,
   } as ParserModule;
