@@ -499,16 +499,6 @@
     "footerRows": 0
   },
   {
-    "name": "",
-    "country": "mint",
-    "filenamePattern": "transactions\\.csv",
-    "filenameExtension": "csv",
-    "inputColumns": ["Date", "Payee", "skip", "Memo", "Inflow", "Category"],
-    "link": "https://github.com/bank2ynab/bank2ynab/blob/develop/bank2ynab.conf#L350",
-    "headerRows": 1,
-    "footerRows": 0
-  },
-  {
     "name": "Bank of Maldives, checking",
     "country": "mv",
     "filenamePattern": "statement\\.\\.csv",
