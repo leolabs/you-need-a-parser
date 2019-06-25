@@ -61,10 +61,6 @@ export const ingDiBaMatcher: MatcherFunction = async (file: File) => {
     'Verwendungszweck',
   ];
 
-  if (file.name.match(/Umsatzanzeige_(.+)_(\d{8})\.csv/)) {
-    return true;
-  }
-
   const rawFileString = await readEncodedFile(file);
 
   if (rawFileString.startsWith('Umsatzanzeige;Datei erstellt am:')) {
@@ -98,6 +94,7 @@ export const ingDiBa: ParserModule = {
   name: 'ING-DiBa',
   country: 'de',
   fileExtension: 'csv',
+  filenamePattern: /^Umsatzanzeige_(.+)_(\d{8})\.csv$/,
   link: 'https://www.ing-diba.de',
   match: ingDiBaMatcher,
   parse: ingDiBaParser,

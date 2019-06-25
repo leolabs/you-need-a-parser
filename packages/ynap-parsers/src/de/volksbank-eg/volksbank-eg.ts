@@ -99,10 +99,6 @@ export const volksbankMatcher: MatcherFunction = async (file: File) => {
     'Währung',
   ];
 
-  if (file.name.match(/Umsaetze_(.+?)_\d{4}\.\d{2}\.\d{2}\.csv/)) {
-    return true;
-  }
-
   const rawFileString = await readEncodedFile(file);
 
   if (rawFileString.startsWith('Volksbank eG;;;;;;;;;;;;')) {
@@ -133,6 +129,7 @@ export const volksbankEG: ParserModule = {
   name: 'Volksbank',
   country: 'de',
   fileExtension: 'csv',
+  filenamePattern: /Umsaetze_(.+?)_\d{4}\.\d{2}\.\d{2}\.csv/,
   link: 'https://www.volksbank-eg.de/privatkunden.html',
   match: volksbankMatcher,
   parse: volksbankParser,

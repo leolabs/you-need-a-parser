@@ -114,10 +114,6 @@ export const comdirectMatcher: MatcherFunction = async (file: File) => {
     'Vorgang',
   ];
 
-  if (file.name.match(/umsaetze_\d+_[\d-]+\.csv/)) {
-    return true;
-  }
-
   const rawFileString = await readEncodedFile(file);
 
   if (rawFileString.startsWith(';\n"Umsätze Verrechnungskonto')) {
@@ -152,6 +148,7 @@ export const comdirect: ParserModule = {
   name: 'comdirect',
   country: 'de',
   fileExtension: 'csv',
+  filenamePattern: /^umsaetze_\d+_[\d-]+\.csv$/,
   link: 'https://www.comdirect.de',
   match: comdirectMatcher,
   parse: comdirectParser,

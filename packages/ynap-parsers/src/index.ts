@@ -37,6 +37,7 @@ export interface ParserModule {
   country: string;
   link: string;
   fileExtension: string;
+  filenamePattern: RegExp;
   match: MatcherFunction;
   parse: ParserFunction;
 }

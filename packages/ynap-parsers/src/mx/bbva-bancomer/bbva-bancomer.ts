@@ -55,10 +55,6 @@ export const bancomerParser: ParserFunction = async (file: File) => {
 };
 
 export const bancomerMatcher: MatcherFunction = async (file: File) => {
-  if (file.name.match(/^descarga\.[c|t]sv$/)) {
-    return true;
-  }
-
   const rawFileString = await readEncodedFile(file, 'utf16le');
 
   if (rawFileString.length === 0) {
@@ -92,6 +88,7 @@ export const bancomer: ParserModule = {
   name: 'bancomer',
   country: 'mx',
   fileExtension: 'csv',
+  filenamePattern: /^descarga\.[c|t]sv$/,
   link: 'https://www.bancomer.com',
   match: bancomerMatcher,
   parse: bancomerParser,

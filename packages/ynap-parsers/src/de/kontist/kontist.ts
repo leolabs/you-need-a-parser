@@ -73,6 +73,7 @@ export const kontist: ParserModule = {
   name: 'Kontist',
   country: 'de',
   fileExtension: 'csv',
+  filenamePattern: /^transactions\.csv$/,
   link: 'https://intercom.help/kontist/konto/konto-export-von-kontoauszugen',
   match: kontistMatcher,
   parse: kontistParser,

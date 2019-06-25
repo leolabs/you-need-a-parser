@@ -33,10 +33,6 @@ export const revolutParser: ParserFunction = async (file: File) => {
 export const revolutMatcher: MatcherFunction = async (file: File) => {
   const requiredKeys: string[] = ['Completed Date', 'Description'];
 
-  if (file.name.match(/^Revolut-(.+)-Statement-(.+)\.csv$/)) {
-    return true;
-  }
-
   const { data } = await parseCsv(file, { preview: 1 });
 
   if (data.length === 0) {
@@ -54,6 +50,7 @@ export const revolut: ParserModule = {
   name: 'Revolut',
   country: 'international',
   fileExtension: 'csv',
+  filenamePattern: /^Revolut-(.+)-Statement-(.+)\.csv$/,
   link: 'https://blog.revolut.com/new-feature-exportable-statements/',
   match: revolutMatcher,
   parse: revolutParser,

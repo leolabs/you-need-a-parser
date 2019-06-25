@@ -55,10 +55,6 @@ export const piraeusParser: ParserFunction = async (file: File) => {
 };
 
 export const piraeusMatcher: MatcherFunction = async (file: File) => {
-  if (file.name.match(/Account Transactions_\d{8}\.xlsx/)) {
-    return true;
-  }
-
   try {
     const xlsx = await import('xlsx');
     const workbook = xlsx.read(await readToBuffer(file), {
@@ -76,6 +72,7 @@ export const piraeus: ParserModule = {
   name: 'Piraeus Bank',
   country: 'gr',
   fileExtension: 'xlsx',
+  filenamePattern: /Account Transactions_\d{8}\.xlsx/,
   link: 'https://www.piraeusbank.gr',
   match: piraeusMatcher,
   parse: piraeusParser,

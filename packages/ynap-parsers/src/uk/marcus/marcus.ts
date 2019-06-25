@@ -66,12 +66,6 @@ export const marcusMatcher: MatcherFunction = async (file: File) => {
     'AccountNumber',
   ];
 
-  if (
-    file.name.match(/Transactions (.+) (\d{4})-(\d{2})-(\d{2}) (\d{2})_(\d{2})\.csv/)
-  ) {
-    return true;
-  }
-
   const { data } = await parse(file, { header: true });
 
   if (data.length === 0) {
@@ -92,6 +86,7 @@ export const marcus: ParserModule = {
   name: 'Marcus',
   country: 'uk',
   fileExtension: 'csv',
+  filenamePattern: /^Transactions (.+) (\d{4})-(\d{2})-(\d{2}) (\d{2})_(\d{2})\.csv$/,
   link: 'https://www.marcus.co.uk/uk/en',
   match: marcusMatcher,
   parse: marcusParser,

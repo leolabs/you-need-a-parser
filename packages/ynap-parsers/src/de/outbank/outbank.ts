@@ -108,10 +108,6 @@ export const outbankMatcher: MatcherFunction = async (file: File) => {
     'Category',
   ];
 
-  if (file.name.startsWith('Outbank_Export_')) {
-    return true;
-  }
-
   const { data } = await parse(file, { header: true });
 
   if (data.length === 0) {
@@ -132,6 +128,7 @@ export const outbank: ParserModule = {
   name: 'Outbank',
   country: 'de',
   fileExtension: 'csv',
+  filenamePattern: /^Outbank_Export_(\d{8})\.csv/,
   link:
     'https://help.outbankapp.com/en/kb/articles/wie-kann-ich-ums-tze-als-csv-datei-exportieren',
   match: outbankMatcher,

@@ -62,10 +62,6 @@ export const n26Matcher: MatcherFunction = async (file: File) => {
     'Amount (EUR)',
   ];
 
-  if (file.name.startsWith('n26-csv-transactions')) {
-    return true;
-  }
-
   const { data } = await parse(file, { header: true });
 
   if (data.length === 0) {
@@ -86,6 +82,7 @@ export const n26: ParserModule = {
   name: 'N26',
   country: 'de',
   fileExtension: 'csv',
+  filenamePattern: /^n26-csv-transactions\.csv/,
   link:
     'https://support.n26.com/en-eu/fixing-an-issue/payments-and-transfers/how-to-export-a-list-of-my-transactions',
   match: n26Matcher,
