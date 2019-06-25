@@ -65,8 +65,13 @@ export const generateParser = (config: ParserConfig) => {
     {} as { [k in keyof YnabRow]: number },
   );
 
-  const match: MatcherFunction = async (file: File) =>
-    !!file.name.match(new RegExp(config.filenamePattern));
+  const match: MatcherFunction = async (file: File) => {
+    const content = await readEncodedFile(file);
+    const { data } = await parseCsv(content);
+
+    const match = file.name.match(new RegExp(config.filenamePattern));
+    return match && data.length > 0 && data[0].length >= config.inputColumns.length;
+  };
 
   const parse: ParserFunction = async (file: File) => {
     const content = await readEncodedFile(file);
