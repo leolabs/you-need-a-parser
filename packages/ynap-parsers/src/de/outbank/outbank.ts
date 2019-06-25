@@ -56,7 +56,7 @@ export const outbankParser: ParserFunction = async (file: File) => {
       (acc, cur) => {
         const data = {
           Date: generateYnabDate(cur.Date!),
-          Payee: cur.Name,
+          Payee: cur.Name || cur.Reason,
           Category: cur.Category,
           Memo: cur.Reason,
           Outflow:

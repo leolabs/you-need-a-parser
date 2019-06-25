@@ -1,85 +1,31 @@
 import { generateYnabDate, outbank } from './outbank';
 import { YnabFile } from '../..';
-import { unparse } from 'papaparse';
+import fs from 'fs';
+import path from 'path';
 
-const content = unparse([
-  {
-    '#': '1',
-    Account: 'DE27100777770209299700',
-    Date: '4/2/19',
-    'Value Date': '',
-    Amount: '-44,98',
-    Currency: 'EUR',
-    Name: 'Shell',
-    Number: '',
-    Bank: '',
-    Reason: 'SHELL 0672',
-    Category: 'Travel',
-    Subcategory: 'Gas Station',
-    Tags: '',
-    Note: '',
-    'Bank name': '',
-    'Ultimate Receiver Name': '',
-    'Original Amount': '-44,98',
-    'Compensation Amount': '',
-    'Exchange Rate': '1',
-    'Posting Key': '',
-    'Posting Text': '',
-    'Purpose Code': '',
-    'SEPA Reference': '',
-    'Client Reference': '',
-    'Mandate Identification': '',
-    'Originator Identifier': '',
-  },
-  {
-    '#': '2',
-    Account: 'DE27100777770209299700',
-    Date: '4/2/19',
-    'Value Date': '',
-    Amount: '44,98',
-    Currency: 'EUR',
-    Name: 'Shell',
-    Number: '',
-    Bank: '',
-    Reason: 'SHELL 0672',
-    Category: 'Travel',
-    Subcategory: 'Gas Station',
-    Tags: '',
-    Note: '',
-    'Bank name': '',
-    'Ultimate Receiver Name': '',
-    'Original Amount': '-44,98',
-    'Compensation Amount': '',
-    'Exchange Rate': '1',
-    'Posting Key': '',
-    'Posting Text': '',
-    'Purpose Code': '',
-    'SEPA Reference': '',
-    'Client Reference': '',
-    'Mandate Identification': '',
-    'Originator Identifier': '',
-  },
-]);
+const content = fs.readFileSync(
+  path.join(__dirname, 'test-data/Outbank_Export_20190403.csv'),
+);
 
 const ynabResult: YnabFile[] = [
   {
-    accountName: 'norisbank-berlin',
+    accountName: 'ing-diba-frankfurt-am-main',
     data: [
       {
         Date: '04/02/2019',
-        Payee: 'Shell',
+        Payee: 'SHELL',
         Category: 'Travel',
-        Memo: 'SHELL 0672',
+        Memo: 'SHELL',
         Outflow: '44.98',
         Inflow: undefined,
       },
       {
         Date: '04/02/2019',
-        Payee: 'Shell',
-        Category: 'Travel',
-        Memo: 'SHELL 0672',
-        Outflow: undefined,
-        Inflow: '44.98',
+        Payee: 'Musikschule',
+        Category: '',
+        Memo: 'Gesang',
+        Outflow: '109.00',
+        Inflow: undefined,
       },
     ],
   },
