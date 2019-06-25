@@ -22,7 +22,7 @@
     "styled-components": "^4.2.0",
     "ts-node": "^8.0.3",
     "typescript": "^3.4.2",
-    "ynap-parsers": "^1.5.2"
+    "ynap-parsers": "latest"
   },
   "scripts": {
     "start": "gatsby develop",
