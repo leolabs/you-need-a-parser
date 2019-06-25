@@ -77,6 +77,25 @@ export const matchFile = async (file: File): Promise<ParserModule[]> => {
     throw new Error('This file has already been converted by YNAP.');
   }
 
+  const filenameMatches = parsers.filter(p => file.name.match(p.filenamePattern));
+
+  // If parser modules match the file by its filename, try those first
+  if (filenameMatches.length > 0) {
+    const parsers = (await Promise.all(
+      filenameMatches.map(async p => ({
+        parser: p,
+        matched: await p.match(file),
+      })),
+    ))
+      .filter(r => r.matched)
+      .map(p => p.parser);
+
+    if (parsers.length > 0) {
+      return parsers;
+    }
+  }
+
+  // If they don't, run all matchers against the input file
   const results = (await Promise.all(
     parsers
       .filter(
@@ -90,11 +109,6 @@ export const matchFile = async (file: File): Promise<ParserModule[]> => {
   ))
     .filter(r => r.matched)
     .map(p => p.parser);
-
-  if (results.length > 1) {
-    console.warn('Found multiple parsers for', file.name);
-    console.warn(results.map(r => r.name));
-  }
 
   return results;
 };
