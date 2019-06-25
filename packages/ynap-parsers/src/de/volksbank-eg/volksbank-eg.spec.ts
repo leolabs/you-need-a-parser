@@ -42,7 +42,7 @@ const ynabResult: YnabFile[] = [
         Inflow: '12.00',
         Memo: 'Quartalsbeitrag Gartenbauverein Musterstadt 73 e.V. vom 03.03.2005',
         Outflow: undefined,
-        Payee: 'Hermann Testkunde',
+        Payee: 'Gartenbauverein',
       },
       {
         Date: '04/04/2019',
@@ -56,7 +56,7 @@ const ynabResult: YnabFile[] = [
         Inflow: '258.17',
         Memo: 'Kaufstadt Lebensmittel Vielen Dank fuer Ihren Einkauf',
         Outflow: undefined,
-        Payee: 'Hermann Testkunde',
+        Payee: '',
       },
     ],
   },

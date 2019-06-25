@@ -49,13 +49,11 @@ export const trimMetaData = (input: string) => {
 };
 
 export const sanitizeMemo = (input: string) => {
-  const match = input.match(/[\S]+\n(.+?)(\nVerwendete TAN:.+|$)/s);
-
-  if (!match) {
-    return input;
-  }
-
-  return match[1].replace(/\n/g, ' ');
+  return input
+    .split('\n')
+    .slice(1)
+    .filter(r => !r.startsWith('Verwendete TAN:'))
+    .join(' ');
 };
 
 export const volksbankParser: ParserFunction = async (file: File) => {
@@ -68,9 +66,7 @@ export const volksbankParser: ParserFunction = async (file: File) => {
         .filter(r => r.Valuta && r.Umsatz)
         .map(r => ({
           Date: generateYnabDate(r.Valuta),
-          Payee:
-            r['Auftraggeber/Zahlungsempfänger'] ||
-            r['Empfänger/Zahlungspflichtiger'],
+          Payee: r['Empfänger/Zahlungspflichtiger'],
           Memo: sanitizeMemo(r['Vorgang/Verwendungszweck']),
           Outflow:
             parseNumber(r.Umsatz) < 0
