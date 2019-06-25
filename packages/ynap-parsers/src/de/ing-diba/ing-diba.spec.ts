@@ -46,11 +46,8 @@ const ynabResult: YnabFile[] = [
 describe('ING-DiBa Parser Module', () => {
   describe('Matcher', () => {
     it('should match ING-DiBa files by file name', async () => {
-      const validFile = new File(
-        [],
-        'Umsatzanzeige_DE27100777770209299700_20190403.csv',
-      );
-      const result = await ingDiBa.match(validFile);
+      const fileName = 'Umsatzanzeige_DE27100777770209299700_20190403.csv';
+      const result = !!fileName.match(ingDiBa.filenamePattern);
       expect(result).toBe(true);
     });
 

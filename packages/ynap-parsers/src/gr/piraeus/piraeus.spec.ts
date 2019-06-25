@@ -101,8 +101,8 @@ const ynabResult: YnabFile[] = [
 describe('Piraeus Bank Parser Module', () => {
   describe('Matcher', () => {
     it('should match Piraeus Bank files by file name', async () => {
-      const validFile = new File([], 'Account Transactions_20190601.xlsx');
-      const result = await piraeus.match(validFile);
+      const fileName = 'Account Transactions_20190601.xlsx';
+      const result = !!fileName.match(piraeus.filenamePattern);
       expect(result).toBe(true);
     });
 

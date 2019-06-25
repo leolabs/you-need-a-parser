@@ -55,8 +55,8 @@ const ynabResult: YnabFile[] = [
 describe('N26 Parser Module', () => {
   describe('Matcher', () => {
     it('should match N26 files by file name', async () => {
-      const validFile = new File([], 'n26-csv-transactions.csv');
-      const result = await n26.match(validFile);
+      const fileName = 'n26-csv-transactions.csv';
+      const result = !!fileName.match(n26.filenamePattern);
       expect(result).toBe(true);
     });
 

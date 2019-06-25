@@ -32,11 +32,8 @@ const ynabResult: YnabFile[] = [
 describe('Revolut Parser Module', () => {
   describe('Matcher', () => {
     it('should match Revolut files by file name', async () => {
-      const validFile = new File(
-        [],
-        'Revolut-RON-Statement-May 2018 – Apr 2019.csv',
-      );
-      const result = await revolut.match(validFile);
+      const fileName = 'Revolut-RON-Statement-May 2018 – Apr 2019.csv';
+      const result = !!fileName.match(revolut.filenamePattern);
       expect(result).toBe(true);
     });
 

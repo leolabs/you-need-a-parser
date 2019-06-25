@@ -49,8 +49,8 @@ const ynabResult: YnabFile[] = [
 describe('BBVA Bancomer Parser Module', () => {
   describe('Matcher', () => {
     it('should match bancomer files by file name', async () => {
-      const validFile = new File([], 'descarga.csv');
-      const result = await bancomer.match(validFile);
+      const fileName = 'descarga.csv';
+      const result = !!fileName.match(bancomer.filenamePattern);
       expect(result).toBe(true);
     });
 

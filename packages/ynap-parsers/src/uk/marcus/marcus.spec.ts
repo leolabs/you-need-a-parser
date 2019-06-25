@@ -50,11 +50,8 @@ const ynabResult: YnabFile[] = [
 describe('Marcus Parser Module', () => {
   describe('Matcher', () => {
     it('should match Marcus files by name', async () => {
-      const file = new File(
-        [],
-        'Transactions [Account Number] 2019-06-12 13_40.csv',
-      );
-      const result = await marcus.match(file);
+      const fileName = 'Transactions [Account Number] 2019-06-12 13_40.csv';
+      const result = !!fileName.match(marcus.filenamePattern);
       expect(result).toBe(true);
     });
 

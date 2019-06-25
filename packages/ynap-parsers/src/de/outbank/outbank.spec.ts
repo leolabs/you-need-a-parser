@@ -88,8 +88,8 @@ const ynabResult: YnabFile[] = [
 describe('Outbank Parser Module', () => {
   describe('Matcher', () => {
     it('should match Outbank files by file name', async () => {
-      const validFile = new File([], 'Outbank_Export_20190403.csv');
-      const result = await outbank.match(validFile);
+      const fileName = 'Outbank_Export_20190403.csv';
+      const result = !!fileName.match(outbank.filenamePattern);
       expect(result).toBe(true);
     });
 

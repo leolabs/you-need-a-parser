@@ -45,8 +45,8 @@ const ynabResult: YnabFile[] = [
 describe('comdirect Parser Module', () => {
   describe('Matcher', () => {
     it('should match comdirect files by file name', async () => {
-      const validFile = new File([], 'umsaetze_1182395441_20190403-2324.csv');
-      const result = await comdirect.match(validFile);
+      const fileName = 'umsaetze_1182395441_20190403-2324.csv';
+      const result = !!fileName.match(comdirect.filenamePattern);
       expect(result).toBe(true);
     });
 
