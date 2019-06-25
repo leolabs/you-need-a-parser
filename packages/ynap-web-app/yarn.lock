@@ -11702,10 +11702,10 @@ yn@^3.0.0:
   resolved "https://registry.yarnpkg.com/yn/-/yn-3.1.0.tgz#fcbe2db63610361afcc5eb9e0ac91e976d046114"
   integrity sha512-kKfnnYkbTfrAdd0xICNFw7Atm8nKpLcLv9AZGEt+kczL/WQVai4e2V6ZN8U/O+iI6WrNuJjNNOyu4zfhl9D3Hg==
 
-ynap-parsers@^1.4.0:
-  version "1.4.0"
-  resolved "https://registry.yarnpkg.com/ynap-parsers/-/ynap-parsers-1.4.0.tgz#fcaad1e311bfca6946f917e21cabc55482ac914d"
-  integrity sha512-Pk1C6Gff+2U932V5t6KLTzNKn+BN+BTWY4Sa0sGVpUlASj3LYTEBL6PgcalZmRxRxGLM0AJz4kWwREIXgsq0/w==
+ynap-parsers@latest:
+  version "1.6.0"
+  resolved "https://registry.yarnpkg.com/ynap-parsers/-/ynap-parsers-1.6.0.tgz#4ba2b113d1edcdc561e81d5865fad00b5c45392c"
+  integrity sha512-dFaeWKhwo2an5m5GMv+XY2EVh1ogjdA7gSsIWg4Nnn34+jBlQQY36VzQkV3Mz12f/9nnv0aht/T1xPd3r2WrFQ==
   dependencies:
     date-fns "2.0.0-alpha.27"
     iban "^0.0.12"
