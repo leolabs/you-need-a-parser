@@ -164,16 +164,16 @@ const App: React.FC<{ version: string; commit: string; timestamp: string }> = ({
       }
     };
 
-    window.addEventListener('dragenter', enter);
-    window.addEventListener('dragover', enter);
-    window.addEventListener('dragleave', leave);
-    window.addEventListener('drop', drop);
+    window.document.body.addEventListener('dragenter', enter);
+    window.document.body.addEventListener('dragover', enter);
+    window.document.body.addEventListener('dragleave', leave);
+    window.document.body.addEventListener('drop', drop);
 
     return () => {
-      window.removeEventListener('dragenter', enter);
-      window.removeEventListener('dragover', enter);
-      window.removeEventListener('dragleave', leave);
-      window.removeEventListener('drop', drop);
+      window.document.body.removeEventListener('dragenter', enter);
+      window.document.body.removeEventListener('dragover', enter);
+      window.document.body.removeEventListener('dragleave', leave);
+      window.document.body.removeEventListener('drop', drop);
     };
   }, []);
 
