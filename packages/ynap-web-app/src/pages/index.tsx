@@ -34,7 +34,7 @@ const Container = styled.div<{ uploadHover?: boolean }>`
   box-sizing: border-box;
 
   background: #f1f4f9;
-  transition: background 0.2s;
+  transition: background-color 0.2s;
 
   > p {
     max-width: 40rem;
