@@ -10,14 +10,13 @@ const ynabResult: YnabFile[] = [
     data: [
       {
         Date: '06/06/2019',
-        Inflow: '19.87',
+        Outflow: '19.87',
         Memo: 'Trainline London GBR',
       },
       {
         Date: '05/27/2019',
-        Inflow: undefined,
         Memo: 'PAYMENT RECEIVED - THANK YOU',
-        Outflow: '59.64',
+        Inflow: '59.64',
       },
     ],
   },

@@ -26,8 +26,8 @@ export const aquaParser: ParserFunction = async (file: File) => {
         ({
           Date: generateYnabDate(cur[0]),
           Memo: cur[1].trim().replace(/\s\s+/g, ' '),
-          Outflow: Number(cur[2]) < 0 ? (-Number(cur[2])).toFixed(2) : undefined,
-          Inflow: Number(cur[2]) > 0 ? Number(cur[2]).toFixed(2) : undefined,
+          Inflow: Number(cur[2]) < 0 ? (-Number(cur[2])).toFixed(2) : undefined,
+          Outflow: Number(cur[2]) > 0 ? Number(cur[2]).toFixed(2) : undefined,
         } as YnabRow),
     );
 
