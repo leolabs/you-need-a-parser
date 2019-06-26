@@ -124,6 +124,7 @@ const App: React.FC<{ version: string; commit: string; timestamp: string }> = ({
 
       const files = Array.from(e.dataTransfer!.files);
       let errors: number = 0;
+      let resultCount: number = 0;
 
       for (const file of files) {
         try {
@@ -141,6 +142,7 @@ const App: React.FC<{ version: string; commit: string; timestamp: string }> = ({
               .filter(e => e)
               .join('-');
             saveAs(blob, `${fileName}.csv`);
+            resultCount++;
           }
         } catch (e) {
           errors++;
@@ -154,10 +156,14 @@ const App: React.FC<{ version: string; commit: string; timestamp: string }> = ({
         }
       }
 
+      const successCount = files.length - errors;
       if (files.length - errors > 0) {
         toast(
           <>
-            Converted <strong>{files.length - errors}</strong> files.
+            Converted <strong>{successCount}</strong> input{' '}
+            {successCount === 1 ? 'file' : 'files'} into{' '}
+            <strong>{resultCount}</strong> {resultCount === 1 ? 'file' : 'files'} for
+            YNAB
           </>,
           { type: 'success' },
         );
