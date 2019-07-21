@@ -12,9 +12,17 @@ export const placeholders: { [k: string]: string } = {
   '%S': 'ss', // 2-digit seconds
 };
 
+const ensureValidity = (date: Date, input: string) => {
+  if (isNaN(date.getTime())) {
+    throw new Error(`${input} is not a valid date.`);
+  }
+
+  return date;
+};
+
 export const parseDate = (input: string, format?: string) => {
   if (!format) {
-    return Date.parse(input);
+    return ensureValidity(new Date(Date.parse(input)), input);
   }
 
   const convertedFormat = Object.keys(placeholders).reduce(
@@ -22,7 +30,7 @@ export const parseDate = (input: string, format?: string) => {
     format,
   );
 
-  return parse(input, convertedFormat, new Date());
+  return ensureValidity(parse(input, convertedFormat, new Date()), input);
 };
 
 export const ynabDate = (input: number | Date) => format(input, 'MM/dd/yyyy');
