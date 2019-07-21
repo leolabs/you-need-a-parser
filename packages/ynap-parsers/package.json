@@ -1,6 +1,6 @@
 {
   "name": "ynap-parsers",
-  "version": "1.6.2",
+  "version": "1.7.0",
   "description": "Parsers from various formats to YNAB CSV",
   "main": "index.js",
   "author": "Leo Bernard <admin+github@leolabs.org>",
