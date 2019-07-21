@@ -2,4 +2,7 @@ node_modules/
 lib/
 src/
 
+index.spec.d.ts
+index.spec.js
+
 yarn-error.log
