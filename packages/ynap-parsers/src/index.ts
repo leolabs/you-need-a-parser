@@ -18,6 +18,7 @@ import { marcus } from './uk/marcus/marcus';
 import { aqua } from './uk/aqua/aqua';
 
 import { bank2ynab } from './bank2ynab/bank2ynab';
+import { sparbankenTanum } from './se/sparbanken-tanum/sparbanken-tanum';
 
 export interface YnabRow {
   Date?: string;
@@ -61,6 +62,9 @@ export const parsers: ParserModule[] = [
 
   // MX
   bancomer,
+
+  // SE
+  sparbankenTanum,
 
   // UK
   marcus,
