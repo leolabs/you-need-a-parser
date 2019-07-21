@@ -85,7 +85,6 @@ export const generateParser = (config: ParserConfig) => {
     // Check that the date column is set correctly
     try {
       if (!parseDate(row[columns.Date], config.dateFormat)) {
-        console.error(row[columns.Date], config.dateFormat);
         return false;
       }
     } catch (e) {
@@ -95,10 +94,6 @@ export const generateParser = (config: ParserConfig) => {
     // Check that the payee column is not a date
     try {
       if (columns.Payee && parseDate(row[columns.Payee], config.dateFormat)) {
-        console.log(
-          row[columns.Payee],
-          parseDate(row[columns.Payee], config.dateFormat),
-        );
         return false;
       }
     } catch (e) {}
