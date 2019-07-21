@@ -1,6 +1,17 @@
-import { calculateInflow, calculateOutflow } from './bank2ynab';
+import { calculateInflow, calculateOutflow, parseNumber } from './bank2ynab';
 
 describe('bank2ynab Parser Module', () => {
+  describe('Number Parser', () => {
+    it('should parse numbers in different formats correctly', () => {
+      expect(parseNumber('10,00')).toBe(10);
+      expect(parseNumber('12.50 ')).toBe(12.5);
+    });
+
+    it('should return NaN when a number is invalid', () => {
+      expect(parseNumber('test')).toBeNaN();
+    });
+  });
+
   describe('Inflow Parser', () => {
     it('should parse inflow correctly', () => {
       expect(calculateInflow(undefined, undefined)).toBeUndefined();
