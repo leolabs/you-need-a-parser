@@ -70,7 +70,50 @@ export const generateParser = (config: ParserConfig) => {
     const { data } = await parseCsv(content);
 
     const match = file.name.match(new RegExp(config.filenamePattern));
-    return match && data.length > 0 && data[0].length >= config.inputColumns.length;
+
+    if (!match) {
+      return false;
+    }
+
+    // Check that enough columns exist
+    if (data.length === 0 || data[0].length < config.inputColumns.length) {
+      return false;
+    }
+
+    const row = data.filter(d => d.length > 1)[config.headerRows];
+
+    // Check that the date column is set correctly
+    try {
+      if (!parseDate(row[columns.Date], config.dateFormat)) {
+        console.error(row[columns.Date], config.dateFormat);
+        return false;
+      }
+    } catch (e) {
+      return false;
+    }
+
+    // Check that the payee column is not a date
+    try {
+      if (columns.Payee && parseDate(row[columns.Payee], config.dateFormat)) {
+        console.log(
+          row[columns.Payee],
+          parseDate(row[columns.Payee], config.dateFormat),
+        );
+        return false;
+      }
+    } catch (e) {}
+
+    // Check that the inflow column is set correctly, if it exists
+    if (columns.Inflow && isNaN(parseNumber(row[columns.Inflow]))) {
+      return false;
+    }
+
+    // Check that the outflow column is set correctly, if it exists
+    if (columns.Outflow && isNaN(parseNumber(row[columns.Outflow]))) {
+      return false;
+    }
+
+    return true;
   };
 
   const parse: ParserFunction = async (file: File) => {
