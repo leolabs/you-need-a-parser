@@ -28,3 +28,8 @@ ynap-parsers to support most of the banks supported by bank2ynab.
 ## Contributing
 
 If you want to improve YNAP, feel free to submit an issue or open a pull request.
+
+## License
+
+This repo and all included packages are licensed under the
+[GNU General Public License v3.0](https://choosealicense.com/licenses/gpl-3.0/).
