@@ -32,4 +32,7 @@ If you want to improve YNAP, feel free to submit an issue or open a pull request
 ## License
 
 This repo and all included packages are licensed under the
-[GNU General Public License v3.0](https://choosealicense.com/licenses/gpl-3.0/).
+[MIT License](https://choosealicense.com/licenses/mit/).
+
+If you use any of the packages in this repo in your project, a mention or link
+to this repo would be nice but is not required.

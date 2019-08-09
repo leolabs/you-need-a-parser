@@ -1,6 +1,7 @@
 {
   "name": "ynap-bank2ynab-converter",
   "version": "1.5.1",
+  "license": "MIT",
   "author": {
     "email": "admin+github@leolabs.org",
     "name": "Leo Bernard",
