@@ -2538,9 +2538,9 @@ minizlib@^1.1.1:
     minipass "^2.2.1"
 
 mixin-deep@^1.2.0:
-  version "1.3.1"
-  resolved "https://registry.yarnpkg.com/mixin-deep/-/mixin-deep-1.3.1.tgz#a49e7268dce1a0d9698e45326c5626df3543d0fe"
-  integrity sha512-8ZItLHeEgaqEvd5lYBXfm4EZSFCX29Jb9K+lAHhDKzReKBQKj3R+7NOF6tjqYi9t4oI8VUfaWITJQm86wnXGNQ==
+  version "1.3.2"
+  resolved "https://registry.yarnpkg.com/mixin-deep/-/mixin-deep-1.3.2.tgz#1120b43dc359a785dce65b55b82e257ccf479566"
+  integrity sha512-WRoDn//mXBiJ1H40rqa3vH0toePwSsGb45iInWlTySa+Uu4k3tYUSxa2v1KqAiLtvlrSzaExqS1gtk96A9zvEA==
   dependencies:
     for-in "^1.0.2"
     is-extendable "^1.0.1"
@@ -3930,10 +3930,10 @@ yargs@^12.0.2:
     y18n "^3.2.1 || ^4.0.0"
     yargs-parser "^11.1.1"
 
-ynap-bank2ynab-converter@^1.5.1:
-  version "1.5.1"
-  resolved "https://registry.yarnpkg.com/ynap-bank2ynab-converter/-/ynap-bank2ynab-converter-1.5.1.tgz#e5a4a11cd236419e56bcdb9b43399ba3a9254aab"
-  integrity sha512-UmjszPngfM44LsS2nzyPHSrRyF8zeWyIKXoHgWRB+MdUkPn4QmiIkeUcfbG+RdwMmexFfl4XG4Ec7QSblhx82Q==
+ynap-bank2ynab-converter@^1.8.0:
+  version "1.8.0"
+  resolved "https://registry.yarnpkg.com/ynap-bank2ynab-converter/-/ynap-bank2ynab-converter-1.8.0.tgz#8c2805a4451b9237f12b8b43fca9ef32b009870c"
+  integrity sha512-W6BTQb7oUBDNUr2lJW8zCqQgvdXeHXFoZZ5C1gF5oUCso+ZsAwC/kdEWnkvRr0IcFeFylLHsvPFFugyXBpDx4Q==
   dependencies:
     commander "^2.20.0"
     encoding "^0.1.12"
