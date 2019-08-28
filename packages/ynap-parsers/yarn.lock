@@ -2562,6 +2562,11 @@ ms@^2.1.1:
   resolved "https://registry.yarnpkg.com/ms/-/ms-2.1.1.tgz#30a5864eb3ebb0a66f2ebe6d727af06a09d86e0a"
   integrity sha512-tgp+dl5cGk28utYktBsrFqA7HKgrhgPsg6Z/EfhWI4gl1Hwq8B/GmY/0oXZ6nF8hDVesS/FpnYaD/kOWhYQvyg==
 
+mt940-js@^0.6.0:
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/mt940-js/-/mt940-js-0.6.0.tgz#fb34e494ccccc29b35358a161cdd1704b03bd415"
+  integrity sha1-+zTklMzMwps1NYoWHN0XBLA71BU=
+
 nan@^2.12.1:
   version "2.13.2"
   resolved "https://registry.yarnpkg.com/nan/-/nan-2.13.2.tgz#f51dc7ae66ba7d5d55e1e6d4d8092e802c9aefe7"
@@ -3926,9 +3931,9 @@ yargs@^12.0.2:
     yargs-parser "^11.1.1"
 
 ynap-bank2ynab-converter@^1.5.1:
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/ynap-bank2ynab-converter/-/ynap-bank2ynab-converter-1.2.0.tgz#e8ffacfd1a6b05a4cfe54788d5dc1967bce72359"
-  integrity sha512-iOtZvAnJPKS2bgnjD/YSbkGwLdSDeeOlGNaT/+UTuk1LPEJrQzYSxyuEw0byQnDSD/cZbGz8wgCFLgISZX3lBw==
+  version "1.5.1"
+  resolved "https://registry.yarnpkg.com/ynap-bank2ynab-converter/-/ynap-bank2ynab-converter-1.5.1.tgz#e5a4a11cd236419e56bcdb9b43399ba3a9254aab"
+  integrity sha512-UmjszPngfM44LsS2nzyPHSrRyF8zeWyIKXoHgWRB+MdUkPn4QmiIkeUcfbG+RdwMmexFfl4XG4Ec7QSblhx82Q==
   dependencies:
     commander "^2.20.0"
     encoding "^0.1.12"

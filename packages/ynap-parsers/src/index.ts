@@ -19,6 +19,7 @@ import { aqua } from './uk/aqua/aqua';
 
 import { bank2ynab } from './bank2ynab/bank2ynab';
 import { sparbankenTanum } from './se/sparbanken-tanum/sparbanken-tanum';
+import { mt940 } from './mt940/mt940';
 
 export interface YnabRow {
   Date?: string;
@@ -51,7 +52,6 @@ export const parsers: ParserModule[] = [
   // DE
   outbank,
   n26,
-  revolut,
   ingDiBa,
   comdirect,
   kontist,
@@ -71,6 +71,8 @@ export const parsers: ParserModule[] = [
   aqua,
 
   // International
+  revolut,
+  mt940,
   ...bank2ynab,
 ];
 
