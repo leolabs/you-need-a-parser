@@ -7658,6 +7658,11 @@ ms@^2.1.1:
   resolved "https://registry.yarnpkg.com/ms/-/ms-2.1.2.tgz#d09d1f357b443f493382a8eb3ccd183872ae6009"
   integrity sha512-sGkPx+VjMtmA6MX27oA4FBFELFCZZ4S4XqeGOXCv68tT+jb3vk/RyaKWP0PTKyWtmLSM0b+adUTEvbs1PEaH2w==
 
+mt940-js@^0.6.0:
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/mt940-js/-/mt940-js-0.6.0.tgz#fb34e494ccccc29b35358a161cdd1704b03bd415"
+  integrity sha1-+zTklMzMwps1NYoWHN0XBLA71BU=
+
 multicast-dns-service-types@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/multicast-dns-service-types/-/multicast-dns-service-types-1.1.0.tgz#899f11d9686e5e05cb91b35d5f0e63b773cfc901"
@@ -11770,10 +11775,10 @@ yn@^3.0.0:
   resolved "https://registry.yarnpkg.com/yn/-/yn-3.1.0.tgz#fcbe2db63610361afcc5eb9e0ac91e976d046114"
   integrity sha512-kKfnnYkbTfrAdd0xICNFw7Atm8nKpLcLv9AZGEt+kczL/WQVai4e2V6ZN8U/O+iI6WrNuJjNNOyu4zfhl9D3Hg==
 
-ynap-parsers@^1.7.0:
-  version "1.7.0"
-  resolved "https://registry.yarnpkg.com/ynap-parsers/-/ynap-parsers-1.7.0.tgz#1b7ed5e755d68dfb17d23566a41d0b3a9636dbf9"
-  integrity sha512-cBt8BRPoGFrxZ42pFYIXBgh4Ws/dzumI2d+GphswxUldyuh1GIwV0g8tVZdx9p9DPyKHn4YHGMM8CIZYV0uLAg==
+ynap-parsers@^1.8.0:
+  version "1.8.0"
+  resolved "https://registry.yarnpkg.com/ynap-parsers/-/ynap-parsers-1.8.0.tgz#b6f81096334b9cdb86e31ec6c40720fcdf1beba5"
+  integrity sha512-7WChQpyQtv2VYXqnnl62QX+3n1i27ZjcoeYaWoxosNlLS9/ZfNBbSoqV4na9Tp4xLQEA/tSTdFuFWenYZqP7yw==
   dependencies:
     date-fns "2.0.0-alpha.27"
     iban "^0.0.12"
@@ -11781,6 +11786,7 @@ ynap-parsers@^1.7.0:
     jschardet "^2.1.0"
     lodash "^4.17.11"
     mdn-polyfills "^5.16.0"
+    mt940-js "^0.6.0"
     papaparse "^4.6.3"
     slugify "^1.3.4"
     xlsx "^0.14.3"
