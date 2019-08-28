@@ -2380,9 +2380,9 @@ lodash.sortby@^4.7.0:
   integrity sha1-7dFMgk4sycHgsKG0K7UhBRakJDg=
 
 lodash@^4.17.11:
-  version "4.17.11"
-  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.11.tgz#b39ea6229ef607ecd89e2c8df12536891cac9b8d"
-  integrity sha512-cQKh8igo5QUhZ7lg38DYWAxMvjSAKG0A8wGSVimP07SIUEK2UO+arSRKbRZWtelMtN5V0Hkwh5ryOto/SshYIg==
+  version "4.17.13"
+  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.13.tgz#0bdc3a6adc873d2f4e0c4bac285df91b64fc7b93"
+  integrity sha512-vm3/XWXfWtRua0FkUyEHBZy8kCPjErNBT9fJx8Zvs+U6zjqPbTUOpkaoum3O5uiA8sm+yNMHXfYkTUHFoMxFNA==
 
 loose-envify@^1.0.0:
   version "1.4.0"
@@ -3930,10 +3930,10 @@ yargs@^12.0.2:
     y18n "^3.2.1 || ^4.0.0"
     yargs-parser "^11.1.1"
 
-ynap-bank2ynab-converter@^1.5.1:
-  version "1.5.1"
-  resolved "https://registry.yarnpkg.com/ynap-bank2ynab-converter/-/ynap-bank2ynab-converter-1.5.1.tgz#e5a4a11cd236419e56bcdb9b43399ba3a9254aab"
-  integrity sha512-UmjszPngfM44LsS2nzyPHSrRyF8zeWyIKXoHgWRB+MdUkPn4QmiIkeUcfbG+RdwMmexFfl4XG4Ec7QSblhx82Q==
+ynap-bank2ynab-converter@^1.8.0:
+  version "1.8.0"
+  resolved "https://registry.yarnpkg.com/ynap-bank2ynab-converter/-/ynap-bank2ynab-converter-1.8.0.tgz#8c2805a4451b9237f12b8b43fca9ef32b009870c"
+  integrity sha512-W6BTQb7oUBDNUr2lJW8zCqQgvdXeHXFoZZ5C1gF5oUCso+ZsAwC/kdEWnkvRr0IcFeFylLHsvPFFugyXBpDx4Q==
   dependencies:
     commander "^2.20.0"
     encoding "^0.1.12"
