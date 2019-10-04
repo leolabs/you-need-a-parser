@@ -128,6 +128,12 @@ export const parseFile = async (file: File, parserOverride?: ParserModule) => {
     parser = parserOverride;
   } else {
     const matches = await matchFile(file);
+    console.log(
+      'The file',
+      file.name,
+      'was matched by',
+      matches.map(m => m.name).join(', '),
+    );
     parser = matches.length > 0 ? matches[0] : null;
   }
 
