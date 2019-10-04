@@ -65,6 +65,8 @@ export const generateParser = (config: ParserConfig) => {
     {} as { [k in keyof YnabRow]: number },
   );
 
+  const hasCol = (name: keyof typeof columns) => Object.keys(columns).includes(name);
+
   const match: MatcherFunction = async (file: File) => {
     const content = await readEncodedFile(file);
     const { data } = await parseCsv(content);
@@ -116,23 +118,25 @@ export const generateParser = (config: ParserConfig) => {
     const { data } = await parseCsv(content);
 
     const ynabData = data
-      .slice(data.length - config.headerRows - config.footerRows + 1)
-      .map(d => {
-        return {
-          Category: columns.Category ? d[columns.Category] : undefined,
-          Date: columns.Date
-            ? ynabDate(parseDate(d[columns.Date], config.dateFormat))
-            : undefined,
-          Inflow: calculateInflow(
-            columns.Inflow ? parseNumber(d[columns.Inflow]) : undefined,
-            columns.Outflow ? parseNumber(d[columns.Outflow]) : undefined,
-          ),
-          Outflow: calculateOutflow(
-            columns.Inflow ? parseNumber(d[columns.Inflow]) : undefined,
-            columns.Outflow ? parseNumber(d[columns.Outflow]) : undefined,
-          ),
-        } as YnabRow;
-      });
+      .slice(config.headerRows, data.length - config.footerRows)
+      .map(
+        d =>
+          ({
+            Category: hasCol('Category') ? d[columns.Category] : undefined,
+            Payee: hasCol('Payee') ? d[columns.Payee] : undefined,
+            Date: hasCol('Date')
+              ? ynabDate(parseDate(d[columns.Date], config.dateFormat))
+              : undefined,
+            Inflow: calculateInflow(
+              hasCol('Inflow') ? parseNumber(d[columns.Inflow]) : undefined,
+              hasCol('Outflow') ? parseNumber(d[columns.Outflow]) : undefined,
+            ),
+            Outflow: calculateOutflow(
+              hasCol('Inflow') ? parseNumber(d[columns.Inflow]) : undefined,
+              hasCol('Outflow') ? parseNumber(d[columns.Outflow]) : undefined,
+            ),
+          } as YnabRow),
+      );
 
     return [
       {
