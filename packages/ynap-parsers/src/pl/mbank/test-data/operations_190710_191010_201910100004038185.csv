@@ -1,0 +1,30 @@
+mBank S.A. Bankowoœæ Detaliczna;
+		Skrytka Pocztowa 2108;
+		90-959 £ódŸ 2;
+		www.mBank.pl;
+		mLinia: 801 300 800;
+		+48 (42) 6 300 800;
+		
+
+#Klient;
+XXXX XXXXX;
+
+Lista operacji;
+
+#Za okres:;
+10.07.2019;10.10.2019;
+
+#zgodnie z wybranymi filtrami wyszukiwania;
+      #dla rachunków:;
+      eKonto - 00000000000000000000000000;
+      eKonto walutowe EUR - 11111111111111111111111111;
+      eKonto oszczêdnoœciowe - 22222222222222222222222222;
+      
+      #Lista nie jest dokumentem w rozumieniu art. 7 Ustawy Prawo Bankowe (Dz. U. Nr 140 z 1997 roku, poz.939 z póŸniejszymi zmianami), poniewa¿ operacje mo¿na samodzielnie edytowaæ.;
+      
+      #Waluta;#Wp³ywy;#Wydatki;
+PLN;19 721,84;-22 620,49;
+      
+#Data operacji;#Opis operacji;#Rachunek;#Kategoria;#Kwota;#Saldo po operacji;
+2019-10-09;OUTCOME                                                               ;eKonto 0000 ... 1111;Bez kategorii;-30,00 PLN;2 960,15 PLN;
+2019-09-25;INCOME;eKonto 0000 ... 1111;Wp³ywy - inne;2 000,00 PLN;2 867,35 PLN;
