@@ -65,7 +65,13 @@ export const generateParser = (config: ParserConfig) => {
     {} as { [k in keyof YnabRow]: number },
   );
 
-  const hasCol = (name: keyof typeof columns) => Object.keys(columns).includes(name);
+  const hasCol = (name: keyof typeof columns) => {
+    if (typeof name !== 'string') {
+      return false;
+    }
+
+    return Object.keys(columns).includes(name);
+  };
 
   const match: MatcherFunction = async (file: File) => {
     const content = await readEncodedFile(file);
