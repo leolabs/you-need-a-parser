@@ -14,6 +14,11 @@ interface mBankRow {
 const AMOUNT_CLEANUP_REGEXP = /[-PLN\s]/g;
 const SHEET_CLEANUP_REGEXP = /\s{3,}/g;
 const REQUIRED_FIELDS = ['#Data operacji', '#Kwota', '#Opis operacji'];
+const PARSER_SETTINGS = {
+  header: true,
+  delimiter: ';',
+  quoteChar: "'",
+};
 
 const cleanup = (input: string) => input.replace(SHEET_CLEANUP_REGEXP, '').trim();
 const trimMetaData = (input: string) =>
@@ -22,15 +27,12 @@ const trimMetaData = (input: string) =>
 export const mbankMatch: MatcherFunction = async (file: File) => {
   const fileString = await readEncodedFile(file);
 
-  if (fileString.startsWith('mBank S.A. Bankowość')) {
+  if (fileString.startsWith('mBank S.A.')) {
     return true;
   }
 
   try {
-    const { data } = await parse(trimMetaData(fileString), {
-      header: true,
-      delimiter: ';',
-    });
+    const { data } = await parse(trimMetaData(fileString), PARSER_SETTINGS);
 
     if (data.length === 0) {
       return false;
@@ -51,10 +53,7 @@ export const mbankMatch: MatcherFunction = async (file: File) => {
 
 const mbankParser: ParserFunction = async (file: File) => {
   const fileString = cleanup(trimMetaData(await readEncodedFile(file, 'msee')));
-  const { data } = await parse(fileString, {
-    header: true,
-    delimiter: ';',
-  });
+  const { data } = await parse(fileString, PARSER_SETTINGS);
   const result = data as mBankRow[];
 
   return [

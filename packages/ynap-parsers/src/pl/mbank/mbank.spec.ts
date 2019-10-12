@@ -71,7 +71,37 @@ describe.only('mBank Parser Module', () => {
       );
       const file = new File([content], 'test.csv');
       const result = await mbank.parse(file);
+
       expect(result).toEqual(ynabResult);
+    });
+
+    it('should properly escape quote characters', async () => {
+      const content = [
+        '#Data operacji;#Opis operacji;#Rachunek;#Kategoria;#Kwota;#Saldo po operacji;',
+        '2019-09-25;INCOME;eKonto 0000 ... 1111;Wpływy - inne;2 000,00 PLN;2 867,35 PLN',
+        '2019-09-22;"QUOTED" Name.;eKonto 0000 ... 1111;Wydatki - inne;-18,39 PLN;4 684,40 PLN',
+        '2019-09-25;INCOME;eKonto 0000 ... 1111;Wpływy - inne;2 000,00 PLN;2 867,35 PLN',
+      ].join('\r\n');
+      const file = new File([iconv.encode(content, 'msee')], 'test.csv');
+      const result = await mbank.parse(file);
+
+      expect(result[0].data).toHaveLength(3);
+      expect(result[0].data[1].Memo).toBe('"QUOTED" Name.');
+    });
+
+    it('should parse uncleared transactions', async () => {
+      const content = [
+        '#Data operacji;#Opis operacji;#Rachunek;#Kategoria;#Kwota;#Saldo po operacji;',
+        '2019-09-25;INCOME;eKonto 0000 ... 1111;Wpływy - inne;2 000,00 PLN;2 867,35 PLN',
+        '2019-09-22;"QUOTED" Name.',
+        '           transakcja nierozliczona  ',
+        '   ;eKonto 0000 ... 1111;Wydatki - inne;-18,39 PLN;4 684,40 PLN',
+        '2019-09-25;INCOME;eKonto 0000 ... 1111;Wpływy - inne;2 000,00 PLN;2 867,35 PLN',
+      ].join('\r\n');
+      const file = new File([iconv.encode(content, 'msee')], 'test.csv');
+      const result = await mbank.parse(file);
+
+      expect(result[0].data).toHaveLength(3);
     });
   });
 });
