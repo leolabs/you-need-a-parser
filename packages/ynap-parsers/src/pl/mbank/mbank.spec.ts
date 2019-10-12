@@ -26,7 +26,7 @@ const ynabResult: YnabFile[] = [
   },
 ];
 
-describe.only('mBank Parser Module', () => {
+describe('mBank Parser Module', () => {
   describe('Matcher', () => {
     it('should match mBank files by file name', async () => {
       const fileName = 'operations_190710_191010_201910100004038185.csv';
