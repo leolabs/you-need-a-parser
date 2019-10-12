@@ -59,8 +59,8 @@ const mbankParser: ParserFunction = async (file: File) => {
   return [
     {
       data: result
-        .filter(
-          item => item['#Data operacji'] && item['#Kwota'] && item['#Opis operacji'],
+        .filter(item =>
+          REQUIRED_FIELDS.every(key => typeof item[key] !== 'undefined'),
         )
         .map(item => {
           const [YYYY, MM, DD] = item['#Data operacji'].split('-');
