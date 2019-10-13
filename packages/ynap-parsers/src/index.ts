@@ -21,6 +21,8 @@ import { bank2ynab } from './bank2ynab/bank2ynab';
 import { sparbankenTanum } from './se/sparbanken-tanum/sparbanken-tanum';
 import { mt940 } from './mt940/mt940';
 
+import { mbank } from './pl/mbank/mbank';
+
 export interface YnabRow {
   Date?: string;
   Payee?: string;
@@ -69,6 +71,9 @@ export const parsers: ParserModule[] = [
   // UK
   marcus,
   aqua,
+
+  // PL
+  mbank,
 
   // International
   revolut,
