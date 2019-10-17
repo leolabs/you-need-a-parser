@@ -1,5 +1,7 @@
 # You Need A Parser
 
+[![codecov](https://codecov.io/gh/leolabs/you-need-a-parser/branch/master/graph/badge.svg)](https://codecov.io/gh/leolabs/you-need-a-parser)
+
 [Web App](https://ynap.leolabs.org) | [Supported Formats](https://ynap.leolabs.org/supported-formats/) | [Suggest a Format](https://github.com/leolabs/you-need-a-parser/issues/new?template=format_request.md)
 
 YNAP is a web app that converts CSV files from a variety of sources into a format
