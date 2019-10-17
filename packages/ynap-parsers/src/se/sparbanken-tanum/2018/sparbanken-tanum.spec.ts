@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import { generateYnabDate, sparbankenTanum } from './sparbanken-tanum';
-import { YnabRow, YnabFile } from '../..';
+import { YnabRow, YnabFile } from '../../..';
 
 const content = fs.readFileSync(path.join(__dirname, 'test-data', 'export.csv'));
 
