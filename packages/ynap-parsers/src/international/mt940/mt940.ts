@@ -1,7 +1,7 @@
 import 'mdn-polyfills/String.prototype.startsWith';
-import { ParserFunction, MatcherFunction, ParserModule, YnabRow } from '..';
-import { readToBuffer } from '../util/read-to-buffer';
-import { YnabFile } from '../';
+import { ParserFunction, MatcherFunction, ParserModule, YnabRow } from '../..';
+import { readToBuffer } from '../../util/read-to-buffer';
+import { YnabFile } from '../..';
 
 export const generateYnabDate = (input: string) => {
   const match = input.match(/(\d{4})-(\d{2})-(\d{2})/);

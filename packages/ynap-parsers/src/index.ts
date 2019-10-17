@@ -19,7 +19,7 @@ import { aqua } from './uk/aqua/aqua';
 
 import { bank2ynab } from './bank2ynab/bank2ynab';
 import { sparbankenTanum } from './se/sparbanken-tanum/sparbanken-tanum';
-import { mt940 } from './mt940/mt940';
+import { mt940 } from './international/mt940/mt940';
 
 import { mbank } from './pl/mbank/mbank';
 
@@ -92,6 +92,8 @@ export const matchFile = async (file: File): Promise<ParserModule[]> => {
 
   const filenameMatches = parsers.filter(p => file.name.match(p.filenamePattern));
 
+  console.log('Filter:', file.name, filenameMatches.map(f => f.name));
+
   // If parser modules match the file by its filename, try those first
   if (filenameMatches.length > 0) {
     const parsers = (await Promise.all(
@@ -102,6 +104,8 @@ export const matchFile = async (file: File): Promise<ParserModule[]> => {
     ))
       .filter(r => r.matched)
       .map(p => p.parser);
+
+    console.log('Matcher:', file.name, parsers.map(p => p.name));
 
     if (parsers.length > 0) {
       return parsers;
