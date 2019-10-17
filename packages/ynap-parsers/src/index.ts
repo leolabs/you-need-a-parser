@@ -18,7 +18,8 @@ import { marcus } from './uk/marcus/marcus';
 import { aqua } from './uk/aqua/aqua';
 
 import { bank2ynab } from './bank2ynab/bank2ynab';
-import { sparbankenTanum } from './se/sparbanken-tanum/2018/sparbanken-tanum';
+import { sparbankenTanum as sparbankenTanum2018 } from './se/sparbanken-tanum/2018/sparbanken-tanum';
+import { sparbankenTanum as sparbankenTanum2019 } from './se/sparbanken-tanum/2019/sparbanken-tanum';
 import { mt940 } from './international/mt940/mt940';
 
 import { mbank } from './pl/mbank/mbank';
@@ -66,7 +67,8 @@ export const parsers: ParserModule[] = [
   bancomer,
 
   // SE
-  sparbankenTanum,
+  sparbankenTanum2018,
+  sparbankenTanum2019,
 
   // UK
   marcus,
