@@ -16,11 +16,15 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-      - name: yarn install, build, and test
+      - name: Install, Build, and Test
         run: |
           cd packages/ynap-parsers
           yarn install
           yarn build
-          yarn test
+          yarn test --coverage
         env:
           CI: true
+      - name: Upload Code Coverage
+        run: bash <(curl -s https://codecov.io/bash)
+        env:
+          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}

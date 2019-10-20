@@ -1,7 +1,7 @@
 import { mt940matcher, mt940parser, generateYnabDate } from './mt940';
 import fs from 'fs';
 import path from 'path';
-import { YnabFile } from '..';
+import { YnabFile } from '../..';
 
 const content = fs.readFileSync(path.join(__dirname, 'test-data/mt940-bunq.sta'));
 

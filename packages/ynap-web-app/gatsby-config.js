@@ -4,7 +4,7 @@ module.exports = {
   siteMetadata: {
     version: require('./package.json').version,
     commit: process.env.COMMIT_REF || 'dev',
-    timestamp: dateFns.format(new Date(), 'YYYY-MM-DD HH:mm:ss'),
+    timestamp: dateFns.format(new Date(), 'yyyy-MM-dd HH:mm:ss'),
   },
   plugins: [
     `gatsby-plugin-typescript`,

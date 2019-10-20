@@ -11,7 +11,7 @@ describe('Main Module', () => {
       const matches = await matchFile(file);
 
       if (matches.length !== 1) {
-        console.error('Multiple parsers for', fileName);
+        console.error('Multiple or no parsers for', fileName);
         console.error(matches.map(m => m.name));
       }
 
