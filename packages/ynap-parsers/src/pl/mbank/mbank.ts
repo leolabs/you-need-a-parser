@@ -11,6 +11,7 @@ interface mBankRow {
   '#Saldo po operacji': string;
 }
 
+const FILE_ENCODING = 'msee';
 const AMOUNT_CLEANUP_REGEXP = /[-PLN\s]/g;
 const SHEET_CLEANUP_REGEXP = /\s{3,}/g;
 const REQUIRED_FIELDS = ['#Data operacji', '#Kwota', '#Opis operacji'];
@@ -25,7 +26,7 @@ const trimMetaData = (input: string) =>
   input.substr(input.indexOf('#Data operacji;'));
 
 export const mbankMatch: MatcherFunction = async (file: File) => {
-  const fileString = await readEncodedFile(file);
+  const fileString = await readEncodedFile(file, FILE_ENCODING);
 
   if (fileString.startsWith('mBank S.A.')) {
     return true;
@@ -52,7 +53,9 @@ export const mbankMatch: MatcherFunction = async (file: File) => {
 };
 
 const mbankParser: ParserFunction = async (file: File) => {
-  const fileString = cleanup(trimMetaData(await readEncodedFile(file, 'msee')));
+  const fileString = cleanup(
+    trimMetaData(await readEncodedFile(file, FILE_ENCODING)),
+  );
   const { data } = await parse(fileString, PARSER_SETTINGS);
   const result = data as mBankRow[];
 

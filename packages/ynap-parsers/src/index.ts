@@ -23,6 +23,7 @@ import { sparbankenTanum as sparbankenTanum2019 } from './se/sparbanken-tanum/20
 import { mt940 } from './international/mt940/mt940';
 
 import { mbank } from './pl/mbank/mbank';
+import { bankPocztowy } from './pl/bank-pocztowy/bank-pocztowy';
 
 export interface YnabRow {
   Date?: string;
@@ -76,6 +77,7 @@ export const parsers: ParserModule[] = [
 
   // PL
   mbank,
+  bankPocztowy,
 
   // International
   revolut,
