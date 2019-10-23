@@ -1,6 +1,6 @@
 {
   "name": "ynap-web-app",
-  "version": "1.10.0",
+  "version": "1.11.0",
   "license": "MIT",
   "private": true,
   "dependencies": {
@@ -23,7 +23,7 @@
     "styled-components": "4.4.0",
     "ts-node": "8.4.1",
     "typescript": "3.6.4",
-    "ynap-parsers": "^1.10.0"
+    "ynap-parsers": "^1.11.0"
   },
   "scripts": {
     "start": "gatsby develop",
