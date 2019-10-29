@@ -20,7 +20,7 @@
   },
   "devDependencies": {
     "@types/iban": "0.0.30",
-    "@types/jest": "24.0.20",
+    "@types/jest": "24.0.21",
     "@types/lodash": "4.14.144",
     "@types/papaparse": "5.0.1",
     "fast-glob": "3.1.0",
