@@ -14,7 +14,7 @@
     "prepublishOnly": "tsc && cp -r ./lib/* . && rm -rf ./lib"
   },
   "devDependencies": {
-    "@types/node": "11.15.2",
+    "@types/node": "11.15.3",
     "@types/node-fetch": "2.5.4",
     "ts-node": "8.5.2",
     "typescript": "3.7.2"
