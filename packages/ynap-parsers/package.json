@@ -23,7 +23,7 @@
     "@types/jest": "24.0.23",
     "@types/lodash": "4.14.149",
     "@types/papaparse": "5.0.2",
-    "fast-glob": "3.1.0",
+    "fast-glob": "3.1.1",
     "jest": "24.9.0",
     "ts-jest": "24.2.0",
     "typescript": "3.7.2",
