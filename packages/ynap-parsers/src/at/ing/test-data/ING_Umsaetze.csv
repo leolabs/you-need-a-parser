@@ -1,0 +1,3 @@
+IBAN;Text;Valutadatum;Währung;Soll;Haben
+AT483200000012345864;Outflow from Max Mustermann;01.12.2019;EUR;100,01;0,00
+AT483200000012345864;Inflow from John Doe;02.12.2019;EUR;0,00;200,01

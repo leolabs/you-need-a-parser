@@ -12,6 +12,7 @@ import { comdirect } from './de/comdirect/comdirect';
 import { kontist } from './de/kontist/kontist';
 import { volksbankEG } from './de/volksbank-eg/volksbank-eg';
 
+import { ingAustria } from './at/ing/ing-austria';
 import { bancomer } from './mx/bbva-bancomer/bbva-bancomer';
 import { piraeus } from './gr/piraeus/piraeus';
 import { marcus } from './uk/marcus/marcus';
@@ -53,6 +54,9 @@ export type MatcherFunction = (file: File) => Promise<boolean>;
 export type ParserFunction = (file: File) => Promise<YnabFile[]>;
 
 export const parsers: ParserModule[] = [
+  // AT
+  ingAustria,
+
   // DE
   outbank,
   n26,
