@@ -6,7 +6,7 @@
   "dependencies": {
     "@types/jest": "24.0.24",
     "@types/node": "12.12.21",
-    "@types/react": "16.9.16",
+    "@types/react": "16.9.17",
     "@types/react-dom": "16.9.4",
     "file-saver": "2.0.2",
     "gatsby": "2.18.14",
