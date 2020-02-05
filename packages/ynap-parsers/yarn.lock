@@ -1514,10 +1514,10 @@ http-signature@~1.2.0:
     jsprim "^1.2.2"
     sshpk "^1.7.0"
 
-iban@^0.0.13:
-  version "0.0.13"
-  resolved "https://registry.yarnpkg.com/iban/-/iban-0.0.13.tgz#a90412bc897762374690ad318206fe3803f362e0"
-  integrity sha512-yiOgn08XU4sKec715jAjQHxiWihFA941CMleuebnia8Obt2JgRA/SV0dYjse3PRvCmOD8cPVPb+S6QC9JVhHaQ==
+iban@^0.0.14:
+  version "0.0.14"
+  resolved "https://registry.yarnpkg.com/iban/-/iban-0.0.14.tgz#fd8a65ac50c8b770682634b20dc5c5c9feba5c24"
+  integrity sha512-+rocNKk+Ga9m8Lr9fTMWd+87JnsBrucm0ZsIx5ROOarZlaDLmd+FKdbtvb0XyoBw9GAFOYG2GuLqoNB16d+p3w==
 
 iconv-lite@0.4.24, iconv-lite@^0.4.4:
   version "0.4.24"
