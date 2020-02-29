@@ -17,7 +17,7 @@
     "@types/node": "11.15.7",
     "@types/node-fetch": "2.5.5",
     "ts-node": "8.6.2",
-    "typescript": "3.8.2"
+    "typescript": "3.8.3"
   },
   "dependencies": {
     "commander": "^3.0.0",
