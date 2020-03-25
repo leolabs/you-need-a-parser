@@ -5,6 +5,7 @@ import uniq from 'lodash/uniq';
 import last from 'lodash/last';
 
 import { outbank } from './de/outbank/outbank';
+import { _1822direkt } from './de/1822direkt/1822direkt';
 import { n26 } from './de/n26/n26';
 import { revolut } from './international/revolut/revolut';
 import { ingDiBa } from './de/ing-diba/ing-diba';
@@ -64,6 +65,7 @@ export const parsers: ParserModule[] = [
   comdirect,
   kontist,
   volksbankEG,
+  _1822direkt,
 
   // GR
   piraeus,
@@ -102,12 +104,14 @@ export const matchFile = async (file: File): Promise<ParserModule[]> => {
 
   // If parser modules match the file by its filename, try those first
   if (filenameMatches.length > 0) {
-    const parsers = (await Promise.all(
-      filenameMatches.map(async p => ({
-        parser: p,
-        matched: await p.match(file),
-      })),
-    ))
+    const parsers = (
+      await Promise.all(
+        filenameMatches.map(async p => ({
+          parser: p,
+          matched: await p.match(file),
+        })),
+      )
+    )
       .filter(r => r.matched)
       .map(p => p.parser);
 
@@ -117,17 +121,20 @@ export const matchFile = async (file: File): Promise<ParserModule[]> => {
   }
 
   // If they don't, run all matchers against the input file
-  const results = (await Promise.all(
-    parsers
-      .filter(
-        p =>
-          p.fileExtension.toLowerCase() === last(file.name.split('.')).toLowerCase(),
-      )
-      .map(async p => ({
-        parser: p,
-        matched: await p.match(file),
-      })),
-  ))
+  const results = (
+    await Promise.all(
+      parsers
+        .filter(
+          p =>
+            p.fileExtension.toLowerCase() ===
+            last(file.name.split('.')).toLowerCase(),
+        )
+        .map(async p => ({
+          parser: p,
+          matched: await p.match(file),
+        })),
+    )
+  )
     .filter(r => r.matched)
     .map(p => p.parser);
 
