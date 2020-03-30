@@ -31,6 +31,7 @@
   },
   "scripts": {
     "test": "jest",
+    "test:watch": "jest --watch",
     "build": "yarn jest && tsc && cp -r ./lib/* . && rm -rf ./lib",
     "fetch-bank2ynab": "ynap-bank2ynab-converter -b develop -o src/bank2ynab/banks.json",
     "prepublishOnly": "yarn build"
