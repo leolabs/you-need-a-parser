@@ -26,6 +26,7 @@ import { mt940 } from './international/mt940/mt940';
 
 import { mbank } from './pl/mbank/mbank';
 import { bankPocztowy } from './pl/bank-pocztowy/bank-pocztowy';
+import { seb } from './se/seb-privat/seb';
 
 export interface YnabRow {
   Date?: string;
@@ -76,6 +77,7 @@ export const parsers: ParserModule[] = [
   // SE
   sparbankenTanum2018,
   sparbankenTanum2019,
+  seb,
 
   // UK
   marcus,
