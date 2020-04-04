@@ -7,7 +7,7 @@
   "license": "MIT",
   "private": false,
   "dependencies": {
-    "date-fns": "2.11.0",
+    "date-fns": "2.11.1",
     "iban": "^0.0.14",
     "iconv-lite": "^0.5.0",
     "jschardet": "^2.1.0",

@@ -47,7 +47,7 @@
     "@types/react-toastify": "4.0.2",
     "@types/styled-components": "4.4.3",
     "babel-plugin-styled-components": "1.10.7",
-    "date-fns": "2.11.0",
+    "date-fns": "2.11.1",
     "encoding": "0.1.12",
     "jest": "24.9.0",
     "node-fetch": "2.6.0",
