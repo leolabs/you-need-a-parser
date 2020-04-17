@@ -1703,10 +1703,10 @@
   resolved "https://registry.yarnpkg.com/@types/node/-/node-12.11.1.tgz#1fd7b821f798b7fa29f667a1be8f3442bb8922a3"
   integrity sha512-TJtwsqZ39pqcljJpajeoofYRfeZ7/I/OMUQ5pR4q5wOKf2ocrUvBAZUMhWsOvKx3dVc/aaV5GluBivt0sWqA5A==
 
-"@types/node@12.12.35":
-  version "12.12.35"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-12.12.35.tgz#1e61b226c14380f4384f70cfe49a65c2c553ad2b"
-  integrity sha512-ASYsaKecA7TUsDrqIGPNk3JeEox0z/0XR/WsJJ8BIX/9+SkMSImQXKWfU/yBrSyc7ZSE/NPqLu36Nur0miCFfQ==
+"@types/node@12.12.36":
+  version "12.12.36"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-12.12.36.tgz#162c8c2a2e659da480049df0e19ae128ad3a1527"
+  integrity sha512-hmmypvyO/uTLFYCYu6Hlb3ydeJ11vXRxg8/WJ0E3wvwmPO0y47VqnfmXFVuWlysO0Zyj+je1Y33rQeuYkZ51GQ==
 
 "@types/node@^8.5.7":
   version "8.10.59"
