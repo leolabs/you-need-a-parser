@@ -1,26 +1,26 @@
 import { generateYnabDate, revolut } from './revolut';
 import { YnabFile } from '../..';
 
-const content = `Completed Date ; Description ; Paid Out (RON) ; Paid In (RON) ; Exchange Out; Exchange In; Balance (RON); Category; Notes
-Apr 2, 2019 ; Premium plan fee  ; 29.99 ;  ;  ;  ; 13.09; general;
-Apr 1, 2019 ; To Piglet  ;  ; 1.42 ;  ;  ; 43.08; transfers;
+const content = `Completed Date ; Reference ; Paid Out (RON) ; Paid In (RON) ; Exchange Out; Exchange In ; Balance (RON); Exchange Rate ; Category
+24 Mar ; Premium plan fee ; 29.99 ;  ;  ;  ; 13.09 ;  ; Services
+1 Apr 2019 ; To Piglet ; ; 1.42 ;  ;  ; 43.08 ;  ; Transfers
 `;
 
 const ynabResult: YnabFile[] = [
   {
     data: [
       {
-        Date: '04/02/2019',
+        Date: '2020-03-24',
         Payee: 'Premium plan fee',
-        Category: 'general',
+        Category: 'Services',
         Memo: 'Premium plan fee',
         Outflow: '29.99',
         Inflow: undefined,
       },
       {
-        Date: '04/01/2019',
+        Date: '2019-04-01',
         Payee: 'To Piglet',
-        Category: 'transfers',
+        Category: 'Transfers',
         Memo: 'To Piglet',
         Outflow: undefined,
         Inflow: '1.42',
@@ -32,7 +32,7 @@ const ynabResult: YnabFile[] = [
 describe('Revolut Parser Module', () => {
   describe('Matcher', () => {
     it('should match Revolut files by file name', async () => {
-      const fileName = 'Revolut-RON-Statement-May 2018 – Apr 2019.csv';
+      const fileName = 'Revolut-RON-Statement-May 2018 to Apr 2019.csv';
       const result = !!fileName.match(revolut.filenamePattern);
       expect(result).toBe(true);
     });
@@ -70,7 +70,7 @@ describe('Revolut Parser Module', () => {
     });
 
     it('should convert dates correctly', () => {
-      expect(generateYnabDate('Feb 12, 2019')).toEqual('02/12/2019');
+      expect(generateYnabDate('12 Feb 2019')).toEqual('2019-02-12');
     });
   });
 });
