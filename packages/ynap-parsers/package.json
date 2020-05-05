@@ -1,6 +1,6 @@
 {
   "name": "ynap-parsers",
-  "version": "1.11.2",
+  "version": "1.12.0",
   "description": "Parsers from various formats to YNAB CSV",
   "main": "index.js",
   "author": "Leo Bernard <admin+github@leolabs.org>",
@@ -27,7 +27,7 @@
     "jest": "24.9.0",
     "ts-jest": "24.3.0",
     "typescript": "3.8.3",
-    "ynap-bank2ynab-converter": "^1.11.2"
+    "ynap-bank2ynab-converter": "^1.12.0"
   },
   "scripts": {
     "test": "jest",
