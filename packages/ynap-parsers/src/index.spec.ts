@@ -10,12 +10,15 @@ describe('Main Module', () => {
       const file = new File([fs.readFileSync(fileName)], path.basename(fileName));
       const matches = await matchFile(file);
 
-      if (matches.length !== 1) {
-        console.error('Multiple or no parsers for', fileName);
-        console.error(matches.map(m => m.name));
+      if (matches.length === 0) {
+        console.error('No parsers for', fileName);
       }
 
-      expect(matches.length).toBe(1);
+      if (matches.length > 1) {
+        console.warn('Multiple parsers for', fileName);
+        console.warn(matches.map((m) => m.name));
+      }
+      expect(matches.length).toBeGreaterThanOrEqual(1);
     }
   });
 });
