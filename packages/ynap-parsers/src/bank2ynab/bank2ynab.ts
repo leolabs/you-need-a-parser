@@ -51,19 +51,16 @@ export const calculateOutflow = (inflow?: number, outflow?: number) => {
 };
 
 export const generateParser = (config: ParserConfig) => {
-  const columns = config.inputColumns.reduce(
-    (acc, cur, index) => {
-      if (cur === 'skip') {
-        return acc;
-      }
+  const columns = config.inputColumns.reduce((acc, cur, index) => {
+    if (cur === 'skip') {
+      return acc;
+    }
 
-      return {
-        ...acc,
-        [cur]: index,
-      };
-    },
-    {} as { [k in keyof YnabRow]: number },
-  );
+    return {
+      ...acc,
+      [cur]: index,
+    };
+  }, {} as { [k in keyof YnabRow]: number });
 
   const hasCol = (name: keyof typeof columns) => Object.keys(columns).includes(name);
 
@@ -82,7 +79,7 @@ export const generateParser = (config: ParserConfig) => {
       return false;
     }
 
-    const row = data.filter(d => d.length > 1)[config.headerRows];
+    const row = data.filter((d) => d.length > 1)[config.headerRows];
 
     // Check that the date column is set correctly
     try {
@@ -120,7 +117,7 @@ export const generateParser = (config: ParserConfig) => {
     const ynabData = data
       .slice(config.headerRows, data.length - config.footerRows)
       .map(
-        d =>
+        (d) =>
           ({
             Category: hasCol('Category') ? d[columns.Category] : undefined,
             Payee: hasCol('Payee') ? d[columns.Payee] : undefined,
@@ -156,7 +153,7 @@ export const generateParser = (config: ParserConfig) => {
   } as ParserModule;
 };
 
-const blacklist = ['de N26', 'de ING-DiBa'];
+const blacklist = ['de N26', 'de ING-DiBa', 'ie N26'];
 export const bank2ynab = banks
-  .filter(b => !blacklist.includes(`${b.country} ${b.name}`))
-  .map(bank => generateParser(bank as ParserConfig));
+  .filter((b) => !blacklist.includes(`${b.country} ${b.name}`))
+  .map((bank) => generateParser(bank as ParserConfig));
