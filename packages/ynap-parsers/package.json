@@ -25,7 +25,7 @@
     "@types/papaparse": "5.0.3",
     "fast-glob": "3.2.2",
     "jest": "24.9.0",
-    "ts-jest": "24.3.0",
+    "ts-jest": "25.5.1",
     "typescript": "3.8.3",
     "ynap-bank2ynab-converter": "^1.12.0"
   },
