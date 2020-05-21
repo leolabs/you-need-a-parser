@@ -20,7 +20,7 @@
     "react-helmet": "5.2.1",
     "react-helmet-async": "1.0.6",
     "react-toastify": "5.5.0",
-    "styled-components": "4.4.1",
+    "styled-components": "5.1.0",
     "ts-node": "8.10.1",
     "typescript": "3.8.3",
     "ynap-parsers": "^1.12.3"
@@ -45,7 +45,7 @@
     "@types/react-helmet": "5.0.15",
     "@types/react-helmet-async": "1.0.1",
     "@types/react-toastify": "4.0.2",
-    "@types/styled-components": "4.4.3",
+    "@types/styled-components": "5.1.0",
     "babel-plugin-styled-components": "1.10.7",
     "date-fns": "2.12.0",
     "encoding": "0.1.12",
