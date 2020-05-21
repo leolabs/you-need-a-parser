@@ -7,12 +7,21 @@ import { ParserConfig } from 'ynap-bank2ynab-converter/parserconfig';
 
 import banks from './banks.json';
 
-export const parseNumber = (input?: string) =>
-  typeof input !== 'undefined'
-    ? (input.match(/,/g) || []).length === 1
-      ? Number(input.replace(',', '.'))
-      : Number(input)
-    : undefined;
+export const parseNumber = (input?: string) => {
+  if (typeof input === 'undefined') {
+    return undefined;
+  }
+
+  try {
+    if (input.includes(',')) {
+      return Number(input.replace(',', '.'));
+    }
+
+    return Number(input);
+  } catch (e) {
+    return undefined;
+  }
+};
 
 export const calculateInflow = (inflow?: number, outflow?: number) => {
   if (typeof inflow === 'undefined' && typeof outflow === 'undefined') {
