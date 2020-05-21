@@ -2496,10 +2496,10 @@ ms@^2.1.1:
   resolved "https://registry.yarnpkg.com/ms/-/ms-2.1.2.tgz#d09d1f357b443f493382a8eb3ccd183872ae6009"
   integrity sha512-sGkPx+VjMtmA6MX27oA4FBFELFCZZ4S4XqeGOXCv68tT+jb3vk/RyaKWP0PTKyWtmLSM0b+adUTEvbs1PEaH2w==
 
-mt940-js@^0.6.0:
-  version "0.6.0"
-  resolved "https://registry.yarnpkg.com/mt940-js/-/mt940-js-0.6.0.tgz#fb34e494ccccc29b35358a161cdd1704b03bd415"
-  integrity sha1-+zTklMzMwps1NYoWHN0XBLA71BU=
+mt940-js@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/mt940-js/-/mt940-js-1.0.0.tgz#1fb1d9cd50c977c23c0393e9ad9489a8066ab9a7"
+  integrity sha512-9iFCkaGoUbo8FfkchMyMsUBxwmOVQbIQpgc7C0tHf6xDSzv+soVvx4PNNng/eQm/vFvCGl7ot4zJRK7Zs4veww==
 
 nan@^2.12.1:
   version "2.14.0"
