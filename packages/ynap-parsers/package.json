@@ -24,7 +24,7 @@
     "@types/lodash": "4.14.150",
     "@types/papaparse": "5.0.3",
     "fast-glob": "3.2.2",
-    "jest": "24.9.0",
+    "jest": "26.0.1",
     "ts-jest": "24.3.0",
     "typescript": "3.8.3",
     "ynap-bank2ynab-converter": "^1.12.0"
