@@ -24,7 +24,7 @@ export const generateYnabDate = (input: string) => {
   return [month.padStart(2, '0'), day.padStart(2, '0'), year].join('/');
 };
 
-export const parseNumber = (input: string) => Number(input.replace(',', '.'));
+export const parseNumber = (input: string) => Number(input.replace('.','').replace(',', '.'));
 
 export const trimMetaData = (input: string) =>
   input.substr(input.indexOf('Buchung;'));
