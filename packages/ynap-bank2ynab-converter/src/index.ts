@@ -9,7 +9,7 @@ commander
   .option(
     '-e, --exclude <items>',
     'Exclude banks by their name (comma-separated)',
-    (v: string) => v.split(',').map(i => i.trim()),
+    (v: string) => v.split(',').map((i) => i.trim()),
   )
   .option(
     '-b, --branch <branch>',
@@ -21,13 +21,9 @@ commander
 
 import { ParserConfig } from './parserconfig';
 
-const CONFIG_URL = `https://raw.githubusercontent.com/bank2ynab/bank2ynab/${
-  commander.branch
-}/bank2ynab.conf`;
+const CONFIG_URL = `https://raw.githubusercontent.com/bank2ynab/bank2ynab/${commander.branch}/bank2ynab.conf`;
 
-const CONFIG_LINK = `https://github.com/bank2ynab/bank2ynab/blob/${
-  commander.branch
-}/bank2ynab.conf`;
+const CONFIG_LINK = `https://github.com/bank2ynab/bank2ynab/blob/${commander.branch}/bank2ynab.conf`;
 
 const SECTION = new RegExp(/^\s*\[([^\]]+)]/);
 const KEY = new RegExp(/\s*(.*?)\s*[=:]\s*(.*)/);
@@ -101,9 +97,9 @@ const script = async () => {
   console.log('Excluding', blacklist.length, 'items from blacklist.');
 
   const filteredConfig: ParserConfig[] = Object.keys(config)
-    .map(c => ({ ...config[c], Name: c }))
+    .map((c) => ({ ...config[c], Name: c }))
     .filter(
-      c =>
+      (c) =>
         c.Name !== 'DEFAULT' &&
         !blacklist.includes(c.Name) &&
         !c.Plugin &&
@@ -111,11 +107,9 @@ const script = async () => {
         c['Input Columns'],
     )
     .map(
-      c =>
+      (c) =>
         ({
-          name: c.Name.split(' ')
-            .slice(1)
-            .join(' '),
+          name: c.Name.split(' ').slice(1).join(' '),
           country: c.Name.split(' ')[0].toLowerCase(),
           filenamePattern: `${c['Source Filename Pattern']}\\.${(
             c['Source Filename Extension'] || '.csv'
@@ -126,6 +120,9 @@ const script = async () => {
           inputColumns: c['Input Columns'].split(','),
           link: `${CONFIG_LINK}#L${c.Line}`,
           dateFormat: c['Date Format'],
+          inflowOutflowFlag: c['Inflow or Outflow Indicator']
+            ?.split(',')
+            .map((s) => s.trim()),
           headerRows: Number(c['Header Rows'] || '1'),
           footerRows: Number(c['Footer Rows'] || '0'),
         } as ParserConfig),

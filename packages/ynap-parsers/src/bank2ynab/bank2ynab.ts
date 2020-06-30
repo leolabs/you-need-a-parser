@@ -69,7 +69,7 @@ export const generateParser = (config: ParserConfig) => {
       ...acc,
       [cur]: index,
     };
-  }, {} as { [k in keyof YnabRow]: number });
+  }, {} as { [k in keyof (YnabRow & { CDFlag?: string })]: number });
 
   const hasCol = (name: keyof typeof columns) => Object.keys(columns).includes(name);
 
@@ -121,10 +121,11 @@ export const generateParser = (config: ParserConfig) => {
 
   const parse: ParserFunction = async (file: File) => {
     const content = await readEncodedFile(file);
-    const { data } = await parseCsv(content);
+    const { data } = await parseCsv(content.trim());
 
     const ynabData = data
       .slice(config.headerRows, data.length - config.footerRows)
+      .filter((d) => d.length > 1)
       .map(
         (d) =>
           ({
@@ -133,14 +134,27 @@ export const generateParser = (config: ParserConfig) => {
             Date: hasCol('Date')
               ? ynabDate(parseDate(d[columns.Date], config.dateFormat))
               : undefined,
-            Inflow: calculateInflow(
-              hasCol('Inflow') ? parseNumber(d[columns.Inflow]) : undefined,
-              hasCol('Outflow') ? parseNumber(d[columns.Outflow]) : undefined,
-            ),
-            Outflow: calculateOutflow(
-              hasCol('Inflow') ? parseNumber(d[columns.Inflow]) : undefined,
-              hasCol('Outflow') ? parseNumber(d[columns.Outflow]) : undefined,
-            ),
+            ...(config.inflowOutflowFlag && hasCol('CDFlag')
+              ? {
+                  Inflow:
+                    d[columns.CDFlag].trim() === config.inflowOutflowFlag[1]
+                      ? parseNumber(d[columns.Inflow])
+                      : undefined,
+                  Outflow:
+                    d[columns.CDFlag].trim() === config.inflowOutflowFlag[2]
+                      ? parseNumber(d[columns.Inflow])
+                      : undefined,
+                }
+              : {
+                  Inflow: calculateInflow(
+                    hasCol('Inflow') ? parseNumber(d[columns.Inflow]) : undefined,
+                    hasCol('Outflow') ? parseNumber(d[columns.Outflow]) : undefined,
+                  ),
+                  Outflow: calculateOutflow(
+                    hasCol('Inflow') ? parseNumber(d[columns.Inflow]) : undefined,
+                    hasCol('Outflow') ? parseNumber(d[columns.Outflow]) : undefined,
+                  ),
+                }),
           } as YnabRow),
       );
 

@@ -4,6 +4,7 @@ export interface ParserConfig {
   headerRows: number;
   footerRows: number;
   inputColumns: string[];
+  inflowOutflowFlag?: [string, string, string];
   dateFormat?: string;
   name: string;
   link: string;
