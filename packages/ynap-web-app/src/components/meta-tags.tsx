@@ -9,7 +9,7 @@ interface MetaTagsProps {
 const MetaTags: React.FC<MetaTagsProps> = ({ title, description }) => {
   const pageTitle = title
     ? `${title} – You Need A Parser`
-    : 'You Need A Parser – Convert CSV files for use with YNAB';
+    : 'You Need A Parser – Convert bank statements for use with YNAB';
 
   const pageDescription =
     description ||
