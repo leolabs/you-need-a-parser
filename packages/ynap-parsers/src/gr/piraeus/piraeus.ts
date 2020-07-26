@@ -18,6 +18,13 @@ export const generateYnabDate = (input: string) => {
 
 export const parseNumber = (input: string) => Number(input.replace(',', '.'));
 
+export const cleanString = (input: string) =>
+  input
+    .replace(/\s+/g, ' ')
+    .replace(/^\s+(.*)/, '$1')
+    .replace(/(.*)\s+$/, '$1')
+    .trim();
+
 export const piraeusParser: ParserFunction = async (file: File) => {
   const xlsx = await import('xlsx');
   const workbook = xlsx.read(await readToBuffer(file), {
@@ -27,24 +34,19 @@ export const piraeusParser: ParserFunction = async (file: File) => {
   const sheet = workbook.Sheets[workbook.SheetNames[0]];
   const rows: YnabRow[] = [];
 
-  let rowNum = 7;
-  while (true) {
+  for (let rowNum = 5; true; rowNum++) {
     let category: CellObject | undefined = sheet[`A${rowNum}`];
     if (!category || category.t === 'e' || String(category.v).trim() === '') {
       break;
     }
 
     rows.push({
-      Category: String(category.v),
+      Category: cleanString(String(category.v)),
       Date: generateYnabDate(String(sheet[`C${rowNum}`].v)),
-      Memo: String(sheet[`D${rowNum}`].v)
-        .split('\r')[0]
-        .trim(),
+      Memo: cleanString(String(sheet[`B${rowNum}`].v).split('\r')[0]),
       Inflow: sheet[`E${rowNum}`].v > 0 ? sheet[`E${rowNum}`].v : undefined,
       Outflow: sheet[`E${rowNum}`].v < 0 ? -sheet[`E${rowNum}`].v : undefined,
     });
-
-    rowNum++;
   }
 
   return [
