@@ -20,7 +20,7 @@
     "typescript": "3.9.7"
   },
   "dependencies": {
-    "commander": "^3.0.0",
+    "commander": "^6.0.0",
     "encoding": "^0.1.12",
     "node-fetch": "^2.3.0"
   }
