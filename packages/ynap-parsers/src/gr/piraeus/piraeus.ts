@@ -18,12 +18,7 @@ export const generateYnabDate = (input: string) => {
 
 export const parseNumber = (input: string) => Number(input.replace(',', '.'));
 
-export const cleanString = (input: string) =>
-  input
-    .replace(/\s+/g, ' ')
-    .replace(/^\s+(.*)/, '$1')
-    .replace(/(.*)\s+$/, '$1')
-    .trim();
+export const cleanString = (input: string) => input.replace(/\s+/g, ' ').trim();
 
 export const piraeusParser: ParserFunction = async (file: File) => {
   const xlsx = await import('xlsx');
