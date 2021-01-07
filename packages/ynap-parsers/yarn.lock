@@ -340,10 +340,10 @@
   dependencies:
     "@babel/types" "^7.3.0"
 
-"@types/iban@0.0.30":
-  version "0.0.30"
-  resolved "https://registry.yarnpkg.com/@types/iban/-/iban-0.0.30.tgz#48a5d532487f69f92105ea057942bb6e39d86506"
-  integrity sha512-RdRxcqL1nuDq+6+LAhlzsr9Wig11wv1xMtKZJfQz/OTmkQTU23yKN91Xo1zkBuGzpr7CdZQBJ8WsJ1widkqBPQ==
+"@types/iban@0.0.32":
+  version "0.0.32"
+  resolved "https://registry.yarnpkg.com/@types/iban/-/iban-0.0.32.tgz#0308cc330fe534d5b7015299feb32ab216e124d5"
+  integrity sha512-GhyJ+IVOC/eFfARnYd8wjL9dKvlQU+amhml0UxgSzTr/13V11op+nVVdkyqEipHYoqJZv4RHWLfkMmZrCgjjCA==
 
 "@types/istanbul-lib-coverage@*", "@types/istanbul-lib-coverage@^2.0.0":
   version "2.0.1"
