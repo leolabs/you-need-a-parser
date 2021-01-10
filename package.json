@@ -2,6 +2,7 @@
   "name": "you-need-a-parser",
   "private": true,
   "devDependencies": {
+    "@types/jest": "^26.0.19",
     "lerna": "3.22.1"
   }
 }
