@@ -21,7 +21,7 @@
     "react-helmet-async": "1.0.6",
     "react-toastify": "5.5.0",
     "styled-components": "4.4.1",
-    "ts-node": "8.10.2",
+    "ts-node": "9.1.1",
     "typescript": "3.9.7",
     "ynap-parsers": "^1.14.0"
   },
