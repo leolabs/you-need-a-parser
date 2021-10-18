@@ -26,7 +26,7 @@
     "fast-glob": "3.2.4",
     "jest": "24.9.0",
     "ts-jest": "24.3.0",
-    "typescript": "3.9.7",
+    "typescript": "4.4.4",
     "ynap-bank2ynab-converter": "^1.14.0"
   },
   "scripts": {
