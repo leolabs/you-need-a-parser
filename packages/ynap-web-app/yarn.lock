@@ -1993,10 +1993,10 @@
   dependencies:
     "@types/react" "*"
 
-"@types/react-helmet@5.0.15":
-  version "5.0.15"
-  resolved "https://registry.yarnpkg.com/@types/react-helmet/-/react-helmet-5.0.15.tgz#af0370617307e9f062c6aee0f1f5588224ce646e"
-  integrity sha512-CCjqvecDJTXRrHG8aTc2YECcQCl26za/q+NaBRvy/wtm0Uh38koM2dpv2bG1xJV4ckz3t1lm2/5KU6nt2s9BWg==
+"@types/react-helmet@5.0.19":
+  version "5.0.19"
+  resolved "https://registry.yarnpkg.com/@types/react-helmet/-/react-helmet-5.0.19.tgz#e709f192eac0b873693a6f831bb2dbc7085a5c19"
+  integrity sha512-Ub4sOSkg/64UYRJG33kYLzMV2OsgD923DXS09K3Pp2Qsq0AId5Ih59NvX2eXDIUQPfxO3rj0rFeVxurN8IUksQ==
   dependencies:
     "@types/react" "*"
 
