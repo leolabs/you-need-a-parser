@@ -8,7 +8,7 @@
     "@types/node": "12.12.53",
     "@types/react": "16.9.43",
     "@types/react-dom": "16.9.7",
-    "file-saver": "2.0.2",
+    "file-saver": "2.0.5",
     "gatsby": "2.24.11",
     "gatsby-plugin-netlify": "2.3.11",
     "gatsby-plugin-offline": "3.2.21",
@@ -40,7 +40,7 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "@types/file-saver": "2.0.1",
+    "@types/file-saver": "2.0.3",
     "@types/node-fetch": "2.5.7",
     "@types/react-helmet": "5.0.15",
     "@types/react-helmet-async": "1.0.1",
