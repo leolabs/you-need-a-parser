@@ -1,0 +1,4 @@
+Date;Payee;Payee;Transaction type;Payment reference;Amount (EUR);Amount (Foreign Currency);Type Foreign Currency;Exchange Rate
+2022-01-17;;;Income;N26 Cashback;0.74;;;
+2022-01-17;Sample data;;MasterCard Payment;-;-8.4;-8.4;EUR;1.0
+2022-01-17;Sample data;;MasterCard Payment;;-10.0;-10.0;EUR;1.0

@@ -5,7 +5,6 @@ import { parse } from '../../util/papaparse';
 export interface N26Row {
   Date: string;
   Payee: string;
-  'Account number': string;
   'Transaction type': string;
   'Payment reference': string;
   Category: string;
@@ -32,8 +31,8 @@ export const n26Parser: ParserFunction = async (file: File) => {
   return [
     {
       data: (data as N26Row[])
-        .filter(r => r.Date && r['Amount (EUR)'])
-        .map(r => ({
+        .filter((r) => r.Date && r['Amount (EUR)'])
+        .map((r) => ({
           Date: generateYnabDate(r.Date),
           Payee: r.Payee,
           Category: r.Category,
@@ -55,10 +54,8 @@ export const n26Matcher: MatcherFunction = async (file: File) => {
   const requiredKeys: (keyof N26Row)[] = [
     'Date',
     'Payee',
-    'Account number',
     'Transaction type',
     'Payment reference',
-    'Category',
     'Amount (EUR)',
   ];
 
@@ -69,7 +66,7 @@ export const n26Matcher: MatcherFunction = async (file: File) => {
   }
 
   const keys = Object.keys(data[0]);
-  const missingKeys = requiredKeys.filter(k => !keys.includes(k));
+  const missingKeys = requiredKeys.filter((k) => !keys.includes(k));
 
   if (missingKeys.length === 0) {
     return true;
@@ -83,8 +80,7 @@ export const n26: ParserModule = {
   country: 'de',
   fileExtension: 'csv',
   filenamePattern: /^n26-csv-transactions\.csv/,
-  link:
-    'https://support.n26.com/en-eu/fixing-an-issue/payments-and-transfers/how-to-export-a-list-of-my-transactions',
+  link: 'https://support.n26.com/en-eu/fixing-an-issue/payments-and-transfers/how-to-export-a-list-of-my-transactions',
   match: n26Matcher,
   parse: n26Parser,
 };

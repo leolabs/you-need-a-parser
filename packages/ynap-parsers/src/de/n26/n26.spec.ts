@@ -2,7 +2,7 @@ import { generateYnabDate, n26 } from './n26';
 import { YnabFile } from '../..';
 import { unparse } from 'papaparse';
 
-const content = unparse([
+const content2021 = unparse([
   {
     Date: '2019-01-01',
     Payee: 'Test Payee',
@@ -29,7 +29,7 @@ const content = unparse([
   },
 ]);
 
-const ynabResult: YnabFile[] = [
+const ynabResult2021: YnabFile[] = [
   {
     data: [
       {
@@ -52,6 +52,52 @@ const ynabResult: YnabFile[] = [
   },
 ];
 
+const content2022 = unparse([
+  {
+    Date: '2019-01-01',
+    Payee: 'Test Payee',
+    'Transaction type': 'Outgoing Transfer',
+    'Payment reference': 'Netflix',
+    'Amount (EUR)': '-3.0',
+    'Amount (Foreign Currency)': '',
+    'Type Foreign Currency': '',
+    'Exchange Rate': '',
+  },
+  {
+    Date: '2019-01-02',
+    Payee: 'Work Account',
+    'Transaction type': 'MasterCard Payment',
+    'Payment reference': '',
+    'Amount (EUR)': '600.0',
+    'Amount (Foreign Currency)': '600.0',
+    'Type Foreign Currency': 'EUR',
+    'Exchange Rate': '1.0',
+  },
+]);
+
+const ynabResult2022: YnabFile[] = [
+  {
+    data: [
+      {
+        Date: '01/01/2019',
+        Payee: 'Test Payee',
+        Category: undefined,
+        Memo: 'Netflix',
+        Outflow: '3.00',
+        Inflow: undefined,
+      },
+      {
+        Date: '01/02/2019',
+        Payee: 'Work Account',
+        Category: undefined,
+        Memo: '',
+        Outflow: undefined,
+        Inflow: '600.00',
+      },
+    ],
+  },
+];
+
 describe('N26 Parser Module', () => {
   describe('Matcher', () => {
     it('should match N26 files by file name', async () => {
@@ -66,8 +112,14 @@ describe('N26 Parser Module', () => {
       expect(result).toBe(false);
     });
 
-    it('should match N26 files by fields', async () => {
-      const file = new File([content], 'test.csv');
+    it('should match N26 files until 2021 by fields', async () => {
+      const file = new File([content2021], 'test.csv');
+      const result = await n26.match(file);
+      expect(result).toBe(true);
+    });
+
+    it('should match N26 files since 2022 by fields', async () => {
+      const file = new File([content2022], 'test.csv');
       const result = await n26.match(file);
       expect(result).toBe(true);
     });
@@ -80,10 +132,18 @@ describe('N26 Parser Module', () => {
   });
 
   describe('Parser', () => {
-    it('should parse data correctly', async () => {
-      const file = new File([content], 'test.csv');
+    it('should parse data until 2021 correctly', async () => {
+      const file = new File([content2021], 'test.csv');
       const result = await n26.parse(file);
-      expect(result).toEqual(ynabResult);
+      expect(result).toEqual(ynabResult2021);
+    });
+  });
+
+  describe('Parser', () => {
+    it('should parse data since 2022 correctly', async () => {
+      const file = new File([content2022], 'test.csv');
+      const result = await n26.parse(file);
+      expect(result).toEqual(ynabResult2022);
     });
   });
 
