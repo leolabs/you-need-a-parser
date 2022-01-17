@@ -2,7 +2,7 @@ import { generateYnabDate, revolut } from './revolut';
 import { YnabFile } from '../..';
 
 const content = `Completed Date ; Reference ; Paid Out (RON) ; Paid In (RON) ; Exchange Out; Exchange In ; Balance (RON); Exchange Rate ; Category
-24 Mar ; Premium plan fee ; 29.99 ;  ;  ;  ; 13.09 ;  ; Services
+24 Mar 2020 ; Premium plan fee ; 29.99 ;  ;  ;  ; 13.09 ;  ; Services
 1 Apr 2019 ; To Piglet ; ; 1.42 ;  ;  ; 43.08 ;  ; Transfers
 `;
 
