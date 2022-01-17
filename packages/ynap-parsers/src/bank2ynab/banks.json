@@ -12,7 +12,7 @@
       "Inflow",
       "skip"
     ],
-    "link": "https://github.com/bank2ynab/bank2ynab/blob/master/bank2ynab.conf#L51",
+    "link": "https://github.com/bank2ynab/bank2ynab/blob/master/bank2ynab.conf#L52",
     "dateFormat": "%d.%m.%Y",
     "headerRows": 0,
     "footerRows": 0
@@ -31,7 +31,7 @@
       "skip",
       "skip"
     ],
-    "link": "https://github.com/bank2ynab/bank2ynab/blob/master/bank2ynab.conf#L60",
+    "link": "https://github.com/bank2ynab/bank2ynab/blob/master/bank2ynab.conf#L61",
     "dateFormat": "%d.%m.%Y",
     "headerRows": 0,
     "footerRows": 0
@@ -50,7 +50,7 @@
       "skip",
       "skip"
     ],
-    "link": "https://github.com/bank2ynab/bank2ynab/blob/master/bank2ynab.conf#L77",
+    "link": "https://github.com/bank2ynab/bank2ynab/blob/master/bank2ynab.conf#L78",
     "dateFormat": "%d.%m.%Y",
     "headerRows": 0,
     "footerRows": 0
@@ -69,7 +69,7 @@
       "skip",
       "Inflow"
     ],
-    "link": "https://github.com/bank2ynab/bank2ynab/blob/master/bank2ynab.conf#L86",
+    "link": "https://github.com/bank2ynab/bank2ynab/blob/master/bank2ynab.conf#L87",
     "dateFormat": "%d.%m.%Y",
     "headerRows": 0,
     "footerRows": 0
@@ -84,7 +84,7 @@
       "Inflow",
       "Payee"
     ],
-    "link": "https://github.com/bank2ynab/bank2ynab/blob/master/bank2ynab.conf#L95",
+    "link": "https://github.com/bank2ynab/bank2ynab/blob/master/bank2ynab.conf#L96",
     "dateFormat": "%d/%m/%y",
     "headerRows": 0,
     "footerRows": 0
@@ -96,13 +96,13 @@
     "filenameExtension": "csv",
     "inputColumns": [
       "Date",
-      "skip",
-      "Payee",
+      "Memo",
       "Inflow",
-      "Inflow"
+      "Inflow",
+      "skip"
     ],
-    "link": "https://github.com/bank2ynab/bank2ynab/blob/master/bank2ynab.conf#L102",
-    "dateFormat": "%d/%m/%y",
+    "link": "https://github.com/bank2ynab/bank2ynab/blob/master/bank2ynab.conf#L103",
+    "dateFormat": "%d/%m/%Y",
     "headerRows": 1,
     "footerRows": 0
   },
@@ -120,7 +120,7 @@
       "Payee",
       "Running Balance"
     ],
-    "link": "https://github.com/bank2ynab/bank2ynab/blob/master/bank2ynab.conf#L113",
+    "link": "https://github.com/bank2ynab/bank2ynab/blob/master/bank2ynab.conf#L114",
     "dateFormat": "%d %b %y",
     "headerRows": 0,
     "footerRows": 0
@@ -150,7 +150,7 @@
       "skip",
       "skip"
     ],
-    "link": "https://github.com/bank2ynab/bank2ynab/blob/master/bank2ynab.conf#L120",
+    "link": "https://github.com/bank2ynab/bank2ynab/blob/master/bank2ynab.conf#L121",
     "dateFormat": "%d/%m/%Y",
     "headerRows": 1,
     "footerRows": 0
@@ -178,7 +178,7 @@
       "skip",
       "skip"
     ],
-    "link": "https://github.com/bank2ynab/bank2ynab/blob/master/bank2ynab.conf#L129",
+    "link": "https://github.com/bank2ynab/bank2ynab/blob/master/bank2ynab.conf#L130",
     "dateFormat": "%d/%m/%Y",
     "headerRows": 1,
     "footerRows": 0
@@ -197,7 +197,7 @@
       "Inflow",
       "skip"
     ],
-    "link": "https://github.com/bank2ynab/bank2ynab/blob/master/bank2ynab.conf#L138",
+    "link": "https://github.com/bank2ynab/bank2ynab/blob/master/bank2ynab.conf#L139",
     "dateFormat": "%d.%m.%Y",
     "headerRows": 1,
     "footerRows": 0
@@ -215,7 +215,7 @@
       "skip",
       "Inflow"
     ],
-    "link": "https://github.com/bank2ynab/bank2ynab/blob/master/bank2ynab.conf#L146",
+    "link": "https://github.com/bank2ynab/bank2ynab/blob/master/bank2ynab.conf#L147",
     "dateFormat": "%d/%m/%Y",
     "headerRows": 1,
     "footerRows": 0
@@ -231,7 +231,7 @@
       "Inflow",
       "skip"
     ],
-    "link": "https://github.com/bank2ynab/bank2ynab/blob/master/bank2ynab.conf#L152",
+    "link": "https://github.com/bank2ynab/bank2ynab/blob/master/bank2ynab.conf#L153",
     "headerRows": 1,
     "footerRows": 0
   },
@@ -247,9 +247,67 @@
       "Inflow",
       "skip"
     ],
-    "link": "https://github.com/bank2ynab/bank2ynab/blob/master/bank2ynab.conf#L159",
+    "link": "https://github.com/bank2ynab/bank2ynab/blob/master/bank2ynab.conf#L160",
     "dateFormat": "%m/%d/%Y",
     "headerRows": 0,
+    "footerRows": 0
+  },
+  {
+    "name": "UBS Checking account",
+    "country": "ch",
+    "filenamePattern": "export\\.csv",
+    "filenameExtension": "csv",
+    "inputColumns": [
+      "skip",
+      "skip",
+      "skip",
+      "skip",
+      "skip",
+      "skip",
+      "skip",
+      "skip",
+      "skip",
+      "Date",
+      "skip",
+      "skip",
+      "skip",
+      "Payee",
+      "Memo",
+      "skip",
+      "skip",
+      "skip",
+      "Outflow",
+      "Inflow",
+      "skip"
+    ],
+    "link": "https://github.com/bank2ynab/bank2ynab/blob/master/bank2ynab.conf#L167",
+    "dateFormat": "%d.%m.%Y",
+    "headerRows": 1,
+    "footerRows": 3
+  },
+  {
+    "name": "UBS Credit card",
+    "country": "ch",
+    "filenamePattern": "^(transactions|invoice)[_ \\d]*\\.csv",
+    "filenameExtension": "csv",
+    "inputColumns": [
+      "skip",
+      "skip",
+      "skip",
+      "Date",
+      "Payee",
+      "skip",
+      "skip",
+      "skip",
+      "skip",
+      "skip",
+      "Outflow",
+      "Inflow",
+      "skip"
+    ],
+    "link": "https://github.com/bank2ynab/bank2ynab/blob/master/bank2ynab.conf#L176",
+    "dateFormat": "%d.%m.%Y",
+    "headerRows": 2,
     "footerRows": 0
   },
   {
@@ -265,7 +323,7 @@
       "Outflow",
       "Inflow"
     ],
-    "link": "https://github.com/bank2ynab/bank2ynab/blob/master/bank2ynab.conf#L166",
+    "link": "https://github.com/bank2ynab/bank2ynab/blob/master/bank2ynab.conf#L186",
     "dateFormat": "%d.%m.%Y",
     "headerRows": 1,
     "footerRows": 0
@@ -284,8 +342,26 @@
       "Payee",
       "skip"
     ],
-    "link": "https://github.com/bank2ynab/bank2ynab/blob/master/bank2ynab.conf#L175",
+    "link": "https://github.com/bank2ynab/bank2ynab/blob/master/bank2ynab.conf#L195",
     "dateFormat": "%Y-%m-%d",
+    "headerRows": 1,
+    "footerRows": 0
+  },
+  {
+    "name": "Bancolombia",
+    "country": "co",
+    "filenamePattern": "[0-9]{3}-[0-9]{6}-[0-9]{2}_[0-9]{3}\\.txt",
+    "filenameExtension": "txt",
+    "inputColumns": [
+      "Date",
+      "skip",
+      "skip",
+      "Memo",
+      "skip",
+      "Inflow"
+    ],
+    "link": "https://github.com/bank2ynab/bank2ynab/blob/master/bank2ynab.conf#L204",
+    "dateFormat": "%Y/%m/%d",
     "headerRows": 1,
     "footerRows": 0
   },
@@ -338,7 +414,7 @@
       "skip",
       "skip"
     ],
-    "link": "https://github.com/bank2ynab/bank2ynab/blob/master/bank2ynab.conf#L184",
+    "link": "https://github.com/bank2ynab/bank2ynab/blob/master/bank2ynab.conf#L213",
     "dateFormat": "%d/%m/%Y",
     "headerRows": 1,
     "footerRows": 0
@@ -361,7 +437,7 @@
       "skip",
       "Memo"
     ],
-    "link": "https://github.com/bank2ynab/bank2ynab/blob/master/bank2ynab.conf#L192",
+    "link": "https://github.com/bank2ynab/bank2ynab/blob/master/bank2ynab.conf#L221",
     "dateFormat": "%Y/%m/%d",
     "headerRows": 1,
     "footerRows": 0
@@ -387,15 +463,38 @@
       "skip",
       "Inflow"
     ],
-    "link": "https://github.com/bank2ynab/bank2ynab/blob/master/bank2ynab.conf#L203",
+    "link": "https://github.com/bank2ynab/bank2ynab/blob/master/bank2ynab.conf#L232",
     "dateFormat": "%d.%m.%Y",
     "headerRows": 1,
     "footerRows": 0
   },
   {
+    "name": "Amazon VISA LBB",
+    "country": "de",
+    "filenamePattern": "KKB\\-Umsätze_[0-9]{8}_[0-9]{4}\\.csv",
+    "filenameExtension": "csv",
+    "inputColumns": [
+      "skip",
+      "Date",
+      "skip",
+      "Payee",
+      "Memo",
+      "skip",
+      "skip",
+      "skip",
+      "Inflow",
+      "skip",
+      "skip"
+    ],
+    "link": "https://github.com/bank2ynab/bank2ynab/blob/master/bank2ynab.conf#L242",
+    "dateFormat": "%d.%m.%Y",
+    "headerRows": 2,
+    "footerRows": 0
+  },
+  {
     "name": "Commerzbank checking",
     "country": "de",
-    "filenamePattern": "Umsaetze_KtoNr[0-9]{9}_EUR_[0-9]{2}-[0-9]{2}-[0-9]{4}_[0-9]{4}\\.CSV",
+    "filenamePattern": "Umsaetze_KtoNr[0-9]{9}_EUR_[0-9]{2}-[0-9]{2}-[0-9]{4}_[0-9]{4}\\.csv",
     "filenameExtension": "csv",
     "inputColumns": [
       "Date",
@@ -408,7 +507,7 @@
       "skip",
       "skip"
     ],
-    "link": "https://github.com/bank2ynab/bank2ynab/blob/master/bank2ynab.conf#L213",
+    "link": "https://github.com/bank2ynab/bank2ynab/blob/master/bank2ynab.conf#L253",
     "dateFormat": "%d.%m.%Y",
     "headerRows": 1,
     "footerRows": 0
@@ -428,7 +527,7 @@
       "Memo",
       "Inflow"
     ],
-    "link": "https://github.com/bank2ynab/bank2ynab/blob/master/bank2ynab.conf#L223",
+    "link": "https://github.com/bank2ynab/bank2ynab/blob/master/bank2ynab.conf#L262",
     "dateFormat": "%d.%m.%Y",
     "headerRows": 1,
     "footerRows": 0
@@ -458,7 +557,7 @@
       "Inflow",
       "skip"
     ],
-    "link": "https://github.com/bank2ynab/bank2ynab/blob/master/bank2ynab.conf#L231",
+    "link": "https://github.com/bank2ynab/bank2ynab/blob/master/bank2ynab.conf#L270",
     "dateFormat": "%m/%d/%Y",
     "headerRows": 4,
     "footerRows": 1
@@ -478,7 +577,7 @@
       "Inflow",
       "skip"
     ],
-    "link": "https://github.com/bank2ynab/bank2ynab/blob/master/bank2ynab.conf#L240",
+    "link": "https://github.com/bank2ynab/bank2ynab/blob/master/bank2ynab.conf#L279",
     "dateFormat": "%m/%d/%Y",
     "headerRows": 4,
     "footerRows": 1
@@ -501,7 +600,7 @@
       "skip",
       "skip"
     ],
-    "link": "https://github.com/bank2ynab/bank2ynab/blob/master/bank2ynab.conf#L251",
+    "link": "https://github.com/bank2ynab/bank2ynab/blob/master/bank2ynab.conf#L290",
     "dateFormat": "%d.%m.%Y",
     "headerRows": 7,
     "footerRows": 0
@@ -519,7 +618,7 @@
       "Inflow",
       "skip"
     ],
-    "link": "https://github.com/bank2ynab/bank2ynab/blob/master/bank2ynab.conf#L261",
+    "link": "https://github.com/bank2ynab/bank2ynab/blob/master/bank2ynab.conf#L300",
     "dateFormat": "%d.%m.%Y",
     "headerRows": 7,
     "footerRows": 0
@@ -544,7 +643,7 @@
       "Inflow",
       "CDFlag"
     ],
-    "link": "https://github.com/bank2ynab/bank2ynab/blob/master/bank2ynab.conf#L271",
+    "link": "https://github.com/bank2ynab/bank2ynab/blob/master/bank2ynab.conf#L310",
     "dateFormat": "%d.%m.%Y",
     "inflowOutflowFlag": [
       "12",
@@ -570,7 +669,7 @@
       "Inflow",
       "skip"
     ],
-    "link": "https://github.com/bank2ynab/bank2ynab/blob/master/bank2ynab.conf#L282",
+    "link": "https://github.com/bank2ynab/bank2ynab/blob/master/bank2ynab.conf#L321",
     "dateFormat": "%d.%m.%Y",
     "headerRows": 13,
     "footerRows": 0
@@ -592,7 +691,7 @@
       "skip",
       "skip"
     ],
-    "link": "https://github.com/bank2ynab/bank2ynab/blob/master/bank2ynab.conf#L300",
+    "link": "https://github.com/bank2ynab/bank2ynab/blob/master/bank2ynab.conf#L339",
     "dateFormat": "%Y-%m-%d",
     "headerRows": 1,
     "footerRows": 0
@@ -600,7 +699,7 @@
   {
     "name": "Ostseesparkasse Rostock checking",
     "country": "de",
-    "filenamePattern": "[0-9]{8}-[0-9]{10}-umsatz\\.CSV",
+    "filenamePattern": "[0-9]{8}-[0-9]{10}-umsatz\\.csv",
     "filenameExtension": "csv",
     "inputColumns": [
       "skip",
@@ -615,7 +714,7 @@
       "skip",
       "skip"
     ],
-    "link": "https://github.com/bank2ynab/bank2ynab/blob/master/bank2ynab.conf#L308",
+    "link": "https://github.com/bank2ynab/bank2ynab/blob/master/bank2ynab.conf#L347",
     "dateFormat": "%d.%m.%y",
     "headerRows": 1,
     "footerRows": 0
@@ -623,7 +722,7 @@
   {
     "name": "Ostseesparkasse Rostock credit card",
     "country": "de",
-    "filenamePattern": "umsatz-[0-9]{4}_{8}[0-9]{4}-[0-9]{8}\\.CSV",
+    "filenamePattern": "umsatz-[0-9]{4}_{8}[0-9]{4}-[0-9]{8}\\.csv",
     "filenameExtension": "csv",
     "inputColumns": [
       "skip",
@@ -643,7 +742,7 @@
       "skip",
       "skip"
     ],
-    "link": "https://github.com/bank2ynab/bank2ynab/blob/master/bank2ynab.conf#L317",
+    "link": "https://github.com/bank2ynab/bank2ynab/blob/master/bank2ynab.conf#L355",
     "dateFormat": "%d.%m.%y",
     "headerRows": 1,
     "footerRows": 0
@@ -672,15 +771,38 @@
       "skip",
       "skip"
     ],
-    "link": "https://github.com/bank2ynab/bank2ynab/blob/master/bank2ynab.conf#L326",
+    "link": "https://github.com/bank2ynab/bank2ynab/blob/master/bank2ynab.conf#L363",
     "dateFormat": "%d.%m.%y",
     "headerRows": 1,
     "footerRows": 0
   },
   {
+    "name": "Landesbank Berlin Amazon Kreditkarten-Banking",
+    "country": "de",
+    "filenamePattern": "KKB-Umsätze_[0-9]{8}_[0-9]{4}\\.csv",
+    "filenameExtension": "csv",
+    "inputColumns": [
+      "skip",
+      "skip",
+      "Date",
+      "Payee",
+      "Memo",
+      "skip",
+      "skip",
+      "skip",
+      "Outflow",
+      "skip",
+      "skip"
+    ],
+    "link": "https://github.com/bank2ynab/bank2ynab/blob/master/bank2ynab.conf#L371",
+    "dateFormat": "%d.%m.%Y",
+    "headerRows": 2,
+    "footerRows": 0
+  },
+  {
     "name": "Sparkasse Südholstein",
     "country": "de",
-    "filenamePattern": "[0-9]{8}-[0-9]{9}-umsatz\\.CSV",
+    "filenamePattern": "[0-9]{8}-[0-9]{9}-umsatz\\.csv",
     "filenameExtension": "csv",
     "inputColumns": [
       "skip",
@@ -701,7 +823,7 @@
       "skip",
       "skip"
     ],
-    "link": "https://github.com/bank2ynab/bank2ynab/blob/master/bank2ynab.conf#L334",
+    "link": "https://github.com/bank2ynab/bank2ynab/blob/master/bank2ynab.conf#L383",
     "dateFormat": "%d.%m.%y",
     "headerRows": 1,
     "footerRows": 0
@@ -717,9 +839,27 @@
       "Inflow",
       "Running Balance"
     ],
-    "link": "https://github.com/bank2ynab/bank2ynab/blob/master/bank2ynab.conf#L343",
+    "link": "https://github.com/bank2ynab/bank2ynab/blob/master/bank2ynab.conf#L391",
     "dateFormat": "%d-%m-%Y",
     "headerRows": 0,
+    "footerRows": 0
+  },
+  {
+    "name": "Danske Bank",
+    "country": "dk",
+    "filenamePattern": "[\\S]*-\\d{10}-\\d{8}.csv\\.csv",
+    "filenameExtension": "csv",
+    "inputColumns": [
+      "Date",
+      "Payee",
+      "Inflow",
+      "Running Balance",
+      "skip",
+      "skip"
+    ],
+    "link": "https://github.com/bank2ynab/bank2ynab/blob/master/bank2ynab.conf#L401",
+    "dateFormat": "%d.%m.%Y",
+    "headerRows": 1,
     "footerRows": 0
   },
   {
@@ -739,7 +879,7 @@
       "skip",
       "skip"
     ],
-    "link": "https://github.com/bank2ynab/bank2ynab/blob/master/bank2ynab.conf#L353",
+    "link": "https://github.com/bank2ynab/bank2ynab/blob/master/bank2ynab.conf#L410",
     "headerRows": 1,
     "footerRows": 0
   },
@@ -755,13 +895,13 @@
       "Inflow",
       "skip"
     ],
-    "link": "https://github.com/bank2ynab/bank2ynab/blob/master/bank2ynab.conf#L359",
+    "link": "https://github.com/bank2ynab/bank2ynab/blob/master/bank2ynab.conf#L416",
     "dateFormat": "%Y-%m-%d",
     "headerRows": 1,
     "footerRows": 0
   },
   {
-    "name": "Sparkassen Thy",
+    "name": "Portalbank",
     "country": "dk",
     "filenamePattern": "export\\.csv",
     "filenameExtension": "csv",
@@ -772,9 +912,42 @@
       "Inflow",
       "Running Balance"
     ],
-    "link": "https://github.com/bank2ynab/bank2ynab/blob/master/bank2ynab.conf#L366",
+    "link": "https://github.com/bank2ynab/bank2ynab/blob/master/bank2ynab.conf#L423",
     "dateFormat": "%d-%m-%Y",
     "headerRows": 0,
+    "footerRows": 0
+  },
+  {
+    "name": "banking software",
+    "country": "hibiscus",
+    "filenamePattern": "hibiscus-export-20[0-9]{6}\\.csv",
+    "filenameExtension": "csv",
+    "inputColumns": [
+      "skip",
+      "skip",
+      "skip",
+      "skip",
+      "skip",
+      "skip",
+      "Payee",
+      "Inflow",
+      "skip",
+      "Date",
+      "Memo",
+      "skip",
+      "skip",
+      "skip",
+      "skip",
+      "Category",
+      "skip",
+      "skip",
+      "skip",
+      "skip",
+      "skip"
+    ],
+    "link": "https://github.com/bank2ynab/bank2ynab/blob/master/bank2ynab.conf#L432",
+    "dateFormat": "%d.%m.%Y",
+    "headerRows": 1,
     "footerRows": 0
   },
   {
@@ -800,8 +973,41 @@
       "skip",
       "skip"
     ],
-    "link": "https://github.com/bank2ynab/bank2ynab/blob/master/bank2ynab.conf#L373",
+    "link": "https://github.com/bank2ynab/bank2ynab/blob/master/bank2ynab.conf#L441",
     "dateFormat": "%Y.%m.%d.",
+    "headerRows": 1,
+    "footerRows": 0
+  },
+  {
+    "name": "K&H",
+    "country": "hu",
+    "filenamePattern": "szamlatortenet_[0-9]{8}_[0-9]{8}\\.csv",
+    "filenameExtension": "csv",
+    "inputColumns": [
+      "Date",
+      "skip",
+      "Memo",
+      "skip",
+      "skip",
+      "skip",
+      "Payee",
+      "Inflow",
+      "skip",
+      "Memo",
+      "skip",
+      "skip",
+      "skip",
+      "skip",
+      "skip",
+      "skip",
+      "skip",
+      "skip",
+      "skip",
+      "skip",
+      "skip"
+    ],
+    "link": "https://github.com/bank2ynab/bank2ynab/blob/master/bank2ynab.conf#L451",
+    "dateFormat": "%Y.%m.%d",
     "headerRows": 1,
     "footerRows": 0
   },
@@ -814,21 +1020,22 @@
       "skip",
       "skip",
       "Inflow",
+      "skip",
       "Date",
       "skip",
       "skip",
       "skip",
-      "skip",
       "Payee",
-      "skip",
-      "skip",
       "Memo",
       "Memo",
+      "skip",
+      "Memo",
+      "skip",
       "skip"
     ],
-    "link": "https://github.com/bank2ynab/bank2ynab/blob/master/bank2ynab.conf#L383",
+    "link": "https://github.com/bank2ynab/bank2ynab/blob/master/bank2ynab.conf#L459",
     "dateFormat": "%Y%m%d",
-    "headerRows": 1,
+    "headerRows": 0,
     "footerRows": 0
   },
   {
@@ -840,19 +1047,24 @@
       "skip",
       "Date",
       "Payee",
-      "Inflow",
+      "skip",
+      "skip",
       "Outflow",
+      "Inflow",
+      "skip",
+      "skip",
       "skip",
       "skip"
     ],
-    "link": "https://github.com/bank2ynab/bank2ynab/blob/master/bank2ynab.conf#L390",
+    "link": "https://github.com/bank2ynab/bank2ynab/blob/master/bank2ynab.conf#L466",
+    "dateFormat": "%d/%m/%Y",
     "headerRows": 1,
     "footerRows": 0
   },
   {
     "name": "Bank of Ireland",
     "country": "ie",
-    "filenamePattern": "TransactionExport\\.csv",
+    "filenamePattern": "[a-z0-9]{8}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{12}\\.csv",
     "filenameExtension": "csv",
     "inputColumns": [
       "Date",
@@ -861,8 +1073,26 @@
       "Inflow",
       "skip"
     ],
-    "link": "https://github.com/bank2ynab/bank2ynab/blob/master/bank2ynab.conf#L398",
+    "link": "https://github.com/bank2ynab/bank2ynab/blob/master/bank2ynab.conf#L474",
     "dateFormat": "%d/%m/%Y",
+    "headerRows": 1,
+    "footerRows": 0
+  },
+  {
+    "name": "First South Credit Union",
+    "country": "ie",
+    "filenamePattern": "statement\\.csv",
+    "filenameExtension": "csv",
+    "inputColumns": [
+      "Date",
+      "Memo",
+      "Outflow",
+      "Inflow",
+      "skip",
+      "skip"
+    ],
+    "link": "https://github.com/bank2ynab/bank2ynab/blob/master/bank2ynab.conf#L480",
+    "dateFormat": "%d %b %y",
     "headerRows": 1,
     "footerRows": 0
   },
@@ -883,7 +1113,7 @@
       "skip",
       "skip"
     ],
-    "link": "https://github.com/bank2ynab/bank2ynab/blob/master/bank2ynab.conf#L404",
+    "link": "https://github.com/bank2ynab/bank2ynab/blob/master/bank2ynab.conf#L487",
     "dateFormat": "%Y-%m-%d",
     "headerRows": 1,
     "footerRows": 0
@@ -902,7 +1132,7 @@
       "skip",
       "skip"
     ],
-    "link": "https://github.com/bank2ynab/bank2ynab/blob/master/bank2ynab.conf#L411",
+    "link": "https://github.com/bank2ynab/bank2ynab/blob/master/bank2ynab.conf#L494",
     "dateFormat": "%d/%m/%Y",
     "headerRows": 1,
     "footerRows": 0
@@ -921,10 +1151,39 @@
       "Memo",
       "skip"
     ],
-    "link": "https://github.com/bank2ynab/bank2ynab/blob/master/bank2ynab.conf#L423",
+    "link": "https://github.com/bank2ynab/bank2ynab/blob/master/bank2ynab.conf#L506",
     "dateFormat": "%d/%m/%Y",
     "headerRows": 1,
     "footerRows": 0
+  },
+  {
+    "name": "Swedbank",
+    "country": "lv",
+    "filenamePattern": "statement\\.csv",
+    "filenameExtension": "csv",
+    "inputColumns": [
+      "skip",
+      "skip",
+      "Date",
+      "Payee",
+      "Memo",
+      "Inflow",
+      "skip",
+      "CDFlag",
+      "skip",
+      "skip",
+      "skip",
+      "skip"
+    ],
+    "link": "https://github.com/bank2ynab/bank2ynab/blob/master/bank2ynab.conf#L514",
+    "dateFormat": "%d.%m.%Y",
+    "inflowOutflowFlag": [
+      "7",
+      "K",
+      "D"
+    ],
+    "headerRows": 2,
+    "footerRows": 4
   },
   {
     "name": "",
@@ -939,7 +1198,7 @@
       "Inflow",
       "Category"
     ],
-    "link": "https://github.com/bank2ynab/bank2ynab/blob/master/bank2ynab.conf#L431",
+    "link": "https://github.com/bank2ynab/bank2ynab/blob/master/bank2ynab.conf#L524",
     "headerRows": 1,
     "footerRows": 0
   },
@@ -961,7 +1220,7 @@
       "Outflow",
       "skip"
     ],
-    "link": "https://github.com/bank2ynab/bank2ynab/blob/master/bank2ynab.conf#L440",
+    "link": "https://github.com/bank2ynab/bank2ynab/blob/master/bank2ynab.conf#L533",
     "headerRows": 1,
     "footerRows": 0
   },
@@ -990,7 +1249,7 @@
       "skip",
       "skip"
     ],
-    "link": "https://github.com/bank2ynab/bank2ynab/blob/master/bank2ynab.conf#L448",
+    "link": "https://github.com/bank2ynab/bank2ynab/blob/master/bank2ynab.conf#L541",
     "dateFormat": "%d-%m-%Y / %H:%M",
     "headerRows": 1,
     "footerRows": 0
@@ -1008,7 +1267,7 @@
       "Payee",
       "Memo"
     ],
-    "link": "https://github.com/bank2ynab/bank2ynab/blob/master/bank2ynab.conf#L453",
+    "link": "https://github.com/bank2ynab/bank2ynab/blob/master/bank2ynab.conf#L546",
     "dateFormat": "%Y-%m-%d",
     "headerRows": 1,
     "footerRows": 0
@@ -1026,7 +1285,7 @@
       "skip",
       "Memo"
     ],
-    "link": "https://github.com/bank2ynab/bank2ynab/blob/master/bank2ynab.conf#L463",
+    "link": "https://github.com/bank2ynab/bank2ynab/blob/master/bank2ynab.conf#L556",
     "dateFormat": "%Y-%m-%d",
     "headerRows": 1,
     "footerRows": 0
@@ -1052,7 +1311,7 @@
       "skip",
       "skip"
     ],
-    "link": "https://github.com/bank2ynab/bank2ynab/blob/master/bank2ynab.conf#L476",
+    "link": "https://github.com/bank2ynab/bank2ynab/blob/master/bank2ynab.conf#L569",
     "dateFormat": "%Y-%m-%d",
     "headerRows": 1,
     "footerRows": 0
@@ -1073,7 +1332,7 @@
       "skip",
       "Memo"
     ],
-    "link": "https://github.com/bank2ynab/bank2ynab/blob/master/bank2ynab.conf#L484",
+    "link": "https://github.com/bank2ynab/bank2ynab/blob/master/bank2ynab.conf#L577",
     "dateFormat": "%Y%m%d",
     "inflowOutflowFlag": [
       "5",
@@ -1099,7 +1358,7 @@
       "skip",
       "Memo"
     ],
-    "link": "https://github.com/bank2ynab/bank2ynab/blob/master/bank2ynab.conf#L494",
+    "link": "https://github.com/bank2ynab/bank2ynab/blob/master/bank2ynab.conf#L587",
     "dateFormat": "%Y%m%d",
     "inflowOutflowFlag": [
       "5",
@@ -1107,6 +1366,39 @@
       "Af"
     ],
     "headerRows": 1,
+    "footerRows": 0
+  },
+  {
+    "name": "KNAB",
+    "country": "nl",
+    "filenamePattern": "Knab transactieoverzicht betaalrekening NL[0-9]{2}KNAB[0-9]* - [0-9]{4}-[0-9]{2}-[0-9]{2} - [0-9]{4}-[0-9]{2}-[0-9]{2}\\.csv",
+    "filenameExtension": "csv",
+    "inputColumns": [
+      "skip",
+      "Date",
+      "skip",
+      "CDFlag",
+      "Inflow",
+      "skip",
+      "Payee",
+      "skip",
+      "skip",
+      "Memo",
+      "skip",
+      "skip",
+      "skip",
+      "skip",
+      "skip",
+      "skip"
+    ],
+    "link": "https://github.com/bank2ynab/bank2ynab/blob/master/bank2ynab.conf#L600",
+    "dateFormat": "%d-%m-%Y",
+    "inflowOutflowFlag": [
+      "3",
+      "C",
+      "D"
+    ],
+    "headerRows": 2,
     "footerRows": 0
   },
   {
@@ -1128,14 +1420,14 @@
       "Memo",
       "skip"
     ],
-    "link": "https://github.com/bank2ynab/bank2ynab/blob/master/bank2ynab.conf#L506",
+    "link": "https://github.com/bank2ynab/bank2ynab/blob/master/bank2ynab.conf#L612",
     "dateFormat": "%Y%m%d",
     "inflowOutflowFlag": [
       "3",
       "C",
       "D"
     ],
-    "headerRows": 1,
+    "headerRows": 0,
     "footerRows": 0
   },
   {
@@ -1171,8 +1463,33 @@
       "skip",
       "skip"
     ],
-    "link": "https://github.com/bank2ynab/bank2ynab/blob/master/bank2ynab.conf#L516",
+    "link": "https://github.com/bank2ynab/bank2ynab/blob/master/bank2ynab.conf#L622",
     "dateFormat": "%Y-%m-%d",
+    "headerRows": 1,
+    "footerRows": 0
+  },
+  {
+    "name": "Rabobank Credit Card",
+    "country": "nl",
+    "filenamePattern": "CSV_CC_20[0-9]{6}_[0-9]{6}\\.csv",
+    "filenameExtension": "csv",
+    "inputColumns": [
+      "skip",
+      "skip",
+      "skip",
+      "skip",
+      "skip",
+      "skip",
+      "skip",
+      "Date",
+      "Inflow",
+      "Payee",
+      "skip",
+      "skip",
+      "skip"
+    ],
+    "link": "https://github.com/bank2ynab/bank2ynab/blob/master/bank2ynab.conf#L630",
+    "dateFormat": "%Y%m%d",
     "headerRows": 1,
     "footerRows": 0
   },
@@ -1188,7 +1505,7 @@
       "Outflow",
       "Inflow"
     ],
-    "link": "https://github.com/bank2ynab/bank2ynab/blob/master/bank2ynab.conf#L524",
+    "link": "https://github.com/bank2ynab/bank2ynab/blob/master/bank2ynab.conf#L639",
     "dateFormat": "%d.%m.%Y",
     "headerRows": 1,
     "footerRows": 0
@@ -1196,18 +1513,19 @@
   {
     "name": "Sparebank 1 VISA",
     "country": "no",
-    "filenamePattern": "# OversiktKonti-\\d{2}.\\d{2}.\\d{4}-\\d{2}.\\d{2}.\\d{4}\\.csv",
+    "filenamePattern": "OversiktKonti-\\d{2}.\\d{2}.\\d{4}-\\d{2}.\\d{2}.\\d{4}\\.csv",
     "filenameExtension": "csv",
     "inputColumns": [
       "Date",
       "Payee",
       "skip",
       "Inflow",
-      "Inflow",
+      "Outflow",
       "skip",
       "skip"
     ],
-    "link": "https://github.com/bank2ynab/bank2ynab/blob/master/bank2ynab.conf#L533",
+    "link": "https://github.com/bank2ynab/bank2ynab/blob/master/bank2ynab.conf#L648",
+    "dateFormat": "%d.%m.%Y",
     "headerRows": 1,
     "footerRows": 0
   },
@@ -1224,7 +1542,7 @@
       "skip",
       "Inflow"
     ],
-    "link": "https://github.com/bank2ynab/bank2ynab/blob/master/bank2ynab.conf#L544",
+    "link": "https://github.com/bank2ynab/bank2ynab/blob/master/bank2ynab.conf#L656",
     "dateFormat": "%Y-%m-%d",
     "headerRows": 1,
     "footerRows": 0
@@ -1244,7 +1562,29 @@
       "Inflow",
       "skip"
     ],
-    "link": "https://github.com/bank2ynab/bank2ynab/blob/master/bank2ynab.conf#L553",
+    "link": "https://github.com/bank2ynab/bank2ynab/blob/master/bank2ynab.conf#L665",
+    "headerRows": 1,
+    "footerRows": 0
+  },
+  {
+    "name": "",
+    "country": "revolut",
+    "filenamePattern": "account-statement_[0-9]{4}-[0-9]{2}-[0-9]{2}_[0-9]{4}-[0-9]{2}-[0-9]{2}_[0-9]{6}\\.csv",
+    "filenameExtension": "csv",
+    "inputColumns": [
+      "skip",
+      "skip",
+      "Date",
+      "skip",
+      "Payee",
+      "Inflow",
+      "skip",
+      "skip",
+      "skip",
+      "skip"
+    ],
+    "link": "https://github.com/bank2ynab/bank2ynab/blob/master/bank2ynab.conf#L675",
+    "dateFormat": "%Y-%m-%d %H:%M:%S",
     "headerRows": 1,
     "footerRows": 0
   },
@@ -1265,7 +1605,8 @@
       "skip",
       "skip"
     ],
-    "link": "https://github.com/bank2ynab/bank2ynab/blob/master/bank2ynab.conf#L574",
+    "link": "https://github.com/bank2ynab/bank2ynab/blob/master/bank2ynab.conf#L693",
+    "dateFormat": "%d/%m/%y",
     "headerRows": 1,
     "footerRows": 0
   },
@@ -1281,7 +1622,7 @@
       "Inflow",
       "skip"
     ],
-    "link": "https://github.com/bank2ynab/bank2ynab/blob/master/bank2ynab.conf#L585",
+    "link": "https://github.com/bank2ynab/bank2ynab/blob/master/bank2ynab.conf#L705",
     "dateFormat": "%Y-%m-%d",
     "headerRows": 1,
     "footerRows": 2
@@ -1301,7 +1642,7 @@
       "skip",
       "skip"
     ],
-    "link": "https://github.com/bank2ynab/bank2ynab/blob/master/bank2ynab.conf#L597",
+    "link": "https://github.com/bank2ynab/bank2ynab/blob/master/bank2ynab.conf#L717",
     "dateFormat": "%Y-%m-%d",
     "headerRows": 1,
     "footerRows": 0
@@ -1319,7 +1660,7 @@
       "Inflow",
       "skip"
     ],
-    "link": "https://github.com/bank2ynab/bank2ynab/blob/master/bank2ynab.conf#L608",
+    "link": "https://github.com/bank2ynab/bank2ynab/blob/master/bank2ynab.conf#L728",
     "dateFormat": "%Y-%m-%d",
     "headerRows": 5,
     "footerRows": 0
@@ -1336,7 +1677,7 @@
       "Inflow",
       "skip"
     ],
-    "link": "https://github.com/bank2ynab/bank2ynab/blob/master/bank2ynab.conf#L615",
+    "link": "https://github.com/bank2ynab/bank2ynab/blob/master/bank2ynab.conf#L735",
     "dateFormat": "%Y-%m-%d",
     "headerRows": 0,
     "footerRows": 0
@@ -1363,7 +1704,7 @@
       "skip",
       "skip"
     ],
-    "link": "https://github.com/bank2ynab/bank2ynab/blob/master/bank2ynab.conf#L625",
+    "link": "https://github.com/bank2ynab/bank2ynab/blob/master/bank2ynab.conf#L745",
     "dateFormat": "%Y/%m/%d",
     "inflowOutflowFlag": [
       "7",
@@ -1385,9 +1726,33 @@
       "Inflow",
       "skip"
     ],
-    "link": "https://github.com/bank2ynab/bank2ynab/blob/master/bank2ynab.conf#L635",
+    "link": "https://github.com/bank2ynab/bank2ynab/blob/master/bank2ynab.conf#L755",
     "dateFormat": "%Y-%m-%d",
     "headerRows": 1,
+    "footerRows": 0
+  },
+  {
+    "name": "Swedbank 2020",
+    "country": "se",
+    "filenamePattern": "Transaktioner_20([0-9]{2}-){2}[0-9]{2}_([0-9]{2}-){2}[0-9]{2}\\.csv",
+    "filenameExtension": "csv",
+    "inputColumns": [
+      "skip",
+      "skip",
+      "skip",
+      "skip",
+      "skip",
+      "Date",
+      "skip",
+      "skip",
+      "Payee",
+      "Memo",
+      "Inflow",
+      "skip"
+    ],
+    "link": "https://github.com/bank2ynab/bank2ynab/blob/master/bank2ynab.conf#L762",
+    "dateFormat": "%Y-%m-%d",
+    "headerRows": 2,
     "footerRows": 0
   },
   {
@@ -1404,7 +1769,7 @@
       "Memo",
       "skip"
     ],
-    "link": "https://github.com/bank2ynab/bank2ynab/blob/master/bank2ynab.conf#L651",
+    "link": "https://github.com/bank2ynab/bank2ynab/blob/master/bank2ynab.conf#L787",
     "dateFormat": "%d %b %Y",
     "headerRows": 0,
     "footerRows": 0
@@ -1431,7 +1796,7 @@
       "skip",
       "Memo"
     ],
-    "link": "https://github.com/bank2ynab/bank2ynab/blob/master/bank2ynab.conf#L659",
+    "link": "https://github.com/bank2ynab/bank2ynab/blob/master/bank2ynab.conf#L795",
     "dateFormat": "%d.%m.%Y",
     "inflowOutflowFlag": [
       "4",
@@ -1444,7 +1809,7 @@
   {
     "name": "VUB",
     "country": "sk",
-    "filenamePattern": "SK030200[0-9]{16}_export_(of_movements_on_the_account|pohybov_na_ucte)\\.CSV",
+    "filenamePattern": "SK030200[0-9]{16}_export_(of_movements_on_the_account|pohybov_na_ucte)\\.csv",
     "filenameExtension": "csv",
     "inputColumns": [
       "Date",
@@ -1463,7 +1828,7 @@
       "skip",
       "skip"
     ],
-    "link": "https://github.com/bank2ynab/bank2ynab/blob/master/bank2ynab.conf#L670",
+    "link": "https://github.com/bank2ynab/bank2ynab/blob/master/bank2ynab.conf#L805",
     "dateFormat": "%Y%m%d",
     "headerRows": 1,
     "footerRows": 0
@@ -1481,7 +1846,7 @@
       "Outflow",
       "skip"
     ],
-    "link": "https://github.com/bank2ynab/bank2ynab/blob/master/bank2ynab.conf#L680",
+    "link": "https://github.com/bank2ynab/bank2ynab/blob/master/bank2ynab.conf#L814",
     "headerRows": 1,
     "footerRows": 0
   },
@@ -1504,7 +1869,7 @@
       "Memo",
       "skip"
     ],
-    "link": "https://github.com/bank2ynab/bank2ynab/blob/master/bank2ynab.conf#L687",
+    "link": "https://github.com/bank2ynab/bank2ynab/blob/master/bank2ynab.conf#L821",
     "dateFormat": "%Y-%m-%d %H:%M:%S +0000",
     "headerRows": 1,
     "footerRows": 0
@@ -1524,7 +1889,7 @@
       "Inflow",
       "Outflow"
     ],
-    "link": "https://github.com/bank2ynab/bank2ynab/blob/master/bank2ynab.conf#L694",
+    "link": "https://github.com/bank2ynab/bank2ynab/blob/master/bank2ynab.conf#L828",
     "dateFormat": "%d %b %y",
     "headerRows": 0,
     "footerRows": 0
@@ -1557,7 +1922,7 @@
       "skip",
       "skip"
     ],
-    "link": "https://github.com/bank2ynab/bank2ynab/blob/master/bank2ynab.conf#L702",
+    "link": "https://github.com/bank2ynab/bank2ynab/blob/master/bank2ynab.conf#L836",
     "dateFormat": "%d/%m/%Y",
     "headerRows": 1,
     "footerRows": 0
@@ -1573,7 +1938,7 @@
       "Inflow",
       "skip"
     ],
-    "link": "https://github.com/bank2ynab/bank2ynab/blob/master/bank2ynab.conf#L714",
+    "link": "https://github.com/bank2ynab/bank2ynab/blob/master/bank2ynab.conf#L848",
     "headerRows": 1,
     "footerRows": 0
   },
@@ -1588,7 +1953,7 @@
       "Outflow",
       "skip"
     ],
-    "link": "https://github.com/bank2ynab/bank2ynab/blob/master/bank2ynab.conf#L721",
+    "link": "https://github.com/bank2ynab/bank2ynab/blob/master/bank2ynab.conf#L855",
     "dateFormat": "%d-%b-%Y",
     "headerRows": 1,
     "footerRows": 0
@@ -1604,7 +1969,7 @@
       "Outflow",
       "skip"
     ],
-    "link": "https://github.com/bank2ynab/bank2ynab/blob/master/bank2ynab.conf#L729",
+    "link": "https://github.com/bank2ynab/bank2ynab/blob/master/bank2ynab.conf#L863",
     "dateFormat": "%m/%d/%Y",
     "headerRows": 7,
     "footerRows": 0
@@ -1621,7 +1986,7 @@
       "skip",
       "Inflow"
     ],
-    "link": "https://github.com/bank2ynab/bank2ynab/blob/master/bank2ynab.conf#L737",
+    "link": "https://github.com/bank2ynab/bank2ynab/blob/master/bank2ynab.conf#L871",
     "dateFormat": "%m/%d/%Y",
     "headerRows": 1,
     "footerRows": 0
@@ -1629,7 +1994,7 @@
   {
     "name": "BB&T",
     "country": "us",
-    "filenamePattern": "EXPORT\\.CSV",
+    "filenamePattern": "EXPORT\\.csv",
     "filenameExtension": "csv",
     "inputColumns": [
       "Date",
@@ -1639,14 +2004,14 @@
       "Inflow",
       "skip"
     ],
-    "link": "https://github.com/bank2ynab/bank2ynab/blob/master/bank2ynab.conf#L746",
+    "link": "https://github.com/bank2ynab/bank2ynab/blob/master/bank2ynab.conf#L880",
     "headerRows": 1,
     "footerRows": 0
   },
   {
     "name": "Chase Credit Card 2017",
     "country": "us",
-    "filenamePattern": "Chase[0-9]{4}_(Activity_Stmt|RecentActivity)_[0-9]{8}\\.CSV",
+    "filenamePattern": "Chase[0-9]{4}_(Activity_Stmt|RecentActivity)_[0-9]{8}\\.csv",
     "filenameExtension": "csv",
     "inputColumns": [
       "skip",
@@ -1655,7 +2020,7 @@
       "Memo",
       "Inflow"
     ],
-    "link": "https://github.com/bank2ynab/bank2ynab/blob/master/bank2ynab.conf#L756",
+    "link": "https://github.com/bank2ynab/bank2ynab/blob/master/bank2ynab.conf#L889",
     "dateFormat": "%m/%d/%Y",
     "headerRows": 1,
     "footerRows": 0
@@ -1663,7 +2028,7 @@
   {
     "name": "Chase Credit Card 2019",
     "country": "us",
-    "filenamePattern": "Chase[0-9]{4}_Activity[0-9]{8}(_[0-9]{8})*\\.CSV",
+    "filenamePattern": "Chase[0-9]{4}_Activity[0-9]{8}(_[0-9]{8})*\\.csv",
     "filenameExtension": "csv",
     "inputColumns": [
       "skip",
@@ -1674,9 +2039,47 @@
       "skip",
       "Inflow"
     ],
-    "link": "https://github.com/bank2ynab/bank2ynab/blob/master/bank2ynab.conf#L765",
+    "link": "https://github.com/bank2ynab/bank2ynab/blob/master/bank2ynab.conf#L897",
     "dateFormat": "%m/%d/%Y",
     "headerRows": 1,
+    "footerRows": 0
+  },
+  {
+    "name": "Schwab Checking",
+    "country": "us",
+    "filenamePattern": "Source Filename Pattern = XXXXXX[0-9]{6}_(Checking)_Transactions_[0-9]{8}-[0-9]{6}\\.csv",
+    "filenameExtension": "csv",
+    "inputColumns": [
+      "Date",
+      "skip",
+      "skip",
+      "Payee",
+      "Outflow",
+      "Inflow",
+      "skip"
+    ],
+    "link": "https://github.com/bank2ynab/bank2ynab/blob/master/bank2ynab.conf#L904",
+    "dateFormat": "%m/%d/%Y",
+    "headerRows": 3,
+    "footerRows": 0
+  },
+  {
+    "name": "Schwab Savings",
+    "country": "us",
+    "filenamePattern": "Source Filename Pattern = XXXXXX[0-9]{6}_(Savings)_Transactions_[0-9]{8}-[0-9]{6}\\.csv",
+    "filenameExtension": "csv",
+    "inputColumns": [
+      "Date",
+      "skip",
+      "skip",
+      "Payee",
+      "Outflow",
+      "Inflow",
+      "skip"
+    ],
+    "link": "https://github.com/bank2ynab/bank2ynab/blob/master/bank2ynab.conf#L912",
+    "dateFormat": "%m/%d/%Y",
+    "headerRows": 3,
     "footerRows": 0
   },
   {
@@ -1693,7 +2096,7 @@
       "skip",
       "Inflow"
     ],
-    "link": "https://github.com/bank2ynab/bank2ynab/blob/master/bank2ynab.conf#L793",
+    "link": "https://github.com/bank2ynab/bank2ynab/blob/master/bank2ynab.conf#L930",
     "dateFormat": "%m/%d/%Y",
     "headerRows": 0,
     "footerRows": 0
