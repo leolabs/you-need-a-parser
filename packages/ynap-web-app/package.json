@@ -10,7 +10,7 @@
     "@types/react-dom": "16.9.7",
     "file-saver": "2.0.2",
     "gatsby": "2.32.13",
-    "gatsby-plugin-netlify": "2.3.11",
+    "gatsby-plugin-netlify": "2.11.1",
     "gatsby-plugin-offline": "3.10.2",
     "gatsby-plugin-react-helmet": "3.10.0",
     "gatsby-plugin-styled-components": "3.10.0",

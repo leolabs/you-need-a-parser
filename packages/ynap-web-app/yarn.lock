@@ -1285,7 +1285,7 @@
   dependencies:
     regenerator-runtime "^0.13.4"
 
-"@babel/runtime@^7.10.2", "@babel/runtime@^7.10.3":
+"@babel/runtime@^7.10.2":
   version "7.10.4"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.10.4.tgz#a6724f1a6b8d2f6ea5236dbfe58c7d7ea9c5eb99"
   integrity sha512-UpTN5yUJr9b4EX2CnGNWIvER7Ab83ibv0pcvvHc4UOdrBI5jb8bj+32cCwPX6xu0mt2daFNjYhoi+X7beH0RSw==
@@ -6804,15 +6804,15 @@ gatsby-page-utils@^0.9.1:
     lodash "^4.17.20"
     micromatch "^4.0.2"
 
-gatsby-plugin-netlify@2.3.11:
-  version "2.3.11"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-netlify/-/gatsby-plugin-netlify-2.3.11.tgz#e8c791490a33aadbd7431a83f791caa5ecc01568"
-  integrity sha512-0YOVsqaGwoUwz7bg3wulWnZOkFt3+NUcFvSutWVmmGyp1AzD7ToTwUNPnz/Fai4kG0vb1ChHbMoPWikEvjZUuw==
+gatsby-plugin-netlify@2.11.1:
+  version "2.11.1"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-netlify/-/gatsby-plugin-netlify-2.11.1.tgz#73b21a3dfdea4abd5ac7569e3003868c55591c27"
+  integrity sha512-mvMYgiVsASU48loQJuexGmvddo3lUJhwMeJQF3lkEx8V7ATt5lHVHzxwko5fypwrVc40ZBGiNsIQ08MiIu3rYg==
   dependencies:
-    "@babel/runtime" "^7.10.3"
+    "@babel/runtime" "^7.12.5"
     fs-extra "^8.1.0"
     kebab-hash "^0.1.2"
-    lodash "^4.17.15"
+    lodash "^4.17.20"
     webpack-assets-manifest "^3.1.1"
 
 gatsby-plugin-offline@3.10.2:
