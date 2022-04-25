@@ -2299,12 +2299,12 @@
   dependencies:
     "@types/react" "*"
 
-"@types/react-dom@16.9.7":
-  version "16.9.7"
-  resolved "https://registry.yarnpkg.com/@types/react-dom/-/react-dom-16.9.7.tgz#60844d48ce252d7b2dccf0c7bb937130e27c0cd2"
-  integrity sha512-GHTYhM8/OwUCf254WO5xqR/aqD3gC9kSTLpopWGpQLpnw23jk44RvMHsyUSEplvRJZdHxhJGMMLF0kCPYHPhQA==
+"@types/react-dom@16.9.15":
+  version "16.9.15"
+  resolved "https://registry.yarnpkg.com/@types/react-dom/-/react-dom-16.9.15.tgz#7bf41f2b2b86915ff9c0de475cb111d904df12c6"
+  integrity sha512-PjWhZj54ACucQX2hDmnHyqHz+N2On5g3Lt5BeNn+wy067qvOokVSQw1nEog1XGfvLYrSl3cyrdebEfjQQNXD3A==
   dependencies:
-    "@types/react" "*"
+    "@types/react" "^16"
 
 "@types/react-helmet-async@1.0.1":
   version "1.0.1"
@@ -2359,7 +2359,7 @@
     "@types/prop-types" "*"
     csstype "^2.2.0"
 
-"@types/react@16.14.25":
+"@types/react@16.14.25", "@types/react@^16":
   version "16.14.25"
   resolved "https://registry.yarnpkg.com/@types/react/-/react-16.14.25.tgz#d003f712c7563fdef5a87327f1892825af375608"
   integrity sha512-cXRVHd7vBT5v1is72mmvmsg9stZrbJO04DJqFeh3Yj2tVKO6vmxg5BI+ybI6Ls7ROXRG3aFbZj9x0WA3ZAoDQw==
