@@ -42,7 +42,7 @@
   "devDependencies": {
     "@types/file-saver": "2.0.1",
     "@types/node-fetch": "2.6.2",
-    "@types/react-helmet": "5.0.15",
+    "@types/react-helmet": "5.0.21",
     "@types/react-helmet-async": "1.0.1",
     "@types/react-toastify": "4.0.2",
     "@types/styled-components": "4.4.3",
