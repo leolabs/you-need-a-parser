@@ -13,6 +13,7 @@ const content = encode(
 "Neuer Kontostand";"16,94 EUR";
 
 "Buchungstag";"Wertstellung (Valuta)";"Vorgang";"Buchungstext";"Umsatz in EUR";
+"offen";"--";"Kartenverfügung";"Kto/IBAN: 000000000000  Buchungstext: NETFLIX.COM Berlin DE               2021-01-01T00:00:00                 ";"-15,99";
 "01.04.2019";"03.04.2019";"Wertpapiere";" Buchungstext: ISHSII-MSCI EUR.SRI EOACC WPKNR: A1H7ZS ISIN: IE00B52VJ196 Ref. 25F1909221559359/2 ";"-119,98";
 "01.04.2019";"01.04.2019";"DTA-glt. Buchung";" Zahlungspflichtiger: John DoeKto/IBAN: DE84100110012626835902 BLZ/BIC: NTSBDEB1XXX Buchungstext: Sparplan 1 Ref. H9219087I4644658/2 ";"180,00";
 
@@ -21,6 +22,7 @@ const content = encode(
 );
 
 const trimmedContent = `"Buchungstag";"Wertstellung (Valuta)";"Vorgang";"Buchungstext";"Umsatz in EUR";
+"offen";"--";"Kartenverfügung";"Kto/IBAN: 000000000000  Buchungstext: NETFLIX.COM Berlin DE               2021-01-01T00:00:00                 ";"-15,99";
 "01.04.2019";"03.04.2019";"Wertpapiere";" Buchungstext: ISHSII-MSCI EUR.SRI EOACC WPKNR: A1H7ZS ISIN: IE00B52VJ196 Ref. 25F1909221559359/2 ";"-119,98";
 "01.04.2019";"01.04.2019";"DTA-glt. Buchung";" Zahlungspflichtiger: John DoeKto/IBAN: DE84100110012626835902 BLZ/BIC: NTSBDEB1XXX Buchungstext: Sparplan 1 Ref. H9219087I4644658/2 ";"180,00";`;
 
