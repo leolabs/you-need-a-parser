@@ -20,12 +20,12 @@
   },
   "devDependencies": {
     "@types/iban": "0.0.30",
-    "@types/jest": "24.9.1",
+    "@types/jest": "29.5.1",
     "@types/lodash": "4.14.191",
     "@types/papaparse": "5.0.3",
     "fast-glob": "3.2.12",
-    "jest": "24.9.0",
-    "ts-jest": "24.3.0",
+    "jest": "29.5.0",
+    "ts-jest": "29.1.0",
     "typescript": "3.9.7",
     "ynap-bank2ynab-converter": "^1.14.0"
   },
