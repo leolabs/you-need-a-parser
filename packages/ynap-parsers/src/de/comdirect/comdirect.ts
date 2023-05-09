@@ -84,7 +84,7 @@ export const comdirectParser: ParserFunction = async (file: File) => {
   return [
     {
       data: (data as ComdirectRow[])
-        .filter(r => r.Buchungstag && r['Umsatz in EUR'])
+        .filter(r => r.Buchungstag && r.Buchungstag != "offen" && r['Umsatz in EUR'])
         .map(r => ({
           Date: generateYnabDate(r.Buchungstag),
           Payee:
