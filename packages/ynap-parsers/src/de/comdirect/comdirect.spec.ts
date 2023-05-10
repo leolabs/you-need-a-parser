@@ -16,7 +16,7 @@ const content = encode(
 "offen";"--";"Kartenverfügung";"Kto/IBAN: 000000000000  Buchungstext: NETFLIX.COM Berlin DE               2021-01-01T00:00:00                 ";"-15,99";
 "01.04.2019";"03.04.2019";"Wertpapiere";" Buchungstext: ISHSII-MSCI EUR.SRI EOACC WPKNR: A1H7ZS ISIN: IE00B52VJ196 Ref. 25F1909221559359/2 ";"-119,98";
 "01.04.2019";"01.04.2019";"DTA-glt. Buchung";" Zahlungspflichtiger: John DoeKto/IBAN: DE84100110012626835902 BLZ/BIC: NTSBDEB1XXX Buchungstext: Sparplan 1 Ref. H9219087I4644658/2 ";"180,00";
-
+"09.05.2023";"09.05.2023";"Lastschrift / Belastung";"Auftraggeber: Some Supermarket Buchungstext: Some Supermarket KARTE 0000 12345678912 05052023 KDN-REF 000000000000 Ref. IY22312953149668/154221";"-7.191,19";
 "Alter Kontostand";"16,89 EUR";`,
   'win1252',
 );
@@ -24,7 +24,8 @@ const content = encode(
 const trimmedContent = `"Buchungstag";"Wertstellung (Valuta)";"Vorgang";"Buchungstext";"Umsatz in EUR";
 "offen";"--";"Kartenverfügung";"Kto/IBAN: 000000000000  Buchungstext: NETFLIX.COM Berlin DE               2021-01-01T00:00:00                 ";"-15,99";
 "01.04.2019";"03.04.2019";"Wertpapiere";" Buchungstext: ISHSII-MSCI EUR.SRI EOACC WPKNR: A1H7ZS ISIN: IE00B52VJ196 Ref. 25F1909221559359/2 ";"-119,98";
-"01.04.2019";"01.04.2019";"DTA-glt. Buchung";" Zahlungspflichtiger: John DoeKto/IBAN: DE84100110012626835902 BLZ/BIC: NTSBDEB1XXX Buchungstext: Sparplan 1 Ref. H9219087I4644658/2 ";"180,00";`;
+"01.04.2019";"01.04.2019";"DTA-glt. Buchung";" Zahlungspflichtiger: John DoeKto/IBAN: DE84100110012626835902 BLZ/BIC: NTSBDEB1XXX Buchungstext: Sparplan 1 Ref. H9219087I4644658/2 ";"180,00";
+"09.05.2023";"09.05.2023";"Lastschrift / Belastung";"Auftraggeber: Some Supermarket Buchungstext: Some Supermarket KARTE 0000 12345678912 05052023 KDN-REF 000000000000 Ref. IY22312953149668/154221";"-7.191,19";`;
 
 const ynabResult: YnabFile[] = [
   {
@@ -39,6 +40,12 @@ const ynabResult: YnabFile[] = [
         Payee: 'John Doe',
         Memo: 'Sparplan 1',
         Inflow: '180.00',
+      },
+      {
+        Date: '05/09/2023',
+        Payee: 'Some Supermarket',
+        Memo: 'Some Supermarket KARTE 0000 12345678912 05052023 KDN-REF 000000000000',
+        Outflow: '7191.19',
       },
     ],
   },
@@ -100,7 +107,7 @@ describe('comdirect Parser Module', () => {
       expect(extractField(postingText1, 'Buchungstext')).toEqual(
         'AMUNDI ETF MSCI WLD X EMU WPKNR: A0RPV6 ISIN: FR0010756114',
       );
-      expect(extractField(postingText1, 'Ref')).toEqual('07F1909220100960/2');
+      expect(extractField(postingText1, 'Ref.')).toEqual('07F1909220100960/2');
       expect(extractField(postingText2, 'Zahlungspflichtiger')).toEqual('John Doe');
       expect(extractField(postingText2, 'Buchungstext')).toEqual('Sparplan 1');
       expect(extractField(postingText2, 'Kto/IBAN')).toEqual(

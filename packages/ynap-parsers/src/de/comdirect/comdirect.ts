@@ -22,7 +22,9 @@ export const generateYnabDate = (input: string) => {
   return [month.padStart(2, '0'), day.padStart(2, '0'), year].join('/');
 };
 
-export const parseNumber = (input: string) => Number(input.replace(',', '.'));
+// Replace '.' with '' to remove German format thousands separator, then
+// replace ',' with '.' to convert from German decimal separator to TS-style '.'
+export const parseNumber = (input: string) => Number(input.replace('.', '').replace(',', '.'));
 
 export const trimMetaData = (input: string) => {
   const beginning = input.indexOf('"Buchungstag"');
@@ -46,7 +48,7 @@ const postingTextFields = {
   Zahlungspflichtiger: 'Zahlungspflichtiger',
   'Kto/IBAN': 'Kto/IBAN',
   'BLZ/BIC': 'BLZ/BIC',
-  Ref: 'Ref',
+  'Ref.': 'Ref.',
 };
 
 export const extractField = (
