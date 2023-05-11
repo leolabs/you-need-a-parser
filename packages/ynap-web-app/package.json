@@ -41,7 +41,7 @@
   ],
   "devDependencies": {
     "@types/file-saver": "2.0.1",
-    "@types/node-fetch": "2.6.2",
+    "@types/node-fetch": "2.6.3",
     "@types/react-helmet": "5.0.21",
     "@types/react-helmet-async": "1.0.1",
     "@types/react-toastify": "4.0.2",
@@ -50,7 +50,7 @@
     "date-fns": "2.29.3",
     "encoding": "0.1.13",
     "jest": "24.9.0",
-    "node-fetch": "2.6.9",
+    "node-fetch": "2.6.11",
     "ts-jest": "24.3.0",
     "tslint": "5.20.1"
   }
