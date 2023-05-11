@@ -46,7 +46,7 @@
     "@types/react-helmet-async": "1.0.1",
     "@types/react-toastify": "4.0.2",
     "@types/styled-components": "4.4.3",
-    "babel-plugin-styled-components": "1.10.7",
+    "babel-plugin-styled-components": "1.13.3",
     "date-fns": "2.29.3",
     "encoding": "0.1.13",
     "jest": "24.9.0",
