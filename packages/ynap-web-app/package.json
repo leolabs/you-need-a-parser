@@ -5,7 +5,7 @@
   "private": true,
   "dependencies": {
     "@types/jest": "24.9.1",
-    "@types/node": "18.16.14",
+    "@types/node": "18.16.15",
     "@types/react": "16.14.41",
     "@types/react-dom": "16.9.19",
     "file-saver": "2.0.5",
