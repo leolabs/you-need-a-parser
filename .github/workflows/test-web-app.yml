@@ -1,6 +1,10 @@
 name: Test web-app
 
-on: [push, pull_request]
+on: [pull_request]
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   build:
@@ -16,6 +20,7 @@ jobs:
         uses: actions/setup-node@v3.6.0
         with:
           node-version: ${{ matrix.node-version }}
+
       - name: Install, Build, and Test
         run: |
           cd packages/ynap-web-app
@@ -23,3 +28,17 @@ jobs:
           yarn build
         env:
           CI: true
+
+  # See https://github.com/orgs/community/discussions/26822#discussioncomment-5122101
+  results-web-app:
+    if: ${{ always() }}
+    runs-on: ubuntu-latest
+    needs: [build]
+    steps:
+      - run: exit 1
+        # see https://stackoverflow.com/a/67532120/4907315
+        if: >-
+          ${{
+               contains(needs.*.result, 'failure')
+            || contains(needs.*.result, 'cancelled')
+          }}
