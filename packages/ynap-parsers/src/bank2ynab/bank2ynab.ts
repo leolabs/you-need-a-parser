@@ -3,7 +3,7 @@ import { ParserFunction, MatcherFunction, ParserModule, YnabRow } from '..';
 import { parse as parseCsv } from '../util/papaparse';
 import { readEncodedFile } from '../util/read-encoded-file';
 import { parseDate, ynabDate } from './parse-date';
-import { ParserConfig } from 'ynap-bank2ynab-converter/parserconfig';
+import { ParserConfig } from 'ynap-bank2ynab-converter/src/parserconfig';
 
 import banks from './banks.json';
 

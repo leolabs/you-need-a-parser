@@ -4,9 +4,9 @@
   ],
   "command": {
     "version": {
-      "message": ":bookmark: publish %s"
+      "message": ":bookmark: publish new versions"
     }
   },
-  "version": "1.15.0",
+  "version": "independent",
   "npmClient": "yarn"
 }
