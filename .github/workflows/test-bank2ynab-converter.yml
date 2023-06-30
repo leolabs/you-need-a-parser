@@ -1,4 +1,4 @@
-name: Test parsers
+name: Test bank2ynab-converter
 
 on: [pull_request]
 
@@ -20,20 +20,16 @@ jobs:
         uses: actions/setup-node@v3.6.0
         with:
           node-version: ${{ matrix.node-version }}
-      - name: Install, Build, and Test
+      - name: Install and run
         run: |
-          cd packages/ynap-parsers
+          cd packages/ynap-bank2ynab-converter
           yarn install
-          yarn build
-          yarn test --coverage
+          yarn start
         env:
           CI: true
 
-      - name: Upload coverage to Codecov
-        uses: codecov/codecov-action@v3.1.3
-
   # See https://github.com/orgs/community/discussions/26822#discussioncomment-5122101
-  results-parsers:
+  results-bank2ynab-converter:
     if: ${{ always() }}
     runs-on: ubuntu-latest
     needs: [build]

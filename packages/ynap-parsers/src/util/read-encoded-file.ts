@@ -1,5 +1,6 @@
 import chardet from 'jschardet';
 import { decode } from 'iconv-lite';
+import { Buffer } from 'buffer';
 
 export const readEncodedFile = (file: File, charset?: string): Promise<string> => {
   return new Promise((res, rej) => {
