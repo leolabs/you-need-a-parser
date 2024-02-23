@@ -40,7 +40,7 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "@types/file-saver": "2.0.5",
+    "@types/file-saver": "2.0.7",
     "@types/node-fetch": "2.6.4",
     "@types/react-helmet": "5.0.21",
     "@types/react-helmet-async": "1.0.1",
