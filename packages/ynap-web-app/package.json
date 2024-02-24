@@ -50,7 +50,7 @@
     "date-fns": "2.30.0",
     "encoding": "0.1.13",
     "jest": "24.9.0",
-    "node-fetch": "2.6.11",
+    "node-fetch": "3.3.2",
     "ts-jest": "24.3.0",
     "tslint": "5.20.1"
   }
