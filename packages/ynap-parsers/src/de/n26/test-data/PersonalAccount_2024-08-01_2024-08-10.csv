@@ -1,0 +1,14 @@
+"Booking Date","Value Date","Partner Name","Partner Iban",Type,"Payment Reference","Account Name","Amount (EUR)","Original Amount","Original Currency","Exchange Rate"
+2024-08-11,2024-08-11,"Company A",,"Credit Transfer","Invoice 2024-001","Business Account",14000,,,
+2024-08-24,2024-08-24,"Company A",,"Debit Transfer","","Business Account",-10000,,,
+2024-09-10,2024-09-10,"Company A",,"Debit Transfer","","Business Account",-8000,,,
+2024-08-02,2024-08-01,"Flight Booking",,"Presentment","","Business Account",-185.95,185.95,EUR,1
+2024-08-02,2024-08-02,"Cloud Services",,"Presentment","","Business Account",-27.6,27.6,EUR,1
+2024-08-05,2024-08-05,"Bank Name",,"Reward","Cashback Reward","Business Account",1.4,,,
+2024-08-05,2024-08-05,"AI Subscription",,"Presentment","","Business Account",-21.6,21.6,EUR,1
+2024-08-05,2024-08-05,"Client B","NL56XXXX0000000000","Credit Transfer","Invoice 2024-0008","Business Account",10000,,,
+2024-08-06,2024-08-06,"Freelancer Payment",,"Presentment","","Business Account",-17.05,18.38,USD,0.9276387378
+2024-08-06,2024-08-06,"Order ABC123",,"Presentment","","Business Account",-14,14,EUR,1
+2024-08-06,2024-08-06,"Software Corp.",,"Presentment","","Business Account",-9.27,9.99,USD,0.9279279279
+2024-08-08,2024-08-08,"Client C","NL22XXXX0000000000","Credit Transfer","Invoice 2024-0009","Business Account",14000,,,
+2024-08-08,2024-08-08,"Online Tool",,"Presentment","","Business Account",-83.4,83.4,EUR,1
