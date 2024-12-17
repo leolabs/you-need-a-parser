@@ -52,47 +52,53 @@ const ynabResult2021: YnabFile[] = [
   },
 ];
 
-const content2022 = unparse([
+const content2024 = unparse([
   {
-    Date: '2019-01-01',
-    Payee: 'Test Payee',
-    'Transaction type': 'Outgoing Transfer',
-    'Payment reference': 'Netflix',
-    'Amount (EUR)': '-3.0',
-    'Amount (Foreign Currency)': '',
-    'Type Foreign Currency': '',
+    'Booking Date': '2024-08-01',
+    'Value Date': '2024-08-01',
+    'Partner Name': 'theName',
+    'Partner Iban': 'DE49100000000000000000',
+    Type: 'Debit Transfer',
+    'Payment Reference': 'Rent payment',
+    'Account Name': 'Main Account',
+    'Amount (EUR)': '-519.20',
+    'Original Amount': '',
+    'Original Currency': '',
     'Exchange Rate': '',
   },
   {
-    Date: '2019-01-02',
-    Payee: 'Work Account',
-    'Transaction type': 'MasterCard Payment',
-    'Payment reference': '',
-    'Amount (EUR)': '600.0',
-    'Amount (Foreign Currency)': '600.0',
-    'Type Foreign Currency': 'EUR',
-    'Exchange Rate': '1.0',
+    'Booking Date': '2024-08-04',
+    'Value Date': '2024-08-03',
+    'Partner Name': 'A company',
+    'Partner Iban': '',
+    Type: 'Presentment',
+    'Payment Reference': '',
+    'Account Name': 'Main Account',
+    'Amount (EUR)': '-324.83',
+    'Original Amount': '350',
+    'Original Currency': 'USD',
+    'Exchange Rate': '0.9280857143',
   },
 ]);
 
-const ynabResult2022: YnabFile[] = [
+const ynabResult2024: YnabFile[] = [
   {
     data: [
       {
-        Date: '01/01/2019',
-        Payee: 'Test Payee',
+        Date: '08/01/2024',
+        Payee: 'theName',
         Category: undefined,
-        Memo: 'Netflix',
-        Outflow: '3.00',
+        Memo: 'Rent payment',
+        Outflow: '519.20',
         Inflow: undefined,
       },
       {
-        Date: '01/02/2019',
-        Payee: 'Work Account',
+        Date: '08/04/2024',
+        Payee: 'A company',
         Category: undefined,
         Memo: '',
-        Outflow: undefined,
-        Inflow: '600.00',
+        Outflow: '324.83',
+        Inflow: undefined,
       },
     ],
   },
@@ -100,15 +106,21 @@ const ynabResult2022: YnabFile[] = [
 
 describe('N26 Parser Module', () => {
   describe('Matcher', () => {
-    it('should match N26 files by file name', async () => {
+    it('should match N26 files by file name (old format)', async () => {
       const fileName = 'n26-csv-transactions.csv';
       const result = !!fileName.match(n26.filenamePattern);
       expect(result).toBe(true);
     });
 
+    it('should match N26 files by file name (2024 format)', async () => {
+      const fileName = 'MainAccount_2024-08-01_2024-09-07.csv';
+      const result = !!fileName.match(n26.filenamePattern);
+      expect(result).toBe(true);
+    });
+
     it('should not match other files by file name', async () => {
-      const invalidFile = new File([], 'invalid.csv');
-      const result = await n26.match(invalidFile);
+      const fileName = 'invalid.csv';
+      const result = !!fileName.match(n26.filenamePattern);
       expect(result).toBe(false);
     });
 
@@ -118,8 +130,8 @@ describe('N26 Parser Module', () => {
       expect(result).toBe(true);
     });
 
-    it('should match N26 files since 2022 by fields', async () => {
-      const file = new File([content2022], 'test.csv');
+    it('should match N26 files for 2024 format by fields', async () => {
+      const file = new File([content2024], 'test.csv');
       const result = await n26.match(file);
       expect(result).toBe(true);
     });
@@ -137,23 +149,27 @@ describe('N26 Parser Module', () => {
       const result = await n26.parse(file);
       expect(result).toEqual(ynabResult2021);
     });
-  });
 
-  describe('Parser', () => {
-    it('should parse data since 2022 correctly', async () => {
-      const file = new File([content2022], 'test.csv');
+    it('should parse data for 2024 format correctly', async () => {
+      const file = new File([content2024], 'test.csv');
       const result = await n26.parse(file);
-      expect(result).toEqual(ynabResult2022);
+      expect(result).toEqual(ynabResult2024);
     });
   });
 
   describe('Date Converter', () => {
     it('should throw an error when the input date is incorrect', () => {
-      expect(() => generateYnabDate('1.1.1')).toThrow('not a valid date');
+      expect(() => generateYnabDate('1.1.1')).toThrow(
+        'The input is not a valid date. Expected formats: YYYY-MM-DD or DD.MM.YYYY'
+      );
     });
 
-    it('should convert dates correctly', () => {
-      expect(generateYnabDate('2018-09-01')).toEqual('09/01/2018');
+    it('should convert dates in old format correctly', () => {
+      expect(generateYnabDate('01.01.2019')).toEqual('01/01/2019');
+    });
+
+    it('should convert dates in 2024 format correctly', () => {
+      expect(generateYnabDate('2024-08-01')).toEqual('08/01/2024');
     });
   });
 });
