@@ -379,10 +379,10 @@
   dependencies:
     jest-diff "^24.3.0"
 
-"@types/lodash@4.14.191":
-  version "4.14.191"
-  resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.14.191.tgz#09511e7f7cba275acd8b419ddac8da9a6a79e2fa"
-  integrity sha512-BdZ5BCCvho3EIXw6wUCXHe7rS53AIDPLE+JzwgT+OsJk53oBfbSmZZ7CX4VaRoN78N+TJpFi9QPlfIVNmJYWxQ==
+"@types/lodash@4.17.28":
+  version "4.17.28"
+  resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.17.28.tgz#44ed30e4af5f2a8ff445d977d605322f2a065374"
+  integrity sha512-2iP9dTMtHQOGZq086o7CyIVz5h3hCS7xqG1dZg3hfbxqcB5/ZaFD+vOp9ebR8YlbCQr84OQjBiv/qgITjHSrYA==
 
 "@types/node@*":
   version "12.11.1"
